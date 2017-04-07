@@ -1,0 +1,8 @@
+# hidden
+.*
+# Mac OS X service directories
+.DS_Store
+# Other
+*.bak
+# local
+/logs
