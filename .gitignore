@@ -6,3 +6,4 @@
 *.bak
 # local
 /logs
+*.log
