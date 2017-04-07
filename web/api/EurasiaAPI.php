@@ -1,10 +1,12 @@
 <?php
+require_once './.settings.php';
 
 
 class EurasiaAPI {
 
 
     public static function getPersonByIIN($iin) {
+        global $PARAM_WSAPI_URL;
 
         $data = [
             'idNumber' => str_replace(" ", '', $iin)
@@ -12,7 +14,7 @@ class EurasiaAPI {
 
         $data = json_encode($data);
 
-        $url = 'https://webtest02.theeurasia.kz/order/ws/policy/fetch-driver/';
+        $url = $PARAM_WSAPI_URL . '/order/ws/policy/fetch-driver/';
 
         return self::request($url, $data);
     }
@@ -24,13 +26,15 @@ class EurasiaAPI {
      * @param type $data данные
      */
     public static function request($url, $data, $method = 'post') {
+        global $PARAM_WSAPI_USER;
+        global $PARAM_WSAPI_PASSWORD;
 
         $logPath = __DIR__.'/../logs/';
 
         $curl = curl_init();
 
         // WS под паролем
-        curl_setopt($curl, CURLOPT_USERPWD, "api_grafica:XHC6O8EEIm");
+        curl_setopt($curl, CURLOPT_USERPWD, $PARAM_WSAPI_USER . ':' . $PARAM_WSAPI_PASSWORD);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($curl, CURLOPT_USERAGENT, 'grafica-API-client/1.0');

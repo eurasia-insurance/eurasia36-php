@@ -1,4 +1,5 @@
 <?php
+require_once './.settings.php';
 
 require './api/EurasiaAPI.php';
 
@@ -37,7 +38,7 @@ if(isset($_SESSION['iinRequest'])) {
 
 
 
-//$driver = file_get_contents('https://webtest02.theeurasia.kz/order/ws/policy/fetch-driver/' . str_replace(" ", '', $_POST['iin']));
+//$driver = file_get_contents($PARAM_WSAPI_URL . '/order/ws/policy/fetch-driver/' . str_replace(" ", '', $_POST['iin']));
 //
 //if($driver) {
 //    echo $driver;
