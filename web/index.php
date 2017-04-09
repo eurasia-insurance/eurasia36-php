@@ -283,7 +283,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 2): ?>
+                                    <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 5): ?>
                                     <div class="g-recaptcha" data-sitekey="6LdQBBsUAAAAADlPZcaxD-VkvvhC6-3K6SjVQ1_a"></div>
                                     <?php endif; ?>
                                     <button type="submit" class="btn btn-blue">Заказать полис</button>
