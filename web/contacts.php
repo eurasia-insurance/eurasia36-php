@@ -1,5 +1,4 @@
 <?php
-require_once './.settings.php';
 
 header('Content-Type: text/html; charset=utf-8');
 
@@ -25,7 +24,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
 
 
-$url = $PARAM_WSAPI_URL . '/order/ws/pos/all/ru';
+$url = 'pos/all/ru';
 
 $data = '{}';
 

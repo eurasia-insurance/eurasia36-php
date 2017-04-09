@@ -1,12 +1,17 @@
 <?php
-require_once './.settings.php';
 
+require_once './.settings.php'; # settings needs to be in a separate file due to portable requirements
 
 class EurasiaAPI {
 
+    const WS_HOST = PARAM_WS_HOST;
+
+    const WS_USER = PARAM_WS_USER;
+
+    const WS_PWD = PARAM_WS_PWD;
+
 
     public static function getPersonByIIN($iin) {
-        global $PARAM_WSAPI_URL;
 
         $data = [
             'idNumber' => str_replace(" ", '', $iin)
@@ -14,7 +19,7 @@ class EurasiaAPI {
 
         $data = json_encode($data);
 
-        $url = $PARAM_WSAPI_URL . '/order/ws/policy/fetch-driver/';
+        $url = 'policy/fetch-driver/';
 
         return self::request($url, $data);
     }
@@ -26,19 +31,17 @@ class EurasiaAPI {
      * @param type $data данные
      */
     public static function request($url, $data, $method = 'post') {
-        global $PARAM_WSAPI_USER;
-        global $PARAM_WSAPI_PASSWORD;
 
         $logPath = __DIR__.'/../logs/';
 
         $curl = curl_init();
 
         // WS под паролем
-        curl_setopt($curl, CURLOPT_USERPWD, $PARAM_WSAPI_USER . ':' . $PARAM_WSAPI_PASSWORD);
+        curl_setopt($curl, CURLOPT_USERPWD, self::WS_USER . ":" . self::WS_PWD);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($curl, CURLOPT_USERAGENT, 'grafica-API-client/1.0');
-        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_URL, self::WS_HOST.$url);
 
         if($method == 'post') {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');

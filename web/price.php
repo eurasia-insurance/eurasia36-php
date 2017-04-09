@@ -1,5 +1,4 @@
 <?php
-require_once './.settings.php';
 
 require './api/EurasiaAPI.php';
 
@@ -136,7 +135,7 @@ $data = json_encode($data);
 //    echo '</pre>';
 //    die();
 
-$url = $PARAM_WSAPI_URL . '/order/ws/policy/fetch-policy/';
+$url = 'policy/fetch-policy/';
 
 $price = EurasiaAPI::request($url, $data);
 

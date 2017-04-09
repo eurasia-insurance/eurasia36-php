@@ -1,5 +1,4 @@
 <?php
-require_once './.settings.php';
 
 require './api/EurasiaAPI.php';
 
@@ -35,14 +34,6 @@ if(isset($_SESSION['iinRequest'])) {
 } else {
     $_SESSION['iinRequest'] = 1;
 }
-
-
-
-//$driver = file_get_contents($PARAM_WSAPI_URL . '/order/ws/policy/fetch-driver/' . str_replace(" ", '', $_POST['iin']));
-//
-//if($driver) {
-//    echo $driver;
-//}
 
 
 

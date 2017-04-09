@@ -1,5 +1,5 @@
 <?php
-require_once './.settings.php';
+
 require './api/EurasiaAPI.php';
 
 session_start();
@@ -59,7 +59,7 @@ if(isset($phone)) {
     $phone = str_replace("(", '', $phone);
     $phone = str_replace(")", '', $phone);
 
-    $url = $PARAM_WSAPI_URL . '/order/ws/check/phone/'.$phone;
+    $url = 'check/phone/'.$phone;
 
     $data = '{}';
 
@@ -80,7 +80,7 @@ if(isset($phone)) {
 // проверяем мыло, если его указали
 if(isset($email)) {
 
-    $url = $PARAM_WSAPI_URL . '/order/ws/check/email/'.$email;
+    $url = 'check/email/'.$email;
 
     $data = '{}';
 
@@ -94,7 +94,7 @@ if(isset($email)) {
 
 }
 
-$url = $PARAM_WSAPI_URL . '/order/ws/crm/send-callback-request';
+$url = 'crm/send-callback-request';
 
 $data = json_encode($_POST);
 
