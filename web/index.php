@@ -533,11 +533,13 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     <div class="modal-body">
 
                         <form method="post" action="callback.php" id="callback-form">
+                            <?php if(isset($_GET['utm_source']) && trim($_GET['utm_source']) != ''): ?>
                             <input type="hidden" name="utm[source]" value="<?= isset($_GET['utm_source']) ? $_GET['utm_source'] : '' ?>" />
                             <input type="hidden" name="utm[medium]" value="<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '' ?>" />
                             <input type="hidden" name="utm[campaign]" value="<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ?>" />
                             <input type="hidden" name="utm[content]" value="<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : '' ?>" />
                             <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? $_GET['utm_term'] : '' ?>" />
+                            <?php endif; ?>
 
                             <input type="hidden" name="requester[language]" value="RUSSIAN" />
                             <input type="hidden" name="requester[name]" value="Не указано" />
@@ -891,7 +893,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 $.ajax({
                     method: "POST",
                     url: $(this).attr("action"),
-                    data: { requester: requester, utm: utm, policy: policyCost },
+                    data: { requester: requester<?= isset($_GET['utm_source']) && trim($_GET['utm_source']) != '' ? ', utm: utm' : '' ?>, policy: policyCost },
                     dataType: "json"
                 })
                 .done(function( data ) {
