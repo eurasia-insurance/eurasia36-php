@@ -112,7 +112,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm"/>или <a href="tel:5678" class="header-tel">5678</a><br/><small>звонок бесплатный</small></span></li>
+                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm-inline"/>или <a href="tel:5678" class="header-tel">5678</a><br/><small>звонок бесплатный</small></span></li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery">Доставка и оплата</a></li>
                             <li><a href="/contacts.php">Адреса и телефоны</a></li>
                         </ul>
@@ -125,8 +125,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 <h1>Обязательная автостраховка с&nbsp;бесплатной доставкой</h1>
 
                 <div class="row pluses">
-                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> Доставка с 11:00 до 20:00</div>
-                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> Минимальная цена</div>
+                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> Быстрое оформление полиса</div>
+                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> Минимальная цена + скидка</div>
                     <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> Работаем c 1995 года</div>
                 </div>
             </div>
