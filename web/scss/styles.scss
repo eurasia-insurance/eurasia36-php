@@ -24,7 +24,7 @@ header {
     color: #fff;
     
     h1 {
-        font: bold 42px Helvetica;
+        font: bold 42px/50px Helvetica;
         margin-bottom: 35px;
         width: 70%
     }
@@ -88,8 +88,8 @@ header {
     display: inline-block;
     margin-right: 30px;
     padding: 7px 10px;
-    border: 1px solid #CCC;
-    border-radius: 3px;
+    border: 1px solid #666;
+    border-radius: 5px;
     font-size: 14px;
     letter-spacing: 1.75px;
 }
