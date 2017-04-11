@@ -1,4 +1,4 @@
-<?php.
+<?php
 require_once './.settings.php';
 if (defined('PARAM_YM_ID')):
 ?>
