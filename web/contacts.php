@@ -43,7 +43,7 @@ $offices = json_decode($offices, true);
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-favicon.png" />
 
-        <title>Евразия</title>
+        <title>Адреса и телефоны страховой компании "Евразия"</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
