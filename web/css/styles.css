@@ -270,7 +270,7 @@ header {
     border: 0;
     color: #FFF; }
   .btn-blue:disabled {
-    background-image: linear-gradient(-180deg, #eee 4%, #999 98%);
+    background: #999;
     box-shadow: none; }
 
 .about-company {
@@ -367,13 +367,16 @@ header {
     display: inline-block;
     width: 125px; }
 
-.callbacl-sent {
+.callback-sent {
   display: inline-block;
   margin-bottom: 30px; }
 
 .addresses h2 {
   margin-top: 30px;
   font-size: 24px; }
+
+.text-danger a {
+  color: #a94442; }
 
 @media only screen and (max-width: 1200px) {
   .pluses {

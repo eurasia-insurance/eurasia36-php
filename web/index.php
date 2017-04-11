@@ -37,7 +37,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-favicon.png" />
 
-        <title>Евразия</title>
+        <title>Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая компания "Евразия"</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -767,6 +767,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                 $(this).parent().slideUp().remove();
 
+                $("#how-much").prop('disabled', false);
+
                 // проверяем заполненность иин полей
                 $(".main-form .inn").each(function() {
 
@@ -906,7 +908,9 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         $(".one-more-form").fadeIn();
                     } else {
 
-                        $("#result-msg").text(data.message).addClass('text-danger').fadeIn();
+                        console.log(data.message)
+
+                        $("#result-msg").html('Кажется, произошла ошибка. Пожалуйста, заполните форму ещё раз или <a href="" data-toggle="modal" data-target="#callback">закажите звонок</a> — мы сами перезвоним и всё рассчитаем.').addClass('text-danger').fadeIn();
 
                         $("#order-form button").text("Заказать полис").prop('disabled', false);
                     }
@@ -938,7 +942,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                     if(data.message == 'Success') {
 
-                        $($form).replaceWith("<strong class='callbacl-sent'>Спасибо, мы приняли вашу заявку.</strong>");
+                        $($form).replaceWith("<strong class='callback-sent'>Спасибо, мы приняли вашу заявку.</strong>");
 
                     } else {
 

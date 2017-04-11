@@ -355,7 +355,7 @@ header {
         color: #FFF;
     }
     &:disabled {
-        background-image: linear-gradient(-180deg, #eee 4%, #999 98%);
+        background: #999;
         box-shadow: none;
     }
 }
@@ -489,7 +489,7 @@ header {
         width: 125px;
     }
 }
-.callbacl-sent {
+.callback-sent {
     display: inline-block;
     margin-bottom: 30px;
 }
@@ -498,6 +498,12 @@ header {
     h2 {
         margin-top: 30px;
         font-size: 24px;
+    }
+}
+
+.text-danger {
+    a {
+        color: #a94442;
     }
 }
 
