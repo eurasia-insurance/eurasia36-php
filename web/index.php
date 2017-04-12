@@ -443,6 +443,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         </label>
                     </div>
                 </div>
+                <div class="form-fader"></div>
             </div>
             <div class="form-group">
                 <div class="col-sm-9 col-sm-offset-3">
