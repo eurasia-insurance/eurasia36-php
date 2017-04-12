@@ -497,7 +497,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="utm[medium]" value="<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '' ?>" />
                             <input type="hidden" name="utm[campaign]" value="<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ?>" />
                             <input type="hidden" name="utm[content]" value="<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : '' ?>" />
-                            <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? $_GET['utm_term'] : '' ?>" />
+                            <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : '' ?>" />
                             <?php endif; ?>
 
                             <input type="hidden" name="requester[language]" value="RUSSIAN" />
@@ -529,7 +529,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 "medium": '<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null ?>',
                 "campaign": '<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null ?>',
                 "content": '<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : null ?>',
-                "term": '<?= isset($_GET['utm_term']) ? $_GET['utm_term'] : null ?>'
+                "term": '<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : null ?>'
             };
 
             $(function() {
