@@ -593,7 +593,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                             if(data.error != true) {
 
-                                if(data.personal) {
+                                if(data.personal && data.personal.name != null) {
                                     var $name = $('<div class="help-block text">' + data.personal.name + " " + data.personal.surename + ', Класс ' + data.insuranceClass.replace(/CLASS_/, '') + '</div>');
                                 } else {
                                     var $name = $('<div class="help-block">Класс ' + data.insuranceClass.replace(/CLASS_/, '') + '</div>');
