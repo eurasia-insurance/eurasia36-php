@@ -493,10 +493,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                         <form method="post" action="callback.php" id="callback-form">
                             <?php if(isset($_GET['utm_source']) && trim($_GET['utm_source']) != ''): ?>
-                            <input type="hidden" name="utm[source]" value="<?= isset($_GET['utm_source']) ? $_GET['utm_source'] : '' ?>" />
-                            <input type="hidden" name="utm[medium]" value="<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '' ?>" />
-                            <input type="hidden" name="utm[campaign]" value="<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ?>" />
-                            <input type="hidden" name="utm[content]" value="<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : '' ?>" />
+                            <input type="hidden" name="utm[source]" value="<?= isset($_GET['utm_source']) ? urldecode($_GET['utm_source']) : '' ?>" />
+                            <input type="hidden" name="utm[medium]" value="<?= isset($_GET['utm_medium']) ? urldecode($_GET['utm_medium']) : '' ?>" />
+                            <input type="hidden" name="utm[campaign]" value="<?= isset($_GET['utm_campaign']) ? urldecode($_GET['utm_campaign']) : '' ?>" />
+                            <input type="hidden" name="utm[content]" value="<?= isset($_GET['utm_content']) ? urldecode($_GET['utm_content']) : '' ?>" />
                             <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : '' ?>" />
                             <?php endif; ?>
 
@@ -525,10 +525,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             var policyCost = null;
 
             var utm = {
-                "source": '<?= isset($_GET['utm_source']) ? $_GET['utm_source'] : null ?>',
-                "medium": '<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : null ?>',
-                "campaign": '<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : null ?>',
-                "content": '<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : null ?>',
+                "source": '<?= isset($_GET['utm_source']) ? urldecode($_GET['utm_source']) : null ?>',
+                "medium": '<?= isset($_GET['utm_medium']) ? urldecode($_GET['utm_medium']) : null ?>',
+                "campaign": '<?= isset($_GET['utm_campaign']) ? urldecode($_GET['utm_campaign']) : null ?>',
+                "content": '<?= isset($_GET['utm_content']) ? urldecode($_GET['utm_content']) : null ?>',
                 "term": '<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : null ?>'
             };
 
