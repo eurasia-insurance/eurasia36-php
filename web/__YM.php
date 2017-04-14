@@ -2,6 +2,7 @@
 require_once './.settings.php';
 if (defined('PARAM_YM_ID')):
 ?>
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -11,7 +12,8 @@ if (defined('PARAM_YM_ID')):
                     clickmap:true,
                     trackLinks:true,
                     accurateTrackBounce:true,
-                    webvisor:true
+                    webvisor:true,
+                    trackHash:true
                 });
             } catch(e) { }
         });
@@ -29,4 +31,5 @@ if (defined('PARAM_YM_ID')):
     })(document, window, "yandex_metrika_callbacks");
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/<?=PARAM_YM_ID?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <?php endif; ?>
