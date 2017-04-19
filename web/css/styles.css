@@ -1,5 +1,6 @@
 body {
-  font-family: "Helvetica", sans-serif; }
+  font-family: "Helvetica", sans-serif;
+  background: #f7fcff; }
 
 a {
   text-decoration: underline;
@@ -15,7 +16,7 @@ h1 {
   font: bold 42px/50px Helvetica; }
 
 header {
-  background: #265a88 url(/i/bg.jpg) no-repeat top center/cover;
+  background: #265a88 url(/i/bg.jpg) no-repeat center/cover;
   background-attachment: fixed;
   color: #fff; }
   header h1 {
@@ -67,7 +68,7 @@ header {
   display: inline-block;
   margin-right: 30px;
   padding: 7px 10px;
-  border: 1px solid #666;
+  border: 1px solid #ddddddb3;
   border-radius: 5px;
   font-size: 14px;
   letter-spacing: 1.75px; }
@@ -77,9 +78,10 @@ header {
 
 .main-form {
   background: #fff;
-  border: 1px solid rgba(150, 150, 150, 0.37);
-  border-radius: 3px;
-  margin-top: -150px; }
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin-top: -150px;
+  box-shadow: 0 0 10px 0 rgba(12, 48, 111, 0.17); }
   .main-form h3 {
     font-weight: bold;
     font-size: 24px;
@@ -297,7 +299,7 @@ header {
 
 .footer {
   margin-top: 60px;
-  margin-bottom: 30px; }
+  margin-bottom: 90px; }
 
 .footer__copyright {
   font-size: 14px;
