@@ -921,6 +921,13 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             $('.inn').mask('999 999 999 999',{placeholder:"_"});
             $('input[type=tel]').mask('+7 (999) 999-99-99',{placeholder:"_"});
 
+            $('input[type=tel]').keydown(function(e) {
+
+                if($(this).val().match(/\+7 \(___\) ___-__-__/) && e.key == 8) {
+                    return false;
+                }
+            });
+
             $('a[href^="#"]').on('click', function(event) {
                 var target = $(this.getAttribute('href'));
                 if( target.length ) {
