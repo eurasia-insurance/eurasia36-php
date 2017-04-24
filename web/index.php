@@ -99,7 +99,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <div class="form-group">
                                 <label for="inputInn" class="col-sm-3 control-label"><strong>Ваш ИИН</strong></label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="drivers[0][idNumber]" class="form-control inn" id="inputInn" placeholder="" />
+                                    <input type="text" name="drivers[0][idNumber]" class="form-control inn" id="inputInn" placeholder="" maxlength="12" />
                                 </div>
                             </div>
                             <div class="form-group">
@@ -341,7 +341,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             <div class="form-group">
                 <label for="inputInn" class="col-sm-3 control-label"><strong>ИИН</strong></label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control inn" name="drivers[][idNumber]" id="inputInn" placeholder="">
+                    <input type="text" class="form-control inn" name="drivers[][idNumber]" id="inputInn" placeholder="" maxlength="12">
                 </div>
             </div>
             <div class="form-group">
@@ -571,7 +571,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     iinInput = $iin.val();
                 }
 
-                if( $iin.val() && !$iin.val().match(/_/) ) {// заполнен ли иин полностью?
+                if( $iin.val() && $iin.val().length == 12 ) {// заполнен ли иин полностью?
 
                     if(iinNumber != $iin.val()) {// введен новый иин?
 
