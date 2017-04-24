@@ -46,7 +46,7 @@ class EurasiaAPI {
         if($method == 'post') {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Accept: application/json', 'Accept-language: ru'));
             }
 
         curl_setopt($curl, CURLOPT_HEADER, FALSE);
