@@ -549,8 +549,25 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             var initialAuto = 1;
 
 
+            $('.main-form').on('keydown', '.inn', function (e) {
+                // Allow: backspace, delete, tab, escape, enter and .
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                     // Allow: Ctrl+A, Command+A
+                    (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                     // Allow: Ctrl+R, Command+R
+                    (e.keyCode === 82 && (e.ctrlKey === true || e.metaKey === true)) ||
+                     // Allow: home, end, left, right, down, up
+                    (e.keyCode >= 35 && e.keyCode <= 40)) {
+                         // let it happen, don't do anything
+                         return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
 
-            $(".main-form").on('keyup', ".inn", function(e) {
+            $(".main-form").on('input', ".inn", function(e) {
 
                 checkIin(this);
             });
@@ -693,7 +710,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                 driverTemplate.slideDown();
 
-                $('.inn').mask('999 999 999 999',{placeholder:"_"});
+                //$('.inn').mask('999 999 999 999',{placeholder:"_"});
             });
 
 
@@ -918,7 +935,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
             });
 
-            $('.inn').mask('999 999 999 999',{placeholder:"_"});
+//            $('.inn').mask('999 999 999 999',{placeholder:"_"});
             $('input[type=tel]').mask('+7 (999) 999-99-99',{placeholder:"_"});
 
             $('input[type=tel]').keydown(function(e) {
