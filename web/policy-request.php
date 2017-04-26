@@ -142,6 +142,8 @@ if(isset($email)) {
 
 $url = 'crm/send-policy-request';
 
+$_POST['type'] = 'EXPRESS';
+
 $data = json_encode($_POST);
 
 //var_dump($_POST);
