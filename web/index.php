@@ -149,13 +149,13 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                 <div class="col-sm-9 radio-toggles">
                                     <div class="radio active">
                                         <label>
-                                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios1" value="UNDER7" checked>
+                                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios1" value="OVER7" checked>
                                             до <?= date('Y') - 7 ?>
                                         </label>
                                     </div><!--
                                     --><div class="radio">
                                         <label>
-                                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios2" value="OVER7">
+                                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios2" value="UNDER7">
                                             <?= date('Y') - 6 ?> и новее
                                         </label>
                                     </div>
@@ -400,13 +400,13 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 <div class="col-sm-9 radio-toggles">
                     <div class="radio active">
                         <label>
-                            <input type="radio" value="UNDER7" name="vehicles[][ageClass]" checked />
+                            <input type="radio" value="OVER7" name="vehicles[][ageClass]" checked />
                             до <?= date('Y') - 7 ?>
                         </label>
                     </div><!--
                     --><div class="radio">
                         <label>
-                            <input type="radio" value="OVER7" name="vehicles[][ageClass]" />
+                            <input type="radio" value="UNDER7" name="vehicles[][ageClass]" />
                             <?= date('Y') - 6 ?> и новее
                         </label>
                     </div>
