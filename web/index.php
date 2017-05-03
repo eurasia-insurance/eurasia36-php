@@ -321,7 +321,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <div class="footer__grafica">
-                            <a href="http://grafica.kz">
+                            <a href="http://grafica.kz" rel="nofollow">
                                 <img src="/i/grafica.svg" alt="Grafica" />
                                 Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»</span>
                             </a>
