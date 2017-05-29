@@ -171,7 +171,9 @@ if(isset($phone)) {
 //    die(json_encode($error));
 }
 
-if(!isset($error) && $_POST['leadSent'] == 0) {
+
+
+if(!isset($error)) {
 
     $url = 'crm/send-policy-request';
 
@@ -195,5 +197,16 @@ if(!isset($error) && $_POST['leadSent'] == 0) {
     //var_dump($_POST);
     //die();
 
-    $request = EurasiaAPI::request($url, $data);
+
+    $dir =  __DIR__ . '/leads';
+
+    if(!is_dir($dir)) {
+        mkdir($dir, 0777);
+    }
+
+    // пишем в файл
+    file_put_contents($dir . '/' . session_id() . '.json', $data);
+
+//    // отправляем в ЦРМку
+//    $request = EurasiaAPI::request($url, $data);
 }
