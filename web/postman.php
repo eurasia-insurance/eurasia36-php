@@ -22,8 +22,8 @@ foreach($files as $file) {
 
     $timePassed = (time() - filemtime($file)) / 60;
 
-    // json и изменен 30 минут газад
-    if($extension == 'json' && $timePassed > 30) {
+    // json и изменен 5 минут назад
+    if($extension == 'json' && $timePassed > 5) {
 
 //        echo "$file<br/>";
 
