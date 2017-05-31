@@ -151,6 +151,11 @@ $data = json_encode($_POST);
 
 $request = EurasiaAPI::request($url, $data);
 
+$json = __DIR__ . '/leads/' . session_id() . '.json';
+if(is_file($json)) {
+    unlink($json);
+}
+
 echo $request;
 
 

@@ -140,3 +140,73 @@ $url = 'policy/fetch-policy/';
 $price = EurasiaAPI::request($url, $data);
 
 echo $price;
+
+
+
+
+$phone = isset($_POST['phone']) ? trim($_POST['phone']) : null;
+
+// проверяем телефон
+if(isset($phone)) {
+
+    $phone = str_replace(" ", '', $phone);
+    $phone = str_replace("-", '', $phone);
+    $phone = str_replace("(", '', $phone);
+    $phone = str_replace(")", '', $phone);
+
+    $url = 'check/phone/'.$phone;
+
+    $data = '{}';
+
+    $checkPhone = EurasiaAPI::request($url, $data, 'get');
+    $checkPhoneArr = json_decode($checkPhone, true);
+
+    if(isset($checkPhoneArr['error'])) {
+        $error = ['error' => true, 'message' => 'Неверно указан номер телефона'];
+//        die(json_encode($error));
+    }
+
+} else {
+    $error = ['error' => true, 'message' => 'Вы забыли указать номер телефона'];
+//    die(json_encode($error));
+}
+
+
+
+if(!isset($error)) {
+
+    $url = 'crm/send-policy-request';
+
+    $price = json_decode($price, true);
+
+    $data = [];
+
+    $data['policy'] = $price;
+    $data['requester']['phone'] = $phone;
+    $data['requester']['name'] = trim($_POST['name']);
+    $data['requester']['language'] = 'RUSSIAN';
+    $data['type'] = 'UNCOMPLETE';
+
+
+//    var_dump($data);
+//    die();
+
+    $data = json_encode($data);
+
+
+    //var_dump($_POST);
+    //die();
+
+
+    $dir =  __DIR__ . '/leads';
+
+    if(!is_dir($dir)) {
+        mkdir($dir, 0777);
+    }
+
+    // пишем в файл
+    file_put_contents($dir . '/' . session_id() . '.json', $data);
+
+//    // отправляем в ЦРМку
+//    $request = EurasiaAPI::request($url, $data);
+}

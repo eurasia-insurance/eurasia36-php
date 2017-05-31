@@ -96,6 +96,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 <div class="col-sm-8">
                     <div class="main-form">
                         <form action="/price.php" method="post" class="form-horizontal" id="main-form">
+                            <input type="hidden" name="leadSent" value="0" />
                             <div class="form-group">
                                 <label for="inputInn" class="col-sm-3 control-label"><strong>Ваш ИИН</strong></label>
                                 <div class="col-sm-9">
@@ -206,21 +207,6 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                 </div>
                             </div>
 
-                            <div class="form-group main-form__btn-container">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-blue" disabled="disabled" id="how-much" onclick="goal('new_policy_calculate');">Рассчитать стоимость</button>
-                                </div>
-                            </div>
-                        </form>
-                        <form action="policy-request.php" method="post" class="form-horizontal order-form" id="order-form">
-                            <input type="hidden" name="language" value="RUSSIAN" />
-                            <div class="form-group">
-                                <div class="col-sm-9 col-sm-offset-3">
-                                    Стоимость вашей страховки
-
-                                    <strong class="price">&nbsp;</strong>
-                                </div>
-                            </div>
                             <div class="form-group">
                                 <label for="inputName" class="col-sm-3 control-label">Ваше имя</label>
                                 <div class="col-sm-9">
@@ -233,12 +219,30 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <input type="tel" class="form-control" name="phone" id="inputPhone" placeholder="+7 (___) ___-__-__" required="required" value="" />
                                 </div>
                             </div>
+
+                            <div class="form-group main-form__btn-container">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <button type="submit" class="btn btn-blue" disabled="disabled" id="how-much" onclick="goal('new_policy_calculate');">Рассчитать стоимость</button>
+                                </div>
+                            </div>
+                        </form>
+                        <form action="policy-request.php" method="post" class="form-horizontal order-form" id="order-form">
+                            <input type="hidden" name="language" value="RUSSIAN" />
+                            <input type="hidden" name="phone" value="" />
+                            <div class="form-group">
+                                <div class="col-sm-9 col-sm-offset-3">
+                                    Стоимость вашей страховки
+
+                                    <strong class="price">&nbsp;</strong>
+                                </div>
+                            </div>
+                            <?php /*
                             <div class="form-group">
                                 <label for="inputEmail" class="col-sm-3 control-label toggle-label">Эл. почта</label>
                                 <div class="col-sm-9">
                                     <input type="email" class="form-control" name="email" id="inputEmail" value="" />
                                 </div>
-                            </div>
+                            </div> */ ?>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 5): ?>
@@ -612,6 +616,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                                 if(data.personal && data.personal.name != null) {
                                     var $name = $('<div class="help-block text">' + data.personal.name + " " + data.personal.surename + ', Класс ' + data.insuranceClass.replace(/CLASS_/, '') + '</div>');
+
+                                    if($("#inputName").val() == '') {
+                                        $("#inputName").val(data.personal.name + " " + data.personal.surename);
+                                    }
                                 } else {
                                     var $name = $('<div class="help-block">Класс ' + data.insuranceClass.replace(/CLASS_/, '') + '</div>');
                                 }
@@ -623,7 +631,6 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                                 var $name = $('<div class="help-block text">' + '<span class="text-danger">Неверно введен ИИН. Пожалуйста, проверьте еще раз.</span>' + '</div>');
 
-//                                console.log(data.code + " " + data.message);
                             }
 
                             $iin.removeClass("loading");
@@ -825,6 +832,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         $("#how-much").prop("disabled", false).text("Расчитать стоимость");
 
                         $("#order-form").find(".price").text(price + " тенге");
+
+                        $("#main-form input[name=leadSent]").val(1);
                     } else {
                         $("#order-form").find(".price").parent().text("Сервис временно недоступен. Но вы можете оставить заявку.")
                     }
@@ -843,6 +852,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             scrollTop: target.offset().top
                         }, 500);
                     }
+
+                    $("#order-form input[name=phone]").val($("#inputPhone").val());
                 })
                 .fail(function(jqXHR, textStatus) {
                     console.log(textStatus);
