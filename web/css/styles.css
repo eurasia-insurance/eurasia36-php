@@ -45,7 +45,8 @@ header {
 
 .navbar-brand {
   padding-top: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  height: auto; }
 
 .navbar-brand__logo {
   width: 220px; }
@@ -64,6 +65,30 @@ header {
   .pluses img {
     margin-right: 5px; }
 
+.langs {
+  float: left;
+  margin-top: 15px; }
+  .langs .dropdown-menu {
+    min-width: auto; }
+  .langs .btn {
+    background: transparent; }
+    .langs .btn:hover, .langs .btn:active, .langs .btn:focus {
+      color: #fff; }
+
+li.lang-li {
+  margin-top: 1px; }
+  li.lang-li a, li.lang-li span {
+    font-size: 14px !important; }
+
+.first-lang-li {
+  margin-left: 30px; }
+
+.current-lang {
+  border: 1px solid #ddddddb3;
+  border-radius: 5px;
+  padding: 5px !important;
+  margin-top: 9px; }
+
 .ogpo-vts {
   display: inline-block;
   margin-right: 30px;
@@ -75,6 +100,15 @@ header {
 
 .avto-kasko {
   color: #fff !important; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  /* Removes leftover margin */ }
 
 .main-form {
   background: #fff;
@@ -318,6 +352,9 @@ header {
     .footer__grafica a:hover span {
       text-decoration: underline; }
 
+.kz-footer__grafica {
+  width: 285px; }
+
 .modal-backdrop {
   background: #000A16; }
 
@@ -368,6 +405,12 @@ header {
   #callback-form .btn {
     display: inline-block;
     width: 125px; }
+  #callback-form .help-block {
+    white-space: normal; }
+  #callback-form .kz-btn {
+    padding-left: 0;
+    padding-right: 0;
+    width: 150px; }
 
 .callback-sent {
   display: inline-block;
@@ -393,7 +436,16 @@ header {
     padding-right: 0; }
 
   .navbar-brand__logo {
-    width: 210px; }
+    width: 170px;
+    margin-top: 5px; }
+
+  .nav > li > a,
+  .nav > li > span {
+    padding-left: 10px;
+    padding-right: 10px; }
+
+  .first-lang-li {
+    margin-left: 0 !important; }
 
   .pluses {
     font-size: 16px;
@@ -421,6 +473,12 @@ header {
 
   .navbar-brand__logo {
     width: 180px; }
+
+  .first-lang-li {
+    margin-left: 0; }
+
+  .lang-li .current-lang {
+    margin-left: 10px; }
 
   .pluses > div:not(:first-child) {
     margin-top: 15px; }

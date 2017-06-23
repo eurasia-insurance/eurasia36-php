@@ -30,7 +30,7 @@ class EurasiaAPI {
      * @param type $url адрес АПИ метода
      * @param type $data данные
      */
-    public static function request($url, $data, $method = 'post') {
+    public static function request($url, $data, $method = 'post', $apiLang = 'ru') {
 
         $logPath = __DIR__.'/../logs/';
 
@@ -46,8 +46,10 @@ class EurasiaAPI {
         if($method == 'post') {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Accept: application/json', 'Accept-language: ru']);
-            }
+            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Accept: application/json', 'Accept-language: '.$apiLang]);
+        } else {
+            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Accept-language: '.$apiLang]);
+        }
 
         curl_setopt($curl, CURLOPT_HEADER, FALSE);
         //curl_setopt($curl, CURLOPT_COOKIEFILE, dirname(__FILE__) . '/cookie.txt'); #PHP>5.3.6 dirname(__FILE__) -> __DIR__

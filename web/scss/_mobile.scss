@@ -9,6 +9,15 @@
     .navbar-brand__logo {
         width: 180px;
     }
+    
+    .first-lang-li {
+        margin-left: 0;
+    }
+    .lang-li {
+        .current-lang {
+            margin-left: 10px;
+        }
+    }
 
     .pluses {
         & > div:not(:first-child) {
