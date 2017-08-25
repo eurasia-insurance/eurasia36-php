@@ -10,7 +10,16 @@
         padding-right: 0;
     }
     .navbar-brand__logo {
-        width: 210px;
+        width: 170px;
+        margin-top: 5px
+    }
+    .nav > li > a,
+    .nav > li > span {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .first-lang-li {
+        margin-left: 0 !important;
     }
     .pluses {
         font-size: 16px;

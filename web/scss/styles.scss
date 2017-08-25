@@ -59,6 +59,7 @@ header {
 .navbar-brand {
     padding-top: 0;
     padding-bottom: 0;
+    height: auto;
 }
 .navbar-brand__logo {
     width: 220px;
@@ -84,6 +85,38 @@ header {
         margin-right: 5px;
     }
 }
+.langs {
+    float: left;
+    margin-top: 15px;
+    
+    .dropdown-menu {
+        min-width: auto;
+    }
+
+    .btn {
+        background: transparent;
+        
+        &:hover, &:active, &:focus {
+            color: #fff;
+        }
+    }
+}
+
+li.lang-li {
+    margin-top: 1px;
+    a, span {
+        font-size: 14px !important;
+    }
+}
+.first-lang-li {
+    margin-left: 30px;
+}
+.current-lang {
+    border: 1px solid #ddddddb3;
+    border-radius: 5px;
+    padding: 5px !important;
+    margin-top: 9px;
+}
 
 .ogpo-vts {
     display: inline-block;
@@ -96,6 +129,16 @@ header {
 }
 .avto-kasko {
     color: #fff !important;
+}
+
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
 }
 
 .main-form {
@@ -419,6 +462,9 @@ header {
         }
     }
 }
+.kz-footer__grafica {
+    width: 285px;
+}
 
 .modal-backdrop {
     background: #000A16;
@@ -489,6 +535,16 @@ header {
     .btn {
         display: inline-block;
         width: 125px;
+    }
+    
+    .help-block {
+        white-space: normal;
+    }
+    
+    .kz-btn {
+        padding-left: 0;
+        padding-right: 0;
+        width: 150px;
     }
 }
 .callback-sent {

@@ -5,6 +5,7 @@ require './api/EurasiaAPI.php';
 
 session_start();
 
+$apiLang = isset($_SESSION['apiLang']) ? $_SESSION['apiLang'] : 'ru';
 
 if(!isset($_POST['requester'])) {
     header("HTTP/1.0 403 No data passed");
@@ -109,16 +110,22 @@ if(isset($phone)) {
 
     $data = '{}';
 
-    $checkPhone = EurasiaAPI::request($url, $data, 'get');
+    $checkPhone = EurasiaAPI::request($url, $data, 'get', $apiLang);
     $checkPhoneArr = json_decode($checkPhone, true);
 
+//    print_r($checkPhoneArr);
+//    die();
+
     if(isset($checkPhoneArr['error'])) {
-        $error = ['error' => true, 'message' => 'Неверно указан номер телефона'];
+
+        $msg = json_decode($checkPhoneArr['message'], true);
+
+        $error = ['error' => true, 'message' => $msg[0]['message']];
         die(json_encode($error));
     }
 
 } else {
-    $error = ['error' => true, 'message' => 'Вы забыли указать номер телефона'];
+    $error = ['error' => true, 'message' => _('Вы забыли указать номер телефона')];
     die(json_encode($error));
 }
 
@@ -130,11 +137,11 @@ if(isset($email)) {
 
     $data = '{}';
 
-    $checkEmail = EurasiaAPI::request($url, $data, 'get');
+    $checkEmail = EurasiaAPI::request($url, $data, 'get', $apiLang);
     $checkEmailArr = json_decode($checkEmail, true);
 
     if(isset($checkEmailArr['error'])) {
-        $error = ['error' => true, 'message' => 'Неверно указана эл. почта'];
+        $error = ['error' => true, 'message' => _('Неверно указана эл. почта')];
         die(json_encode($error));
     }
 
@@ -149,7 +156,7 @@ $data = json_encode($_POST);
 //var_dump($_POST);
 //die();
 
-$request = EurasiaAPI::request($url, $data);
+$request = EurasiaAPI::request($url, $data, 'post', $apiLang);
 
 $json = __DIR__ . '/leads/' . session_id() . '.json';
 if(is_file($json)) {

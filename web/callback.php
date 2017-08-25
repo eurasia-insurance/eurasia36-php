@@ -4,6 +4,9 @@ require './api/EurasiaAPI.php';
 
 session_start();
 
+$apiLang = isset($_SESSION['apiLang']) ? $_SESSION['apiLang'] : 'ru';
+
+
 if(!isset($_POST['requester'])) {
     header("HTTP/1.0 403 No data passed");
     die();
@@ -63,11 +66,15 @@ if(isset($phone)) {
 
     $data = '{}';
 
-    $checkPhone = EurasiaAPI::request($url, $data, 'get');
+    $checkPhone = EurasiaAPI::request($url, $data, 'get', $apiLang);
     $checkPhoneArr = json_decode($checkPhone, true);
 
     if(isset($checkPhoneArr['error'])) {
-        $error = ['error' => true, 'message' => 'Неверно указан номер телефона', 'systemMessage' => $checkPhoneArr['message']];
+
+        $msg = json_decode($checkPhoneArr['message'], true);
+
+        $error = ['error' => true, 'message' => $msg[0]['message']];
+
         die(json_encode($error));
     }
 

@@ -4,6 +4,13 @@ require './api/EurasiaAPI.php';
 
 session_start();
 
+$apiLangs = [
+    'ru' => ['Русский', 'ru_RU', 'RUSSIAN'],
+    'kk' => ['Қазақша', 'kk_KZ', 'KAZAKH'],
+    /*, 'en' => ['English', 'en_US']*/
+    ];
+
+$apiLang = isset($_SESSION['apiLang']) ? $_SESSION['apiLang'] : 'ru';
 
 if(!isset($_POST['drivers']) || !isset($_POST['vehicles'])) {
     header("HTTP/1.0 403 No data passed");
@@ -110,9 +117,14 @@ foreach($_POST['drivers'] as $key => $driver) {
 
 foreach($_POST['vehicles'] as $key => $vehicle) {
 
+    $vehicle['majorCity'] = (boolean)$vehicle['majorCity'];
+
 //    $vehicle['temporaryEntry'] = false;
     $vehicle['temporaryEntry'] = (boolean)$vehicle['temporaryEntry'];
-    $vehicle['majorCity'] = (boolean)$vehicle['majorCity'];
+    if($vehicle['temporaryEntry'] == 1) {
+        $vehicle['area'] = 'UNDEFINED';
+        $vehicle['majorCity'] = false;
+    }
 
     $vehicles[] = $vehicle;
 }
@@ -137,7 +149,7 @@ $data = json_encode($data);
 
 $url = 'policy/fetch-policy/';
 
-$price = EurasiaAPI::request($url, $data);
+$price = EurasiaAPI::request($url, $data, 'post', $apiLang);
 
 echo $price;
 
@@ -158,7 +170,7 @@ if(isset($phone)) {
 
     $data = '{}';
 
-    $checkPhone = EurasiaAPI::request($url, $data, 'get');
+    $checkPhone = EurasiaAPI::request($url, $data, 'get', $apiLang);
     $checkPhoneArr = json_decode($checkPhone, true);
 
     if(isset($checkPhoneArr['error'])) {
@@ -184,7 +196,7 @@ if(!isset($error)) {
     $data['policy'] = $price;
     $data['requester']['phone'] = $phone;
     $data['requester']['name'] = trim($_POST['name']);
-    $data['requester']['language'] = 'RUSSIAN';
+    $data['requester']['language'] = $apiLangs[$apiLang][2];
     $data['type'] = 'UNCOMPLETE';
 
 
@@ -208,5 +220,5 @@ if(!isset($error)) {
     file_put_contents($dir . '/' . session_id() . '.json', $data);
 
 //    // отправляем в ЦРМку
-//    $request = EurasiaAPI::request($url, $data);
+//    $request = EurasiaAPI::request($url, $data, 'post', $apiLang);
 }

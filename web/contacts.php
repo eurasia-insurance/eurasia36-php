@@ -2,13 +2,26 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
+
+$langs = ['ru' => ['Русский', 'ru_RU'], 'kz' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
+
+
+$lang = (isset($_GET['lang']) && array_key_exists($_GET['lang'], $langs)) ? $_GET['lang'] : 'ru';
+
+putenv("LC_ALL=".$langs[$lang][1]);
+setlocale(LC_ALL, $langs[$lang][1]);
+
+bindtextdomain("$lang", "./i18n");
+textdomain("$lang");
+bind_textdomain_codeset($lang, 'utf-8');
+
 require './api/EurasiaAPI.php';
 
-$language = 'ru';
+
 $timestamp = time();
 
 $tsstring = gmdate('D, d M Y H:i:s ', $timestamp) . 'GMT';
-$etag = $language . $timestamp;
+$etag = $lang . $timestamp;
 
 $if_modified_since = isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) ? $_SERVER['HTTP_IF_MODIFIED_SINCE'] : false;
 $if_none_match = isset($_SERVER['HTTP_IF_NONE_MATCH']) ? $_SERVER['HTTP_IF_NONE_MATCH'] : false;
@@ -24,7 +37,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
 
 
-$url = 'pos/all/ru';
+$url = 'pos/all/'.($lang == 'kz' ? 'kk' : $lang);
 
 $data = '{}';
 
@@ -43,11 +56,11 @@ $offices = json_decode($offices, true);
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-favicon.png" />
 
-        <title>Адреса и телефоны страховой компании "Евразия"</title>
+        <title><?= _("Адреса и телефоны страховой компании \"Евразия\"") ?></title>
 
         <!-- Bootstrap core CSS -->
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="/css/styles.css?<?= time() ?>" rel="stylesheet"/>
+        <link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet"/>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -74,13 +87,15 @@ $offices = json_decode($offices, true);
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/"><img src="/i/eurasia.svg" alt="Евразия" class="navbar-brand__logo" /></a>
+                        <a class="navbar-brand" href="/<?= $lang != 'ru' ? $lang : '' ?>"><img src="/i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm"/>или <a href="tel:5678" class="header-tel">5678</a><br/><small>звонок бесплатный</small></span></li>
-                            <li><a href="#info" data-toggle="modal" data-target="#delivery">Доставка и оплата</a></li>
-                            <li><span>Адреса и телефоны</span></li>
+                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
+                            <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
+                            <li><span><?= _("Адреса и телефоны") ?></span></li>
+                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="contacts.php">RU</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="?lang=kz">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -93,12 +108,12 @@ $offices = json_decode($offices, true);
 
                 <div class="row">
                     <div class="col-xs-12">
-                        <h1>Адреса и телефоны</h1>
+                        <h1><?= _("Адреса и телефоны") ?></h1>
 
                         <h4 style="line-height: 1.5">
-                            8 800 080-00-99 — бесплатная горячая линия по Казахстану<br/>
-                            5678 — бесплатно с мобильного<br/>
-                            Эл. почта: <a href="mailto:info@theeurasia.kz">info@theeurasia.kz</a>
+                            <?= _("8 800 080-00-99 — бесплатная горячая линия по Казахстану") ?><br/>
+                            <?= _("5678 — бесплатно с мобильного") ?><br/>
+                            <?= _("Эл. почта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>") ?>
                         </h4>
                     </div>
                 </div>
@@ -132,7 +147,7 @@ $offices = json_decode($offices, true);
 
                 if(isset($offices['error'])) {
                     $error = ['error' => true, 'message' => 'Неверно указана эл. почта', 'systemMessage' => $offices['message']];
-    //                die(json_encode($error));
+                    die(json_encode($error));
                 } else {
 
                     $rowOpen = false;
@@ -193,16 +208,8 @@ $offices = json_decode($offices, true);
             <div class="container footer">
                 <div class="row">
                     <div class="col-sm-6 footer__copyright">
-                        © АО «Страховая компания «Евразия»
+                        <?= _("© АО «Страховая компания «Евразия»") ?>
                     </div>
-<!--                    <div class="col-sm-6">
-                        <div class="footer__grafica">
-                            <a href="http://grafica.kz">
-                                <img src="/i/grafica.svg" alt="Grafica" />
-                                Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»</span>
-                            </a>
-                        </div>
-                    </div>-->
                 </div>
             </div>
         </footer>
@@ -214,16 +221,16 @@ $offices = json_decode($offices, true);
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">&nbsp;</button>
-                        <h4 class="modal-title" id="myModalLabel">Доставка и оплата</h4>
+                        <h4 class="modal-title" id="myModalLabel"><?= _("Доставка и оплата") ?></h4>
                     </div>
                     <div class="modal-body">
-                        <p class="delivery-time">Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни.</p>
+                        <p class="delivery-time"><?= _("Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни.") ?></p>
 
-                        <p>Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.</p>
+                        <p><?= _("Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.") ?></p>
 
-                        <p>Принимаем заказы круглосуточно, без выходных и праздничных дней.</p>
+                        <p><?= _("Принимаем заказы круглосуточно, без выходных и праздничных дней.") ?></p>
 
-                        <p class="delivery-time">Оплата наличными курьеру при получении.</p>
+                        <p class="delivery-time"><?= _("Оплата наличными курьеру при получении.") ?></p>
                     </div>
                 </div>
             </div>
