@@ -5,7 +5,7 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 
 
-$langs = ['ru' => ['Русский', 'ru_RU'], 'kz' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
+$langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kz' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
 
 
 $lang = (isset($_GET['lang']) && array_key_exists($_GET['lang'], $langs)) ? $_GET['lang'] : 'ru';
@@ -259,7 +259,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             </div>
                         </form>
                         <form action="policy-request.php" method="post" class="form-horizontal order-form" id="order-form">
-                            <input type="hidden" name="language" value="RUSSIAN" />
+                            <input type="hidden" name="language" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="phone" value="" />
                             <div class="form-group">
                                 <div class="col-sm-9 col-sm-offset-3">
@@ -536,7 +536,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : '' ?>" />
                             <?php endif; ?>
 
-                            <input type="hidden" name="requester[language]" value="RUSSIAN" />
+                            <input type="hidden" name="requester[language]" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="requester[name]" value="Не указано" />
                             <input type="tel" name="requester[phone]" class="form-control" placeholder="Телефон" />
                             <button type="submit" class="btn btn-blue <?= $lang ?>-btn" onclick="goal('new_callback_request');"><?= _("Заказать") ?></button>

@@ -4,6 +4,12 @@ require './api/EurasiaAPI.php';
 
 session_start();
 
+$apiLangs = [
+    'ru' => ['Русский', 'ru_RU', 'RUSSIAN'],
+    'kk' => ['Қазақша', 'kk_KZ', 'KAZAKH'],
+    /*, 'en' => ['English', 'en_US']*/
+    ];
+
 $apiLang = isset($_SESSION['apiLang']) ? $_SESSION['apiLang'] : 'ru';
 
 if(!isset($_POST['drivers']) || !isset($_POST['vehicles'])) {
@@ -190,7 +196,7 @@ if(!isset($error)) {
     $data['policy'] = $price;
     $data['requester']['phone'] = $phone;
     $data['requester']['name'] = trim($_POST['name']);
-    $data['requester']['language'] = 'RUSSIAN';
+    $data['requester']['language'] = $apiLangs[$apiLang][2];
     $data['type'] = 'UNCOMPLETE';
 
 
