@@ -900,7 +900,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 $(".more-details").slideUp();
 
 
-                requester = {};
+                requester = {name: $("#inputName").val()};
                 formData = $(this).serializeArray();
                 $(formData).each(function(i, e) {
 
