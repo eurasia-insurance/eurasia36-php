@@ -266,7 +266,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <?= _("Стоимость вашей страховки") ?>
 
                                     <strong class="price">&nbsp;</strong>
-                                    <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тг в месяц.') ?></span>
+                                    <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span>
                                 </div>
                             </div>
                             <?php /*
