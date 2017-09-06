@@ -266,6 +266,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <?= _("Стоимость вашей страховки") ?>
 
                                     <strong class="price">&nbsp;</strong>
+                                    <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span>
                                 </div>
                             </div>
                             <?php /*
@@ -288,7 +289,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9 order-hint">
-                                    <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках.") ?>
+                                    <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках и рассрочке.") ?>
                                 </div>
                                 <div class="col-sm-offset-3 col-sm-9 one-more-form">
                                     <a href="/"><?= _("Заполнить еще одну заявку") ?></a>
@@ -353,7 +354,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         <?= _("© АО «Страховая компания «Евразия»") ?>
                     </div>
                     <div class="col-sm-3 col-xs-12 footer__box">
-                        <a href="https://box.eurasia36.kz"><?= _("Отправить нам документы") ?></a>
+                        <a href="https://box.eurasia36.kz"><?= _("Отправить нам документы") ?></a><br/>
+                        <a href="https://creditpolis.theeurasia.kz/"><?= _("Страховка в рассрочку") ?></a>
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <div class="footer__grafica <?= $lang ?>-footer__grafica">
@@ -857,13 +859,19 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     if(data.cost) {
 
                         price = Math.round(data.cost) + '';
+                        priceByThree = Math.round(price/3) + '';
+
                         price = price.replace(/(.)/g, function(c, i, o, a) {
+                                    return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
+                                });
+                        priceByThree = priceByThree.replace(/(.)/g, function(c, i, o, a) {
                                     return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
                                 });
 
                         $("#how-much").prop("disabled", false).text("<?= _("Рассчитать стоимость") ?>");
 
                         $("#order-form").find(".price").text(price + " <?= _("тенге") ?>");
+                        $("#order-form").find(".price-post").text(priceByThree);
                     } else {
                         $("#order-form").find(".price").parent().text("<?= _("Сервис временно недоступен. Но вы можете оставить заявку.") ?>")
                     }

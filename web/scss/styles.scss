@@ -19,6 +19,9 @@ a.btn {
 h1 {
     font: bold 42px/50px Helvetica;
 }
+.gray {
+    color: #999;
+}
 header {
     background: #265a88 url(/i/bg.jpg) no-repeat center / cover;
     background-attachment: fixed;
@@ -440,6 +443,12 @@ input[type=number]::-webkit-outer-spin-button {
 .footer__copyright {
     font-size: 14px;
     color: #808080;
+}
+.footer__box {
+    a {
+        display: inline-block;
+        margin-bottom: 7px;
+    }
 }
 .footer__grafica {
     float: right;
