@@ -258,6 +258,13 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                 </div>
                             </div>
                         </form>
+                        <div class="more-details">
+                            <div class="row">
+                                <div class="col-sm-offset-3 col-sm-9">
+                                    <?= _('Добавить ещё<br class="visible-xs"/> <a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or"> <br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
+                                </div>
+                            </div>
+                        </div>
                         <form action="policy-request.php" method="post" class="form-horizontal order-form" id="order-form">
                             <input type="hidden" name="language" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="phone" value="" />
@@ -295,14 +302,6 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                 </div>
                             </div>
                         </form>
-
-                        <div class="more-details">
-                            <div class="row">
-                                <div class="col-sm-offset-3 col-sm-9">
-                                    <?= _('Добавить ещё<br class="visible-xs"/> <a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or"> <br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-sm-4 hidden-xs">
@@ -484,9 +483,9 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             <div class="form-group">
                 <div class="col-sm-9 col-sm-offset-3">
                     <div class="checkbox">
-                        <input type="hidden" value="0" name="vehicles[0][temporaryEntry]" />
+                        <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />
                         <label>
-                            <input type="checkbox" value="1" name="vehicles[0][temporaryEntry]" class="temporary-entry" />
+                            <input type="checkbox" value="1" name="vehicles[][temporaryEntry]" class="temporary-entry" />
                             <?= _("временный въезд на территорию РК") ?>
                         </label>
                     </div>
@@ -842,7 +841,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                 $("#how-much").prop("disabled", true).text("<?= _("Расчитываем стоимость...") ?>");
 
-                $(".more-details").hide();
+//                $(".more-details").hide();
 
                 $.ajax({
                     method: "POST",
