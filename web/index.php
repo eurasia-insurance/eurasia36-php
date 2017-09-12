@@ -268,13 +268,20 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <strong class="price">&nbsp;</strong>
                                 </div>
                             </div>
-                            <?php /*
-                            <div class="form-group">
+
+                            <div class="form-group" id="payment-online-block">
+                                <div class="col-sm-9 col-sm-offset-3">
+                                    <input type="checkbox" name="payment-online" value="1" id="payment-online" />
+                                    <label for="payment-online">оплатить банковской картой в интернете</label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="email-block" style="display: none;">
                                 <label for="inputEmail" class="col-sm-3 control-label toggle-label">Эл. почта</label>
                                 <div class="col-sm-9">
                                     <input type="email" class="form-control" name="email" id="inputEmail" value="" />
                                 </div>
-                            </div> */ ?>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-sm-offset-3 col-sm-9">
                                     <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 5): ?>
@@ -920,7 +927,15 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     if(data.message == 'Success') {
                         $("#order-form button").fadeOut(function() {
                             $("#result-msg").text("<?= _("Спасибо. Мы получили вашу заявку") ?>").removeClass('text-danger').fadeIn();
+
+                            if(data.paymentLink != null) {
+                                $("#result-msg").append("<br/><br/><?= _("Сейчас вы будете перенаправлены на страницу оплаты") ?>");
+
+                                window.setTimeout('document.location.href="' + data.paymentLink + '"', 3000);
+                            }
                         });
+
+                        $("#payment-online-block, #email-block").fadeOut();
 
                         $(".one-more-form").fadeIn();
                     } else {
@@ -993,6 +1008,17 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     $('html, body').stop().animate({
                         scrollTop: target.offset().top - 45
                     }, 500);
+                }
+            });
+
+            $("#payment-online").change(function() {
+
+                if($(this).is(":checked")) {
+                    $("#email-block").slideDown();
+                    $("#inputEmail").attr("required", true);
+                } else {
+                    $("#email-block").slideUp();
+                    $("#inputEmail").attr("required", false);
                 }
             });
 
