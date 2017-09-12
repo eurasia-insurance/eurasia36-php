@@ -272,7 +272,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <div class="form-group" id="payment-online-block">
                                 <div class="col-sm-9 col-sm-offset-3">
                                     <input type="checkbox" name="payment-online" value="1" id="payment-online" />
-                                    <label for="payment-online">оплатить банковской картой в интернете</label>
+                                    <label for="payment-online"><?= _("оплатить банковской картой в интернете"); ?></label>
                                 </div>
                             </div>
                             <div class="form-group" id="email-block" style="display: none;">

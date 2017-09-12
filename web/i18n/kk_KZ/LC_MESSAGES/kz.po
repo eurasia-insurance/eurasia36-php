@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eurasia\n"
-"POT-Creation-Date: 2017-06-01 14:45+0600\n"
-"PO-Revision-Date: 2017-06-01 19:03+0600\n"
+"POT-Creation-Date: 2017-09-12 15:41+0600\n"
+"PO-Revision-Date: 2017-09-12 15:41+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: kk\n"
@@ -19,46 +19,46 @@ msgstr ""
 msgid "Адреса и телефоны страховой компании \"Евразия\""
 msgstr "«Евразия» сақтандыру компаниясының байланыстары"
 
-#: contacts.php:94 index.php:99 index.php:332
+#: contacts.php:94 index.php:104 index.php:346
 msgid "или"
 msgstr "немесе"
 
-#: contacts.php:94 index.php:99
+#: contacts.php:94 index.php:104
 msgid "звонок бесплатный"
 msgstr "қоңырау шалу тегін"
 
-#: contacts.php:95 contacts.php:222 index.php:100 index.php:497
+#: contacts.php:95 contacts.php:224 index.php:105 index.php:511
 msgid "Доставка и оплата"
 msgstr "Жеткізу және төлеу"
 
-#: contacts.php:96 contacts.php:109 index.php:101
+#: contacts.php:96 contacts.php:111 index.php:106
 msgid "Адреса и телефоны"
 msgstr "Байланыстар"
 
-#: contacts.php:112
+#: contacts.php:114
 msgid "8 800 080-00-99 — бесплатная горячая линия по Казахстану"
 msgstr "8 800 080-00-99 — Қазақстан бойынша тегін жедел желі"
 
-#: contacts.php:113
+#: contacts.php:115
 msgid "5678 — бесплатно с мобильного"
 msgstr "5678 — ұялы телефоннан тегін"
 
-#: contacts.php:114
+#: contacts.php:116
 msgid "Эл. почта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>"
 msgstr ""
 "Эл. пошта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>"
 
-#: contacts.php:209 index.php:346
+#: contacts.php:211 index.php:360
 msgid "© АО «Страховая компания «Евразия»"
 msgstr "© «Евразия» Сақтандыру компаниясы» АҚ"
 
-#: contacts.php:225 index.php:500
+#: contacts.php:227 index.php:514
 msgid "Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни."
 msgstr ""
 "Полистерді тек Алматы қ. бойынша жұмыс күндері<br/>сағат 9:00 ден 19:00 "
 "дейін жеткіземіз."
 
-#: contacts.php:227 index.php:502
+#: contacts.php:229 index.php:516
 msgid ""
 "Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, "
 "Актау, Павлодаре, Атырау и Актобе."
@@ -66,16 +66,16 @@ msgstr ""
 "Өзі алып кету Алматы, Астана, Қарағанды, Өскемен, Қостанай, Ақтау, Павлодар, "
 "Атырау және Ақтөбе қалаларында мүмкін болады."
 
-#: contacts.php:229 index.php:504
+#: contacts.php:231 index.php:518
 msgid "Принимаем заказы круглосуточно, без выходных и праздничных дней."
 msgstr ""
 "Тапсырыстарды тәулік бойына, демалыссыз және мереке күндері қабылдаймыз."
 
-#: contacts.php:231 index.php:506
+#: contacts.php:233 index.php:520
 msgid "Оплата наличными курьеру при получении."
 msgstr "Төлем қолқа алу кезінде курьерге қолма-қол ақшамен."
 
-#: index.php:52
+#: index.php:57
 msgid ""
 "Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая "
 "компания \"Евразия\""
@@ -83,200 +83,204 @@ msgstr ""
 "Тегін жеткізумен автомобильді міндетті сақтандыру (АҚЖМС) — \"Евразия\" "
 "сақтандыру компаниясы"
 
-#: index.php:108
+#: index.php:115
 msgid "ОГПО ВТС"
 msgstr "КҚИ АҚЖМС"
 
-#: index.php:109
+#: index.php:116
 msgid "Обязательная автостраховка с&nbsp;бесплатной доставкой"
 msgstr "Тегін жеткізумен міндетті автосақтандыру"
 
-#: index.php:112
+#: index.php:119
 msgid "Быстрое оформление полиса"
 msgstr "Полисті жылдам ресімдеу"
 
-#: index.php:113
+#: index.php:120
 msgid "Минимальная цена + скидка"
 msgstr "Ең төменгі баға + жеңілдік"
 
-#: index.php:114
+#: index.php:121
 msgid "Работаем c 1995 года"
 msgstr "1995 ж. бастап жұмыс істейміз"
 
-#: index.php:126
+#: index.php:133
 msgid "Ваш ИИН"
 msgstr "Сіздің ЖСН"
 
-#: index.php:132 index.php:377
+#: index.php:139 index.php:391
 msgid "за рулем"
 msgstr "жүргізу өтілі"
 
-#: index.php:137 index.php:382
+#: index.php:144 index.php:396
 msgid "менее 2 лет"
 msgstr "2 жылдан аз"
 
-#: index.php:143 index.php:388
+#: index.php:150 index.php:402
 msgid "2 года и больше"
 msgstr "2 жылдан артық"
 
-#: index.php:154 index.php:399
+#: index.php:161 index.php:413
 msgid "льготные условия для пенсионеров и инвалидов"
 msgstr "жеңілдікті жағдайлар — мүгедектер, зейнеткерлер, ҰОС қатысушылар"
 
-#: index.php:160 index.php:414
+#: index.php:167 index.php:428
 msgid "Ваше авто"
 msgstr "Сіздің автокөлік"
 
-#: index.php:163 index.php:417
+#: index.php:170 index.php:431
 msgid "Легковая машина"
 msgstr "Жеңіл"
 
-#: index.php:164 index.php:418
+#: index.php:171 index.php:432
 msgid "Мотоцикл"
 msgstr "Мотокөлік"
 
-#: index.php:165 index.php:419
+#: index.php:172 index.php:433
 msgid "Грузовик"
 msgstr "Жүк"
 
-#: index.php:166 index.php:420
+#: index.php:173 index.php:434
 msgid "Прицеп"
 msgstr "Тіркемелер (жартылай тіркемелер)"
 
-#: index.php:167 index.php:421
+#: index.php:174 index.php:435
 msgid "Автобус (до 16 пассажиров)"
 msgstr "16 және одан аз жолаушылары бар автобустар"
 
-#: index.php:168 index.php:422
+#: index.php:175 index.php:436
 msgid "Автобус (более 16 пассажиров)"
 msgstr "16 артық жолаушылары бар автобустар"
 
-#: index.php:169 index.php:423
+#: index.php:176 index.php:437
 msgid "Троллейбус или трамвай"
 msgstr ""
 
-#: index.php:174 index.php:428
+#: index.php:181 index.php:442
 msgid "год выпуска"
 msgstr "шығарылған жылы"
 
-#: index.php:179
+#: index.php:186
 #, php-format
 msgid "до %d"
 msgstr "%d дейін"
 
-#: index.php:185
+#: index.php:192
 #, php-format
 msgid "%d и новее"
 msgstr "%d және одан жаңа"
 
-#: index.php:191 index.php:445
+#: index.php:198 index.php:459
 msgid "на учёте в"
 msgstr "тіркеу өңірі"
 
-#: index.php:194 index.php:448
+#: index.php:201 index.php:462
 msgid "Астане"
 msgstr "Астана қаласы"
 
-#: index.php:195 index.php:449
+#: index.php:202 index.php:463
 msgid "Алматы"
 msgstr "Алматы қаласы"
 
-#: index.php:196 index.php:450
+#: index.php:203 index.php:464
 msgid "Акмолинской области"
 msgstr "Ақмола облысы"
 
-#: index.php:197 index.php:451
+#: index.php:204 index.php:465
 msgid "Алматинской области"
 msgstr "Алматы облысы"
 
-#: index.php:198 index.php:452
+#: index.php:205 index.php:466
 msgid "Актюбинской области"
 msgstr "Ақтөбе облысы"
 
-#: index.php:199 index.php:453
+#: index.php:206 index.php:467
 msgid "Атырауской области"
 msgstr "Атырау облысы"
 
-#: index.php:200 index.php:454
+#: index.php:207 index.php:468
 msgid "Восточно-Казахстанской области"
 msgstr "Шығыс Қазақстан облысы"
 
-#: index.php:201 index.php:455
+#: index.php:208 index.php:469
 msgid "Жамбылской области"
 msgstr "Жамбыл облысы"
 
-#: index.php:202 index.php:456
+#: index.php:209 index.php:470
 msgid "Западно-Казахстанской области"
 msgstr "Батыс Қазақстан облысы"
 
-#: index.php:203 index.php:457
+#: index.php:210 index.php:471
 msgid "Карагандинской области"
 msgstr "Қарағанды облысы"
 
-#: index.php:204 index.php:458
+#: index.php:211 index.php:472
 msgid "Костанайской области"
 msgstr "Қостанай облысы"
 
-#: index.php:205 index.php:459
+#: index.php:212 index.php:473
 msgid "Кызылординской области"
 msgstr "Қызылорда облысы"
 
-#: index.php:206 index.php:460
+#: index.php:213 index.php:474
 msgid "Мангистауской области"
 msgstr "Маңғыстау облысы"
 
-#: index.php:207 index.php:461
+#: index.php:214 index.php:475
 msgid "Павлодарской области"
 msgstr "Павлодар облысы"
 
-#: index.php:208 index.php:462
+#: index.php:215 index.php:476
 msgid "Северо-Казахстанской области"
 msgstr "Солтүстік Қазақстан облысы"
 
-#: index.php:209 index.php:463
+#: index.php:216 index.php:477
 msgid "Южно-Казахстанской области"
 msgstr "Оңтүстік Қазақстан облысы"
 
-#: index.php:217 index.php:471
+#: index.php:224 index.php:485
 msgid "город областного значения"
 msgstr "облыстық маңызы бар қала"
 
-#: index.php:229 index.php:483
+#: index.php:236 index.php:497
 msgid "временный въезд на территорию РК"
 msgstr "ҚР аумағына уақытша кіру"
 
-#: index.php:236
+#: index.php:243
 msgid "Ваше имя"
 msgstr "Сіздің атыңыз"
 
-#: index.php:250 index.php:857
+#: index.php:257 index.php:871
 msgid "Рассчитать стоимость"
 msgstr "Бағасын есептеп шығару"
 
-#: index.php:259
+#: index.php:266
 msgid "Стоимость вашей страховки"
 msgstr "Сіздің сақтандырудың құны"
 
-#: index.php:276 index.php:925
+#: index.php:275
+msgid "оплатить банковской картой в интернете"
+msgstr "банк картасымен ғаламтор арқылы төлеу"
+
+#: index.php:290 index.php:947
 msgid "Заказать полис"
 msgstr "Полиске тапсырыс беру"
 
-#: index.php:278 index.php:915
+#: index.php:292 index.php:929
 msgid "Спасибо. Мы получили вашу заявку"
 msgstr "Рахмет. Біз сіздің өтініміңізді алдық"
 
-#: index.php:284
+#: index.php:298
 msgid ""
 "Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках."
 msgstr ""
 "10 минут ішінде қайта қоңырау шаламыз. Менеджерден қолданыстағы жеңілдіктер "
 "туралы сұраңыз."
 
-#: index.php:287
+#: index.php:301
 msgid "Заполнить еще одну заявку"
 msgstr "Тағы бір өтінішті толтыру"
 
-#: index.php:295
+#: index.php:309
 msgid ""
 "Добавить ещё<br class=\"visible-xs\"/> <a href=\"\" class=\"btn-additional "
 "add-driver\">водителя</a><span class=\"add-car\"><span class=\"add-car__or"
@@ -288,7 +292,7 @@ msgstr ""
 "span>&nbsp;<a href=\"\" class=\"btn-additional add-auto\">автомобильді</a></"
 "span> қосу"
 
-#: index.php:306
+#: index.php:320
 msgid ""
 "У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/"
 "kzAA- (S&P, 2016)."
@@ -296,30 +300,30 @@ msgstr ""
 "Бізде Қазақстанның жеке қаржы компанияларының арасындағы ең жоғарғы рейтинг: "
 "BB+/kzAA- (S&P, 2016)."
 
-#: index.php:313
+#: index.php:327
 msgid "О страховой компании «Евразия»"
 msgstr "«Евразия» сақтандыру компаниясы туралы"
 
-#: index.php:315
+#: index.php:329
 msgid "«Евразия» основана в 1995 году, и работает в 75 странах мира."
 msgstr "«Евразия» 1995 жылы құрылған, және әлемнің 75 елдерінде жұмыс істейді."
 
-#: index.php:317
+#: index.php:331
 msgid "Мы предлагаем все виды страхования для компаний и частных лиц."
 msgstr ""
 "Біз компаниялар мен жеке тұлғалар үшін сақтандырудың барлық түрлерін "
 "ұсынамыз."
 
-#: index.php:320 index.php:335
+#: index.php:334 index.php:349
 msgid "10 000 тенге  в&nbsp;минуту"
 msgstr "Минутына 10 000 теңге"
 
-#: index.php:321 index.php:336
+#: index.php:335 index.php:350
 msgid "или 5,9 млн. тенге в день выплачивает «Евразия» своим клиентам"
 msgstr ""
 "немесе тәулігіне 5,9 млн. теңге, оның клиенттері үшін «Евразия» төлейді"
 
-#: index.php:324
+#: index.php:338
 msgid ""
 "Компании страхуют у нас сотрудников, транспорт, имущество и гражданско-"
 "правовую ответственность. Частные лица — автомобили (КАСКО и ОГПО ВТС), "
@@ -329,7 +333,7 @@ msgstr ""
 "жауапкершілікті сақтандырады. Жеке тұлғалар – автомобильдерді (КАСКО және "
 "КҚИ АҚЖМС), мүлікті және шетелге шығу кезінде денсаулығын."
 
-#: index.php:326
+#: index.php:340
 msgid ""
 "Офисы компании работают в Алматы, Астане, Караганде и других крупных городах "
 "Казахстана."
@@ -337,7 +341,7 @@ msgstr ""
 "Компанияның офистері Алматы, Астана, Қарағанды қалаларында және Қазақстанның "
 "басқа ірі қалаларында жұмыс істейді."
 
-#: index.php:328
+#: index.php:342
 msgid ""
 "В 2016 Standard & Poor’s присвоил «Евразии» наивысший среди частных "
 "финансовых компаний Казахстана рейтинг «ВВ+/kzAA-» («позитивный»)."
@@ -345,105 +349,116 @@ msgstr ""
 "2016 жылы Standard & Poor’s «Евразияға» Қазақстанның жеке қаржы "
 "компанияларының арасында ең жоғарғы «ВВ+/kzAA-» («оң») рейтингін берді."
 
-#: index.php:332
+#: index.php:346
 msgid "Узнать стоимость страховки"
 msgstr "Сақтандыру құны білу"
 
-#: index.php:332
+#: index.php:346
 msgid "заказать звонок"
 msgstr "қоңырау шалуға тапсырыс беру"
 
-#: index.php:349
+#: index.php:363
 msgid "Отправить нам документы"
 msgstr "Бізге құжаттарды жіберу"
 
-#: index.php:355
+#: index.php:369
 msgid "Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»"
 msgstr "Сайт «Графика»<br/>студиясында&nbsp;жасалған"
 
-#: index.php:367
+#: index.php:381
 msgid "Ещё один водитель"
 msgstr "Тағы бір жүргізуші"
 
-#: index.php:371
+#: index.php:385
 msgid "ИИН"
 msgstr "Сіздің ЖСН"
 
-#: index.php:410
+#: index.php:424
 msgid "Ещё один автомобиль"
 msgstr "Тағы бір автомобиль"
 
-#: index.php:519
+#: index.php:533
 msgid "Заказ звонка"
 msgstr "Қоңырау шалуға тапсырыс"
 
-#: index.php:535
+#: index.php:549
 msgid "Заказать"
 msgstr "Тапсырыс беру"
 
-#: index.php:539
+#: index.php:553
 msgid "Перезвоним в течение 10 минут."
 msgstr "10 минут ішінде қайта қоңырау шаламыз."
 
-#: index.php:539
+#: index.php:553
 msgid "Спросите менеджера о действующих скидках."
 msgstr "Менеджерден қолданыстағы жеңілдіктер туралы сұраңыз."
 
-#: index.php:572
+#: index.php:586
 msgid "Второй"
 msgstr "Екінші"
 
-#: index.php:573
+#: index.php:587
 msgid "Третий"
 msgstr "Үшінші"
 
-#: index.php:574
+#: index.php:588
 msgid "Четвертый"
 msgstr "Төртінші"
 
-#: index.php:575
+#: index.php:589
 msgid "Пятый"
 msgstr "Бесінші"
 
-#: index.php:657
+#: index.php:671
 msgid "Неверно введен ИИН. Пожалуйста, проверьте еще раз."
 msgstr "ЖСН қате енгізілген. Өтінеміз, тағы да бір рет тексеріңіз."
 
-#: index.php:695
+#: index.php:709
 msgid "автомобиль"
 msgstr "автомобиль"
 
-#: index.php:730
+#: index.php:744
 msgid "водитель"
 msgstr "жүргізуші"
 
-#: index.php:836
+#: index.php:850
 msgid "Расчитываем стоимость..."
 msgstr "Құнын есептейміз…"
 
-#: index.php:859
+#: index.php:873
 msgid "тенге"
 msgstr "теңге"
 
-#: index.php:861
+#: index.php:875
 msgid "Сервис временно недоступен. Но вы можете оставить заявку."
 msgstr "Сервис уақытша қолжетімді емес. Бірақ сіз өтінімді қалдыра аласыз."
 
-#: index.php:892
+#: index.php:906
 msgid "Отправляем заявку..."
 msgstr "Өтінімді жібереміз …"
 
-#: index.php:923
-msgid ""
-"Кажется, произошла ошибка. Пожалуйста, заполните форму ещё раз или <a href="
-"\"\" data-toggle=\"modal\" data-target=\"#callback\">закажите звонок</a> — "
-"мы сами перезвоним и всё рассчитаем."
-msgstr ""
-"Қате болған секілді. Өтінеміз, нысанды тағы да бір рет толтырыңыз немесе <a "
-"href=\"\" data-toggle=\"modal\" data-target=\"#callback\">қоңырау шалуға "
-"тапсырыс беріңіз</a> — біз өзіміз қайта қоңырау шаламыз және бәрін "
-"есептейміз."
+#: index.php:932
+msgid "Сейчас вы будете перенаправлены на страницу оплаты"
+msgstr "Сіз қазір төлеу парақшасына ауыстырыласыз"
 
-#: index.php:955
+#: index.php:977
 msgid "Спасибо, мы приняли вашу заявку."
 msgstr "Рахмет. Біз сіздің өтініміңізді алдық"
+
+#: policy-request.php:128
+msgid "Вы забыли указать номер телефона"
+msgstr ""
+
+#: policy-request.php:144
+msgid "Неверно указана эл. почта"
+msgstr ""
+
+#~ msgid ""
+#~ "Кажется, произошла ошибка. Пожалуйста, заполните форму ещё раз или <a "
+#~ "href=\"\" data-toggle=\"modal\" data-target=\"#callback\">закажите "
+#~ "звонок</a> — мы сами перезвоним и всё рассчитаем."
+#~ msgstr ""
+#~ "Қате болған секілді. Өтінеміз, нысанды тағы да бір рет толтырыңыз немесе "
+#~ "<a href=\"\" data-toggle=\"modal\" data-target=\"#callback\">қоңырау "
+#~ "шалуға тапсырыс беріңіз</a> — біз өзіміз қайта қоңырау шаламыз және бәрін "
+#~ "есептейміз."
