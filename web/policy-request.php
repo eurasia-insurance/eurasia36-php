@@ -148,12 +148,20 @@ if(isset($email)) {
 }
 
 $url = 'crm/send-policy-request';
+$url = 'crm/send-policy-request-reply';
 
 $_POST['type'] = 'EXPRESS';
 
+// Оплата картой онлайн
+if(isset($_POST['requester']['payment-online']) && $_POST['requester']['payment-online'] == 1) {
+    $_POST['payment']['method'] = 'PAYCARD_ONLINE';
+
+    unset($_POST['requester']['payment-online']);
+}
+
 $data = json_encode($_POST);
 
-//var_dump($_POST);
+//print_r($data);
 //die();
 
 $request = EurasiaAPI::request($url, $data, 'post', $apiLang);
