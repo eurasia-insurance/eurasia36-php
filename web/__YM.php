@@ -3,7 +3,7 @@ require_once './.settings.php';
 if (defined('PARAM_YM_ID')):
 ?>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
+<script type="text/javascript" >
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
             try {
@@ -12,8 +12,7 @@ if (defined('PARAM_YM_ID')):
                     clickmap:true,
                     trackLinks:true,
                     accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
+                    webvisor:true
                 });
             } catch(e) { }
         });
