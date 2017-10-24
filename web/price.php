@@ -147,7 +147,7 @@ $data = json_encode($data);
 //    echo '</pre>';
 //    die();
 
-$url = 'policy/fetch-policy/';
+$url = 'insurance/policy/fetch-policy/';
 
 $price = EurasiaAPI::request($url, $data, 'post', $apiLang);
 
@@ -166,7 +166,7 @@ if(isset($phone)) {
     $phone = str_replace("(", '', $phone);
     $phone = str_replace(")", '', $phone);
 
-    $url = 'check/phone/'.$phone;
+    $url = 'insurance/check/phone/'.$phone;
 
     $data = '{}';
 
@@ -187,7 +187,7 @@ if(isset($phone)) {
 
 if(!isset($error)) {
 
-    $url = 'crm/send-policy-request';
+    $url = 'insurance/crm/send-policy-request';
 
     $price = json_decode($price, true);
 

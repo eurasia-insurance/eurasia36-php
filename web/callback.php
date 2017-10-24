@@ -62,7 +62,7 @@ if(isset($phone)) {
     $phone = str_replace("(", '', $phone);
     $phone = str_replace(")", '', $phone);
 
-    $url = 'check/phone/'.$phone;
+    $url = 'insurance/check/phone/'.$phone;
 
     $data = '{}';
 
@@ -87,7 +87,7 @@ if(isset($phone)) {
 // проверяем мыло, если его указали
 if(isset($email)) {
 
-    $url = 'check/email/'.$email;
+    $url = 'insurance/check/email/'.$email;
 
     $data = '{}';
 
@@ -101,7 +101,7 @@ if(isset($email)) {
 
 }
 
-$url = 'crm/send-callback-request';
+$url = 'insurance/crm/send-callback-request';
 
 $data = json_encode($_POST);
 

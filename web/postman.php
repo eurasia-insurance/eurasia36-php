@@ -3,7 +3,7 @@
 require './api/EurasiaAPI.php';
 
 
-$url = 'crm/send-policy-request';
+$url = 'insurance/crm/send-policy-request';
 
 
 $dir = __DIR__ . '/leads';
