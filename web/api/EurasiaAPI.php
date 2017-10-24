@@ -19,7 +19,7 @@ class EurasiaAPI {
 
         $data = json_encode($data);
 
-        $url = 'policy/fetch-driver/';
+        $url = 'insurance/policy/fetch-driver/';
 
         return self::request($url, $data);
     }

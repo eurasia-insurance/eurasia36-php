@@ -106,7 +106,7 @@ if(isset($phone)) {
     $phone = str_replace("(", '', $phone);
     $phone = str_replace(")", '', $phone);
 
-    $url = 'check/phone/'.$phone;
+    $url = 'insurance/check/phone/'.$phone;
 
     $data = '{}';
 
@@ -133,7 +133,7 @@ if(isset($phone)) {
 // проверяем мыло, если его указали
 if(isset($email)) {
 
-    $url = 'check/email/'.$email;
+    $url = 'insurance/check/email/'.$email;
 
     $data = '{}';
 
@@ -147,8 +147,8 @@ if(isset($email)) {
 
 }
 
-$url = 'crm/send-policy-request';
-$url = 'crm/send-policy-request-reply';
+$url = 'insurance/crm/send-policy-request';
+$url = 'insurance/crm/send-policy-request-reply';
 
 $_POST['type'] = 'EXPRESS';
 
