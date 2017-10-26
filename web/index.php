@@ -1031,9 +1031,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
             function goal(id) {
                 <?php if (defined('PARAM_YM_ID')): ?>
-
                 yaCounter<?= PARAM_YM_ID ?>.reachGoal(id);
-
+                <?php endif; ?>
+                <?php if (defined('PARAM_GA_ID')): ?>
+		ga('send', 'event', 'button', 'click', id);
                 <?php endif; ?>
             }
         </script>
