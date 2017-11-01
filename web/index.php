@@ -112,7 +112,9 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
             </nav>
 
             <div class="container">
+                <!--
                 <span class="ogpo-vts"><?= _("ОГПО ВТС") ?></span> <a href="/order/casco/index.html" class="avto-kasko">Авто Каско</a>
+                -->
                 <h1><?= _("Обязательная автостраховка с&nbsp;бесплатной доставкой") ?></h1>
 
                 <div class="row pluses">
