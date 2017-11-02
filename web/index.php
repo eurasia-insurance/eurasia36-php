@@ -45,6 +45,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+	<?php include './__GTM-head.php'; ?>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -73,6 +74,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
     </head>
 
     <body>
+	<?php include './__GTM-body.php'; ?>
         <header>
             <nav class="navbar navbar-static-top">
                 <div class="container">
