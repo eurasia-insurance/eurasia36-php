@@ -258,7 +258,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                             <div class="form-group main-form__btn-container">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-blue goal-policy-calculate" disabled="disabled" id="how-much" onclick="goal('new_policy_request');" onsubmit="yaCounter39882375.reachGoal('policy_calculate'); ga('send', 'new_policy, 'new_policy_calculate', 'new_policy_label');"><?= _("Рассчитать стоимость") ?></button>
+                                    <button type="submit" class="btn btn-blue goal-policy-calculate" disabled="disabled" id="how-much"><?= _("Рассчитать стоимость") ?></button>
                                 </div>
                             </div>
                         </form>
@@ -299,7 +299,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 5): ?>
                                     <div class="g-recaptcha" data-sitekey="6LdQBBsUAAAAADlPZcaxD-VkvvhC6-3K6SjVQ1_a"></div>
                                     <?php endif; ?>
-                                    <button type="submit" class="btn btn-blue goal-policy-request" onclick="goal('new_policy_request');" onsubmit="yaCounter39882375.reachGoal('policy_request'); ga('send', 'new_policy_zakaz, 'new_policy_request', 'new_policy_zakaz_label');"><?= _("Заказать полис") ?></button>
+                                    <button type="submit" class="btn btn-blue goal-policy-request"><?= _("Заказать полис") ?></button>
                                     <div>
                                         <strong id="result-msg" style="display: none"><?= _("Спасибо. Мы получили вашу заявку") ?></strong>
                                     </div>
@@ -551,7 +551,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="requester[language]" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="requester[name]" value="Не указано" />
                             <input type="tel" name="requester[phone]" class="form-control" placeholder="Телефон" />
-                            <button type="submit" class="btn btn-blue goal-callback-request <?= $lang ?>-btn" onclick="goal('new_callback_request');"><?= _("Заказать") ?></button>
+                            <button type="submit" class="btn btn-blue goal-callback-request <?= $lang ?>-btn"><?= _("Заказать") ?></button>
                             <div class="help-block" style="display: none"><span class="text-danger"></span></div>
                         </form>
 
@@ -1032,15 +1032,6 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     $("#inputEmail").attr("required", false);
                 }
             });
-
-            function goal(id) {
-                <?php if (defined('PARAM_YM_ID')): ?>
-                yaCounter<?= PARAM_YM_ID ?>.reachGoal(id);
-                <?php endif; ?>
-                <?php if (defined('PARAM_GA_ID')): ?>
-		ga('send', 'event', 'button', 'click', id);
-                <?php endif; ?>
-            }
         </script>
 
         <?php include './__jivosite.php'; ?>
