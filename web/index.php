@@ -258,7 +258,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                             <div class="form-group main-form__btn-container">
                                 <div class="col-sm-offset-3 col-sm-9">
-                                    <button type="submit" class="btn btn-blue" disabled="disabled" id="how-much" onclick="goal('new_policy_calculate');"><?= _("Рассчитать стоимость") ?></button>
+                                    <button type="submit" class="btn btn-blue" disabled="disabled" id="how-much" onclick="goal('new_policy_request');" onsubmit="yaCounter39882375.reachGoal('policy_calculate'); ga('send', 'new_policy, 'new_policy_calculate', 'new_policy_label');"><?= _("Рассчитать стоимость") ?></button>
                                 </div>
                             </div>
                         </form>
@@ -299,7 +299,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                                     <?php if(isset($_SESSION['policyRequest']) && $_SESSION['policyRequest'] > 5): ?>
                                     <div class="g-recaptcha" data-sitekey="6LdQBBsUAAAAADlPZcaxD-VkvvhC6-3K6SjVQ1_a"></div>
                                     <?php endif; ?>
-                                    <button type="submit" class="btn btn-blue" onclick="goal('new_policy_request');"><?= _("Заказать полис") ?></button>
+                                    <button type="submit" class="btn btn-blue" onclick="goal('new_policy_request');" onsubmit="yaCounter39882375.reachGoal('policy_request'); ga('send', 'new_policy_zakaz, 'new_policy_request', 'new_policy_zakaz_label');"><?= _("Заказать полис") ?></button>
                                     <div>
                                         <strong id="result-msg" style="display: none"><?= _("Спасибо. Мы получили вашу заявку") ?></strong>
                                     </div>
