@@ -1,0 +1,331 @@
+html, body {
+  height: 100%;
+  min-height: 500px; }
+
+body {
+  color: #fff;
+  background: #000 url("/i/500-back.png") no-repeat center/cover;
+  font-family: "Helvetica", sans-serif;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden; }
+
+a:hover {
+  text-decoration: none; }
+
+.logo {
+  width: 220px;
+  margin-top: 30px; }
+
+.error-text, .tels {
+  line-height: 28px;
+  /*margin-top: 30px;*/ }
+
+.tels {
+  margin-top: 7px; }
+
+.tel {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+  .tel:hover {
+    color: #fff;
+    border-bottom: 1px solid white; }
+  .tel:first-child {
+    margin-right: 5px; }
+  .tel:last-of-type {
+    margin-left: 5px; }
+
+.footer {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  font-size: 14px; }
+
+/*
+	Glitchy Text from https://css-tricks.com/glitch-effect-text-images-svg/
+
+  (TEXT) PARAMS
+  =================
+  1. Namespace
+  2. Intensity
+  3. Text color
+  4. Background color (flat)
+  5. Highlight #1 color
+  6. Highlight #2 color
+  7. Width (px)
+  8. Height (px)
+*/
+.glitch {
+  width: fit-content;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  margin: 110px auto 0 auto;
+  font-size: 180px;
+  font-weight: bold;
+  line-height: 180px;
+  color: #fff;
+  position: relative; }
+@keyframes glitch-anim-1 {
+  0% {
+    opacity: 1;
+    clip: rect(183px, 1084px, 76px, 0); }
+  5.88235% {
+    opacity: 1;
+    clip: rect(151px, 1084px, 103px, 0); }
+  11.76471% {
+    opacity: 1;
+    clip: rect(69px, 1084px, 137px, 0); }
+  17.64706% {
+    opacity: 1;
+    clip: rect(39px, 1084px, 109px, 0); }
+  23.52941% {
+    opacity: 1;
+    clip: rect(35px, 1084px, 177px, 0); }
+  29.41176% {
+    opacity: 1;
+    clip: rect(115px, 1084px, 76px, 0); }
+  35.29412% {
+    opacity: 1;
+    clip: rect(177px, 1084px, 128px, 0); }
+  41.17647% {
+    opacity: 1;
+    clip: rect(163px, 1084px, 74px, 0); }
+  47.05882% {
+    opacity: 1;
+    clip: rect(117px, 1084px, 128px, 0); }
+  52.94118% {
+    opacity: 1;
+    clip: rect(152px, 1084px, 33px, 0); }
+  58.82353% {
+    opacity: 1;
+    clip: rect(28px, 1084px, 156px, 0); }
+  64.70588% {
+    opacity: 1;
+    clip: rect(141px, 1084px, 59px, 0); }
+  70.58824% {
+    opacity: 1;
+    clip: rect(33px, 1084px, 79px, 0); }
+  76.47059% {
+    opacity: 1;
+    clip: rect(37px, 1084px, 98px, 0); }
+  82.35294% {
+    opacity: 1;
+    clip: rect(24px, 1084px, 11px, 0); }
+  88.23529% {
+    opacity: 1;
+    clip: rect(96px, 1084px, 24px, 0); }
+  94.11765% {
+    opacity: 1;
+    clip: rect(83px, 1084px, 193px, 0); }
+  100% {
+    opacity: 1;
+    clip: rect(138px, 1084px, 92px, 0); } }
+@keyframes glitch-anim-2 {
+  0% {
+    opacity: 1;
+    clip: rect(196px, 1084px, 159px, 0); }
+  5.88235% {
+    opacity: 1;
+    clip: rect(37px, 1084px, 142px, 0); }
+  11.76471% {
+    opacity: 1;
+    clip: rect(106px, 1084px, 177px, 0); }
+  17.64706% {
+    opacity: 1;
+    clip: rect(135px, 1084px, 194px, 0); }
+  23.52941% {
+    opacity: 1;
+    clip: rect(122px, 1084px, 161px, 0); }
+  29.41176% {
+    opacity: 1;
+    clip: rect(95px, 1084px, 95px, 0); }
+  35.29412% {
+    opacity: 1;
+    clip: rect(63px, 1084px, 164px, 0); }
+  41.17647% {
+    opacity: 1;
+    clip: rect(148px, 1084px, 14px, 0); }
+  47.05882% {
+    opacity: 1;
+    clip: rect(138px, 1084px, 165px, 0); }
+  52.94118% {
+    opacity: 1;
+    clip: rect(163px, 1084px, 165px, 0); }
+  58.82353% {
+    opacity: 1;
+    clip: rect(162px, 1084px, 117px, 0); }
+  64.70588% {
+    opacity: 1;
+    clip: rect(171px, 1084px, 13px, 0); }
+  70.58824% {
+    opacity: 1;
+    clip: rect(134px, 1084px, 192px, 0); }
+  76.47059% {
+    opacity: 1;
+    clip: rect(54px, 1084px, 2px, 0); }
+  82.35294% {
+    opacity: 1;
+    clip: rect(69px, 1084px, 190px, 0); }
+  88.23529% {
+    opacity: 1;
+    clip: rect(48px, 1084px, 153px, 0); }
+  94.11765% {
+    opacity: 1;
+    clip: rect(104px, 1084px, 42px, 0); }
+  100% {
+    opacity: 1;
+    clip: rect(57px, 1084px, 194px, 0); } }
+  .glitch:before, .glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    clip: rect(0, 0, 0, 0); }
+  .glitch:after {
+    left: 2px;
+    text-shadow: -1px 0 darkblue;
+    animation: glitch-anim-1 2s infinite linear alternate-reverse; }
+  .glitch:before {
+    left: -2px;
+    text-shadow: 2px 0 #999;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse; }
+
+@media (max-width: 767px) {
+  .glitch {
+    margin: 50px auto 0 auto;
+    font-size: 100px;
+    line-height: 110px;
+    color: #fff;
+    position: relative; }
+  @keyframes glitch-anim-1 {
+    0% {
+      opacity: 1;
+      clip: rect(86px, 900px, 10px, 0); }
+    5.88235% {
+      opacity: 1;
+      clip: rect(42px, 900px, 62px, 0); }
+    11.76471% {
+      opacity: 1;
+      clip: rect(77px, 900px, 96px, 0); }
+    17.64706% {
+      opacity: 1;
+      clip: rect(27px, 900px, 33px, 0); }
+    23.52941% {
+      opacity: 1;
+      clip: rect(124px, 900px, 16px, 0); }
+    29.41176% {
+      opacity: 1;
+      clip: rect(102px, 900px, 67px, 0); }
+    35.29412% {
+      opacity: 1;
+      clip: rect(123px, 900px, 76px, 0); }
+    41.17647% {
+      opacity: 1;
+      clip: rect(117px, 900px, 39px, 0); }
+    47.05882% {
+      opacity: 1;
+      clip: rect(85px, 900px, 41px, 0); }
+    52.94118% {
+      opacity: 1;
+      clip: rect(45px, 900px, 66px, 0); }
+    58.82353% {
+      opacity: 1;
+      clip: rect(67px, 900px, 102px, 0); }
+    64.70588% {
+      opacity: 1;
+      clip: rect(45px, 900px, 63px, 0); }
+    70.58824% {
+      opacity: 1;
+      clip: rect(57px, 900px, 19px, 0); }
+    76.47059% {
+      opacity: 1;
+      clip: rect(29px, 900px, 53px, 0); }
+    82.35294% {
+      opacity: 1;
+      clip: rect(121px, 900px, 83px, 0); }
+    88.23529% {
+      opacity: 1;
+      clip: rect(17px, 900px, 113px, 0); }
+    94.11765% {
+      opacity: 1;
+      clip: rect(42px, 900px, 125px, 0); }
+    100% {
+      opacity: 1;
+      clip: rect(130px, 900px, 75px, 0); } }
+  @keyframes glitch-anim-2 {
+    0% {
+      opacity: 1;
+      clip: rect(71px, 900px, 28px, 0); }
+    5.88235% {
+      opacity: 1;
+      clip: rect(44px, 900px, 26px, 0); }
+    11.76471% {
+      opacity: 1;
+      clip: rect(95px, 900px, 10px, 0); }
+    17.64706% {
+      opacity: 1;
+      clip: rect(78px, 900px, 112px, 0); }
+    23.52941% {
+      opacity: 1;
+      clip: rect(106px, 900px, 11px, 0); }
+    29.41176% {
+      opacity: 1;
+      clip: rect(52px, 900px, 47px, 0); }
+    35.29412% {
+      opacity: 1;
+      clip: rect(81px, 900px, 46px, 0); }
+    41.17647% {
+      opacity: 1;
+      clip: rect(39px, 900px, 101px, 0); }
+    47.05882% {
+      opacity: 1;
+      clip: rect(37px, 900px, 57px, 0); }
+    52.94118% {
+      opacity: 1;
+      clip: rect(95px, 900px, 49px, 0); }
+    58.82353% {
+      opacity: 1;
+      clip: rect(119px, 900px, 4px, 0); }
+    64.70588% {
+      opacity: 1;
+      clip: rect(96px, 900px, 14px, 0); }
+    70.58824% {
+      opacity: 1;
+      clip: rect(17px, 900px, 83px, 0); }
+    76.47059% {
+      opacity: 1;
+      clip: rect(120px, 900px, 125px, 0); }
+    82.35294% {
+      opacity: 1;
+      clip: rect(61px, 900px, 39px, 0); }
+    88.23529% {
+      opacity: 1;
+      clip: rect(77px, 900px, 73px, 0); }
+    94.11765% {
+      opacity: 1;
+      clip: rect(88px, 900px, 124px, 0); }
+    100% {
+      opacity: 1;
+      clip: rect(51px, 900px, 49px, 0); } }
+    .glitch:before, .glitch:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: transparent;
+      clip: rect(0, 0, 0, 0); }
+    .glitch:after {
+      left: 2px;
+      text-shadow: -1px 0 darkblue;
+      animation: glitch-anim-1 2s infinite linear alternate-reverse; }
+    .glitch:before {
+      left: -2px;
+      text-shadow: 2px 0 #999;
+      animation: glitch-anim-2 3s infinite linear alternate-reverse; } }
+
+/*# sourceMappingURL=500.css.map */
