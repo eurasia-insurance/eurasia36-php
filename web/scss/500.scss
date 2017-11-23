@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+    min-height: 500px;
+}
+body {
+    color: #fff;
+    background: #000 url('/i/500-back.png') no-repeat center / cover;
+    
+    font-family: "Helvetica", sans-serif;
+    font-size: 18px;
+    
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.logo {
+    width: 220px;
+    margin-top: 30px;
+}
+
+.error-text {
+    line-height: 28px;
+    /*margin-top: 30px;*/
+}
+
+.tels {
+    @extend .error-text;
+
+    margin-top: 7px;
+}
+.tel {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+    
+    &:hover {
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 1);
+    }
+    &:first-child {
+        margin-right: 5px;
+    }
+    &:last-of-type {
+        margin-left: 5px;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+
+    font-size: 14px;
+}
+
+/*
+	Glitchy Text from https://css-tricks.com/glitch-effect-text-images-svg/
+
+  (TEXT) PARAMS
+  =================
+  1. Namespace
+  2. Intensity
+  3. Text color
+  4. Background color (flat)
+  5. Highlight #1 color
+  6. Highlight #2 color
+  7. Width (px)
+  8. Height (px)
+*/
+@mixin textGlitch($name, $intensity, $textColor, $background, $highlightColor1, $highlightColor2, $width, $height) {
+  
+  color: $textColor;
+  position: relative;
+  $steps: $intensity;
+  
+  // Ensure the @keyframes are generated at the root level
+  @at-root {
+    // We need two different ones
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          #{percentage($i*(1/$steps))} {
+            opacity: random(1);
+            clip: rect(
+              random($height)+10+px,
+              $width+px,
+              random($height)+px,
+              0
+            );
+          }
+        }
+      }
+    }
+  }
+  &:before,
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $background;
+    clip: rect(0, 0, 0, 0); 
+  }
+  &:after {
+    left: 2px;
+    text-shadow: -1px 0 $highlightColor1;
+    animation: #{$name}-anim-1 2s infinite linear alternate-reverse;
+  }
+  &:before {
+    left: -2px;
+    text-shadow: 2px 0 $highlightColor2; 
+    animation: #{$name}-anim-2 3s infinite linear alternate-reverse;
+  }
+  
+}
+
+.glitch {
+    width: fit-content;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    margin: 110px auto 0 auto;
+    font-size: 180px;
+    font-weight: bold;
+    line-height: 180px;
+    @include textGlitch("glitch", 17, #fff, transparent, darkblue, #999, 1084, 195);
+}
+@media (max-width: 767px) {
+   .glitch {
+        margin: 50px auto 0 auto;
+        font-size: 100px;
+        line-height: 110px;
+        @include textGlitch("glitch", 17, #fff, transparent, darkblue, #999, 900, 125);
+   }
+}
