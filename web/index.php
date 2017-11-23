@@ -1,5 +1,9 @@
 <?php
 
+ini_set("display_errors", 0);
+
+throw new Exception("asdsds");
+
 header('Content-Type: text/html; charset=utf-8');
 
 session_start();
