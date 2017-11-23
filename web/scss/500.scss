@@ -4,7 +4,7 @@ html, body {
 }
 body {
     color: #fff;
-    background: #000 url('/i/500-back.png') no-repeat center / cover;
+    background: red;
     
     font-family: "Helvetica", sans-serif;
     font-size: 18px;
@@ -139,4 +139,44 @@ a {
         line-height: 110px;
         @include textGlitch("glitch", 17, #fff, transparent, darkblue, #999, 900, 125);
    }
+}
+
+
+
+
+.inifinity {
+    
+    
+    
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    background: #000 url('/i/500-back.png') no-repeat center / 70%;
+    width: 220%;
+    height: 220%;
+
+    z-index: -1;
+}
+
+
+.inifinity {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 360s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+
+  -moz-animation-name: rotate;
+  -moz-animation-duration: 360s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+}
+
+@-webkit-keyframes rotate {
+  from { -webkit-transform:rotate(0deg); }
+  to {  -webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes rotate {
+  from { -moz-transform:rotate(0deg); }
+  to { -moz-transform:rotate(360deg); }
 }
