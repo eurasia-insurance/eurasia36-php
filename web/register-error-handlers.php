@@ -6,7 +6,7 @@ function to500() {
     ob_end_clean(); # try to purge content sent so far
     http_response_code(500);
 #    header("Location: /500.html");
-    include './500.html';
+    include $_SERVER[DOCUMENT_ROOT].'/500.html';
     die;
 }
 
