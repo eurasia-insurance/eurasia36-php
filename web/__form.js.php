@@ -371,6 +371,8 @@ $("#order-form").submit(function(e) {
                     $("#result-msg").text("<?= _("Спасибо. Мы получили вашу заявку") ?>").removeClass('text-danger').fadeIn();
 
                     if(data.paymentLink != null) {
+                        alert(data.paymentLink);
+
                         $("#result-msg").append("<br/><br/><?= _("Сейчас вы будете перенаправлены на страницу оплаты") ?>");
 
                         window.setTimeout('document.location.href="' + data.paymentLink + '"', 3000);
