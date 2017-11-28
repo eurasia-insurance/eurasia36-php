@@ -478,6 +478,10 @@ input[type=number]::-webkit-outer-spin-button {
     font: bold 36px Helvetica;
     width: 100%; }
 
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+
   .navbar-brand__logo {
     width: 180px; }
 
