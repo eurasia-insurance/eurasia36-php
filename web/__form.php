@@ -1,4 +1,4 @@
-<div class="main-form">
+<div class="main-form" id="form-container">
     <form action="/price.php" method="post" class="form-horizontal" id="main-form">
         <div class="form-group">
             <label for="inputInn" class="col-sm-3 control-label"><strong><?= _("Ваш ИИН") ?></strong></label>

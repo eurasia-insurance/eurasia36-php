@@ -2,6 +2,10 @@
 
 @import "_button";
 
+html, body {
+  background: transparent !important;
+}
+
 .main-form {
   margin: 20px;
 }

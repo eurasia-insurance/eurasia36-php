@@ -435,7 +435,6 @@ $("#callback-form").submit(function(e) {
 
 });
 
-//            $('.inn').mask('999 999 999 999',{placeholder:"_"});
 $('input[type=tel]').mask('+7 (999) 999-99-99',{placeholder:"_"});
 
 $('input[type=tel]').keydown(function(e) {

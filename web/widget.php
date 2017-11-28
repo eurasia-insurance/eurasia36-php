@@ -68,8 +68,33 @@ header("ETag: \"{$etag}\"");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/jquery.maskedinput.min.js"></script>
+
+    <script type="text/javascript" src="/js/detect-resize/jquery.resize.js"></script>
+
     <script>
         <?php require('./__form.js.php') ?>
+
+        var iframeHeight = function() {
+            var body = document.body,
+                html = document.documentElement,
+                height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+            height = $("#form-container").height() + 40;
+
+            if (parent.postMessage) {
+                parent.postMessage(height, "http://enpi.loc");
+            }
+        }
+
+        $('#form-container').resize(iframeHeight);
+//        $('#resizeElement').removeResize(myFunc);
+
+
+        $(document).ready(function () {
+            iframeHeight;
+        });
+
+
     </script>
 </body>
 </html>
