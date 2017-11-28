@@ -6,11 +6,9 @@ set_exception_handler('myExceptionHandler');
 set_error_handler('myErrorHandler');
 
 function to500() {
-    ob_end_clean(); # try to purge content sent so far
+    ob_end_clean();
     http_response_code(500);
 #    header("Location: /500.html");
-
-    ob_end_clean();
 
     include $_SERVER[DOCUMENT_ROOT].'/500.html';
     die;
