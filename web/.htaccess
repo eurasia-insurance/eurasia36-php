@@ -11,3 +11,9 @@ ErrorDocument 500 /500.html
     RewriteRule ^.*$ - [NC,L]
     RewriteRule ^(ru|kz|en)/?$ index.php?lang=$1 [QSA,L]
 </IfModule>
+
+php_flag   display_errors       Off
+php_value  auto_prepend_file    register-error-handlers.php
+
+# put line above to the host's main config file
+#    php_value include_path ".:PATH_TO_DOCUMENT_ROOT"
