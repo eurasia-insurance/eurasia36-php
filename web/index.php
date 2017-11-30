@@ -134,8 +134,6 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     <?php require('./__form.php') ?>
                 </div>
                 <div class="col-sm-4 hidden-xs">
-                    <!--<div class="bought-today"><div class="bought-today__number">14</div> полисов заказали<br/>на сайте сегодня</div>-->
-
                     <div class="rating">
                         <img src="/i/rating.png" alt="" />
                         <?= _("У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/kzAA- (S&P, 2017).") ?>
