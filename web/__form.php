@@ -1,12 +1,12 @@
 <div class="main-form" id="form-container">
     <form action="/price.php" method="post" class="form-horizontal" id="main-form">
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label for="inputInn" class="col-sm-3 control-label"><strong><?= _("Ваш ИИН") ?></strong></label>
             <div class="col-sm-9">
                 <input type="text" name="drivers[0][idNumber]" class="form-control inn" id="inputInn" placeholder="" maxlength="12" />
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label class="col-sm-3 control-label toggle-label"><?= _("за рулем") ?></label>
             <div class="col-sm-9 radio-toggles">
                 <div class="radio">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
             <div class="col-sm-9">
                 <select class="form-control" id="inputAuto" name="vehicles[0][typeClass]">
@@ -48,7 +48,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
             <div class="col-sm-9 radio-toggles">
                 <div class="radio active">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
             <div class="col-sm-9" id="inputReg">
                 <select class="form-control region-select" name="vehicles[0][area]">
@@ -98,7 +98,7 @@
             </div>
             <div class="form-fader"></div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col widget-checkbox">
             <div class="col-sm-9 col-sm-offset-3">
                 <div class="checkbox">
                     <input type="hidden" value="0" name="vehicles[0][temporaryEntry]" />
@@ -110,13 +110,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label for="inputName" class="col-sm-3 control-label"><?= _("Ваше имя") ?></label>
             <div class="col-sm-9">
                 <input type="text" class="form-control" name="name" id="inputName" required="required" value="" />
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group widget-two-col">
             <label for="inputPhone" class="col-sm-3 control-label">Телефон</label>
             <div class="col-sm-9">
                 <input type="tel" class="form-control" name="phone" id="inputPhone" placeholder="+7 (___) ___-__-__" required="required" value="" />
@@ -191,13 +191,13 @@
             <h3 class="driver-num"><?= _("Ещё один водитель") ?></h3>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col">
         <label for="inputInn" class="col-sm-3 control-label"><strong><?= _("ИИН") ?></strong></label>
         <div class="col-sm-9">
             <input type="text" class="form-control inn" name="drivers[][idNumber]" id="inputInn" placeholder="" maxlength="12">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col">
         <label class="col-sm-3 control-label toggle-label"><?= _("за рулем") ?></label>
         <div class="col-sm-9 radio-toggles">
             <div class="radio">
@@ -234,7 +234,7 @@
             <h3 class="driver-num"><?= _("Ещё один автомобиль") ?></h3>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col">
         <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
         <div class="col-sm-9">
             <select class="form-control" id="inputAuto" name="vehicles[][typeClass]">
@@ -248,7 +248,7 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col">
         <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
         <div class="col-sm-9 radio-toggles">
             <div class="radio active">
@@ -265,7 +265,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col">
         <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
         <div class="col-sm-9" id="inputReg">
             <select class="form-control region-select" name="vehicles[][area]">
@@ -298,7 +298,7 @@
         </div>
         <div class="form-fader"></div>
     </div>
-    <div class="form-group">
+    <div class="form-group widget-two-col widget-checkbox">
         <div class="col-sm-9 col-sm-offset-3">
             <div class="checkbox">
                 <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />

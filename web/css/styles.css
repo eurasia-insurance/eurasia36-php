@@ -171,8 +171,9 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0px 1px 5px 0px rgba(93, 145, 171, 0.6); }
     .radio-toggles .radio.active {
       background: #0099E6;
-      box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
-      color: #fff; }
+      box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
+      .radio-toggles .radio.active label {
+        color: #fff; }
     .radio-toggles .radio:first-child {
       border-radius: 3px 0px 0px 3px; }
     .radio-toggles .radio:last-child {

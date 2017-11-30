@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic");
 input[type=number] {
   -moz-appearance: textfield; }
 
@@ -65,8 +66,9 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 0px 1px 5px 0px rgba(93, 145, 171, 0.6); }
     .radio-toggles .radio.active {
       background: #0099E6;
-      box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.6);
-      color: #fff; }
+      box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.6); }
+      .radio-toggles .radio.active label {
+        color: #fff; }
     .radio-toggles .radio:first-child {
       border-radius: 3px 0px 0px 3px; }
     .radio-toggles .radio:last-child {
@@ -182,9 +184,107 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: none; }
 
 html, body {
-  background: transparent !important; }
+  background: transparent !important;
+  font-family: 'PT Sans', sans-serif;
+  color: #fff; }
 
 .main-form {
-  margin: 20px; }
+  margin: 15px 0;
+  background: transparent;
+  box-shadow: none; }
+  .main-form h3 {
+    color: #fff;
+    margin-bottom: 0; }
+  .main-form form {
+    color: #fff;
+    margin: 0; }
+    .main-form form .form-group {
+      margin-bottom: 10px; }
+      .main-form form .form-group .form-fader {
+        opacity: 0;
+        background: transparent; }
+    .main-form form .form-faded {
+      opacity: .3; }
+    .main-form form .form-control {
+      padding: 7px 10px; }
+    .main-form form select.form-control {
+      padding: 7px 10px;
+      height: 39px; }
+    .main-form form #inputPhone {
+      max-width: 170px; }
+    .main-form form .help-block {
+      margin-bottom: 0;
+      color: #fff; }
+
+.radio-toggles .radio label {
+  padding: 7px 15px;
+  color: #000; }
+
+.widget-two-col {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  min-width: 330px;
+  padding-right: 30px; }
+  .widget-two-col > label, .widget-two-col > div {
+    width: 100%; }
+  .widget-two-col > label {
+    margin-bottom: 5px !important; }
+  .widget-two-col .form-control {
+    width: 100% !important; }
+
+.widget-checkbox {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 45px; }
+
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  .widget-two-col {
+    padding-right: 0;
+    width: 100%;
+    min-width: 300px; }
+
+  .widget-checkbox {
+    margin-top: 0; } }
+.btn-blue {
+  padding: 7px 20px; }
+
+.more-details {
+  margin: 0; }
+  .more-details br.visible-xs {
+    display: none !important; }
+
+.btn-additional {
+  border-color: #fff;
+  color: #fff; }
+  .btn-additional:hover, .btn-additional:active, .btn-additional:focus {
+    border-color: #fff;
+    color: #fff; }
+
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  .more-details {
+    text-align: center; }
+    .more-details br.visible-xs {
+      display: inline !important; }
+
+  .btn-additional {
+    margin-top: 10px; } }
+.main-form__additional-driver, .main-form__additional-auto,
+.main-form__additional-auto,
+.main-form__additional-driver ~ .main-form__btn-container,
+.main-form__additional-auto ~ .main-form__btn-container,
+.main-form__additional-auto ~ .main-form__btn-container {
+  border: 0; }
+
+.order-form {
+  margin: 30px 0 0 0 !important;
+  padding: 20px 0 0 0;
+  background: transparent;
+  border-top: 1px dotted #999; }
+  .order-form .price {
+    color: #fff; }
+
+.order-hint {
+  color: #999; }
 
 /*# sourceMappingURL=widget.css.map */

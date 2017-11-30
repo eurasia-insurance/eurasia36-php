@@ -272,10 +272,15 @@ $(".main-form").on('change', '.majorCity', function(e) {
 
 // временный въезд
 $(".main-form").on('change', ".temporary-entry", function() {
+
+    var $fader = $(this).parents(".form-group").prev().find(".form-fader");
+
     if($(this).is(":checked")) {
-        $(this).parents(".form-group").prev().find(".form-fader").show();
+        $fader.show();
+        $fader.parent().addClass('form-faded');
     } else {
-        $(this).parents(".form-group").prev().find(".form-fader").hide();
+        $fader.hide();
+        $fader.parent().removeClass('form-faded');
     }
 });
 
@@ -292,8 +297,7 @@ $("#main-form").submit(function(e) {
         url: $(this).attr("action"),
         data:  $(this).serialize(),
         dataType: "json"
-    })
-        .done(function( data ) {
+    }).done(function( data ) {
 
 //                    $(".main-form__btn-container").hide();
 
@@ -323,14 +327,14 @@ $("#main-form").submit(function(e) {
                 $("#order-form #inputName").val(data.drivers[0].personal.name + " " + data.drivers[0].personal.surename);
             }
 
-            $("#order-form").slideDown();
-
-            var target = $("#order-form");
-            if( target.length ) {
-                $('html, body').stop().animate({
-                    scrollTop: target.offset().top
-                }, 500);
-            }
+            $("#order-form").slideDown(function(){
+                var target = $("#order-form");
+                if( target.length ) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 500);
+                }
+            });
 
             $("#order-form input[name=phone]").val($("#inputPhone").val());
         })

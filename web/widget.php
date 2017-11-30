@@ -75,20 +75,15 @@ header("ETag: \"{$etag}\"");
         <?php require('./__form.js.php') ?>
 
         var iframeHeight = function() {
-            var body = document.body,
-                html = document.documentElement,
-                height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
 
-            height = $("#form-container").height() + 40;
+            var height = $("#form-container").height() + 40;
 
             if (parent.postMessage) {
-                parent.postMessage(height, "http://enpi.loc");
+                parent.postMessage(height, '<?= $_SERVER['HTTP_REFERER'] ?>');
             }
         }
 
         $('#form-container').resize(iframeHeight);
-//        $('#resizeElement').removeResize(myFunc);
-
 
         $(document).ready(function () {
             iframeHeight;
