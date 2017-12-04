@@ -7,7 +7,20 @@ if(container) {
     iframe.setAttribute('width', '100%');
     iframe.setAttribute('scrolling', "no");
     iframe.setAttribute('id', "iframe-widget");
-    iframe.setAttribute('src', host + "/widget.php");
+
+
+    var lang = '?lang=ru';
+    if(container.getAttribute('data-lang')) {
+        lang = '?lang=' + container.getAttribute('data-lang');
+    }
+
+    var utm = '';
+    if(location.search) {
+        utm = '&' + location.search.substr(1);
+    }
+
+    iframe.setAttribute('src', host + "/widget.php" + lang + utm);
+
 
     container.appendChild(iframe);
 }
