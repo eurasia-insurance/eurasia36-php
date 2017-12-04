@@ -5,7 +5,7 @@ if(container) {
     iframe.setAttribute('width', '100%');
     iframe.setAttribute('scrolling', "no");
     iframe.setAttribute('id', "iframe-widget");
-    iframe.setAttribute('src', "//eurasia.loc/widget.php");
+    iframe.setAttribute('src', "https:///webtest01.theeurasia.kz/widget.php");
 
     container.appendChild(iframe);
 }
