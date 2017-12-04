@@ -1,0 +1,168 @@
+@import "_form";
+
+@import "_button";
+
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
+
+
+html, body {
+  background: transparent !important;
+
+  font-family: 'PT Sans', sans-serif;
+  color: #fff;
+}
+
+.main-form {
+  margin: 15px 0;
+  background: transparent;
+  box-shadow: none;
+
+  h3 {
+    color: #fff;
+    margin-bottom: 0;
+  }
+
+  form {
+    color: #fff;
+    margin: 0;
+
+    .form-group {
+      margin-bottom: 10px;
+
+      .form-fader {
+        opacity: 0;
+        background: transparent;
+      }
+    }
+    .form-faded {
+      opacity: .3;
+    }
+
+    .form-control {
+      padding: 7px 10px;
+    }
+    select.form-control {
+      padding: 7px 10px;
+      height: 39px;
+    }
+    #inputPhone {
+      max-width: 170px;
+    }
+
+    .help-block {
+      margin-bottom: 0;
+      color: #fff;
+    }
+  }
+}
+.radio-toggles {
+  .radio {
+    label {
+      padding: 7px 15px;
+      color: #000;
+    }
+  }
+}
+
+.widget-two-col {
+  display: inline-block;
+  vertical-align: top;
+
+  width: 50%;
+  min-width: 330px;
+  padding-right: 30px;
+
+  & > label,
+  & > div {
+    width: 100%;
+  }
+  & > label {
+    margin-bottom: 5px !important;
+  }
+
+  .form-control {
+    width: 100% !important;
+  }
+}
+.widget-checkbox {
+  display: inline-block;
+  vertical-align: top;
+
+  margin-top: 45px;
+}
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  .widget-two-col {
+    padding-right:0;
+    width: 100%;
+    min-width: 300px;
+  }
+  .widget-checkbox {
+    margin-top: 0;
+  }
+}
+
+.btn-blue {
+  padding: 7px 20px;
+}
+
+.more-details {
+  margin: 0;
+
+  br.visible-xs {
+    display: none !important;
+  }
+}
+.btn-additional {
+  border-color: #fff;
+  color: #fff;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: #fff;
+    color: #fff;
+  }
+}
+@media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  .more-details {
+    text-align: center;
+
+    br.visible-xs {
+      display: inline !important;
+    }
+  }
+  .btn-additional {
+    margin-top: 10px;
+  }
+}
+
+.main-form__additional-driver,
+.main-form__additional-auto,
+.main-form__additional-driver ~ .main-form__btn-container,
+.main-form__additional-auto ~ .main-form__btn-container {
+  border: 0;
+}
+
+.main-form__additional-driver {
+  .close-form {
+    background: transparent url(/i/close-white.svg) no-repeat center !important;
+  }
+}
+.main-form__additional-auto {
+  @extend .main-form__additional-driver;
+}
+
+.order-form {
+  margin: 30px 0 0 0 !important;
+  padding: 20px 0 0 0;
+  background: transparent;
+  border-top: 1px dotted #999;
+
+  .price {
+    color: #fff;
+  }
+}
+.order-hint {
+  color: #999;
+}

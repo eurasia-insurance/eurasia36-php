@@ -135,209 +135,7 @@ li.lang-li {
 }
 
 
-input[type=number] {
-    -moz-appearance: textfield;
-}
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none;
-  margin: 0; /* Removes leftover margin */
-}
-
-.main-form {
-    background: #fff;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    margin-top: -150px;
-    box-shadow: 0 0 10px 0 rgba(12, 48, 111, 0.17);
-    
-    h3 {
-        font-weight: bold;
-        font-size: 24px;
-        color: #333;
-    }
-    
-    form {
-        margin: 50px 100px 0;
-        font-size: 16px;
-        overflow: hidden;
-
-        label {
-            font-weight: normal;
-        }
-
-        .form-group {
-            position: relative;
-            margin-bottom: 20px;
-
-            .form-fader {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #fff;
-                opacity: 0.7;
-
-                display: none;
-            }
-        }
-        
-        .help-block {
-            display: none;
-            font-size: 14px;
-            color: #333;
-            margin-top: 13px;
-            margin-bottom: 5;
-        }
-        
-        .form-control {
-            font-size: 16px;
-            color: #000;
-            height: auto;
-            width: 80%;
-            padding: 16px 10px;
-        }
-        select.form-control {
-            font-size: 16px;
-            height: 56px;
-            padding: 16px 10px;
-        }
-        
-        button {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    }
-}
-// переключалки
-.radio-toggles {
-    white-space: nowrap;
-
-    .radio {
-        display: inline-block;
-        padding: 0;
-        white-space: normal;
-
-        background-image: linear-gradient(-180deg, #FFFFFF 0%, #EAF1F5 97%);
-        box-shadow: 0px 1px 5px 0px rgba(93,145,171,0.6);
-
-        &.active {
-            background: #0099E6;
-            box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.6);
-            color: #fff;
-        }
-        &:first-child {
-            border-radius: 3px 0px 0px 3px;
-        }
-        &:last-child {
-            border-radius: 0px 3px 3px 0px;
-        }
-        &:not(.active):hover {
-            background-image: linear-gradient(-180deg, #FFFFFF 3%, #B6DBEC 95%);
-        }
-        
-        label {
-            padding: 15px 20px;
-        }
-        input[type=radio] {
-            visibility: hidden;
-        }
-    }
-}
-.form-horizontal .control-label {
-    padding-top: 15px;
-    text-align: left;
-}
-.loading {
-    background: #fff url(/i/loader.gif) no-repeat 95% center;
-}
-
-.main-form__additional-driver {
-    position: relative;
-    border-top: 1px dashed #ccc;
-    padding-top: 10px;
-    clear: both;
-    
-    .close-form {
-        display: inline-block;
-        width: 33px;
-        height: 33px;
-        position: absolute;
-        background: transparent url(/i/close-form.svg) no-repeat center;
-        top: 25px;
-        right: 0;
-        z-index: 1;
-        text-decoration: none;
-        
-        transition: all 500ms;
-
-        &:hover {
-            transform: rotate(360deg);
-            background: transparent url(/i/close-form-hover.svg) no-repeat center;
-        }
-    }
-}
-.main-form__additional-auto {
-    @extend .main-form__additional-driver;
-}
-.main-form__additional-driver ~ .main-form__btn-container {
-    border-top: 1px dashed #ccc;
-}
-
-.order-form {
-    display: none;
-    
-    background: #F5EFDC;
-    margin: 30px 0 0 0 !important;
-    padding: 30px 100px;
-    clear: both;
-    
-    .form-group:first-child {
-        margin-bottom: 40px;
-    }
-    .form-group:last-child {
-        margin-bottom: 0;
-    }
-    
-    .price {
-        display: block;
-        margin-top: 5px;
-        font-size: 30px;
-        color: #000;
-    }
-    #result-msg {
-        display: inline-block;
-        margin: 20px 0;
-    }
-}
-.order-hint {
-    font-size: 16px;
-    color: #4D4D4D;
-    line-height: 22px;
-}
-.one-more-form {
-    display: none;
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.more-details {
-    margin: 15px 100px;
-    overflow: hidden;
-}
-.btn-additional {
-    display: inline-block;
-    vertical-align: middle;
-    border: 1px solid rgba(0, 153, 230, .3);
-    border-radius: 3px;
-    padding: 5px 10px;
-    margin: 0 3px;
-    
-    &:hover {
-        border-color: #0366B4;
-    }
-}
+@import "_form";
 
 .bought-today {
     margin-top: -100px;
@@ -359,7 +157,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: #000;
     line-height: 29px;
     letter-spacing: 5px;
-
 }
 
 .rating {
@@ -368,43 +165,6 @@ input[type=number]::-webkit-outer-spin-button {
     img {
         float: right;
         margin-left: 30px;
-    }
-}
-
-.btn-blue {
-    background-image: linear-gradient(-180deg, #009EFF 4%, #0286C8 100%);
-    box-shadow: 0px 4px 7px 0px rgba(52,128,166,0.40);
-    border-radius: 3px;
-    padding: 15px 20px;
-    border: 0;
-    
-    font-size: 18px;
-    color: #FFF;
-
-    &:hover {
-        background-image: linear-gradient(-180deg, #43B6FD 6%, #0270B0 97%);
-        box-shadow: 0px 4px 7px 0px rgba(52,128,166,0.40);
-        border-radius: 3px;
-        color: #FFF;
-        border: 0;
-    }
-    &:active {
-        background-image: linear-gradient(-180deg, #0371B1 4%, #43B6FD 98%);
-        border-radius: 3px;
-        box-shadow: none;
-        border: 0;
-        color: #FFF;
-    }
-    &:focus {
-        background-image: linear-gradient(-180deg, #0371B1 4%, #43B6FD 98%);
-        border-radius: 3px;
-        box-shadow: none;
-        border: 0;
-        color: #FFF;
-    }
-    &:disabled {
-        background: #999;
-        box-shadow: none;
     }
 }
 
@@ -435,6 +195,8 @@ input[type=number]::-webkit-outer-spin-button {
 .ili {
     margin: 10px;
 }
+
+@import "_button";
 
 .footer {
     margin-top: 60px;
