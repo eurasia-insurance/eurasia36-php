@@ -1,4 +1,4 @@
-var host = 'https://webtest01.theeurasia.kz';
+var host = 'https://eurasia36.kz';
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
