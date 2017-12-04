@@ -86,7 +86,7 @@ header("ETag: \"{$etag}\"");
         $('#form-container').resize(iframeHeight);
 
         $(document).ready(function () {
-            iframeHeight;
+            iframeHeight();
         });
 
 
