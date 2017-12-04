@@ -276,6 +276,9 @@ html, body {
 .main-form__additional-auto ~ .main-form__btn-container {
   border: 0; }
 
+.main-form__additional-driver .close-form, .main-form__additional-auto .close-form {
+  background: transparent url(/i/close-white.svg) no-repeat center !important; }
+
 .order-form {
   margin: 30px 0 0 0 !important;
   padding: 20px 0 0 0;
