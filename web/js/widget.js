@@ -39,6 +39,9 @@ var resizeIframe = function (event) {
         }
     } else if(event.data.toString().match(/^http/gi)) {
         window.setTimeout('document.location.href="' + event.data + '"', 3000);;
+    } else if(event.data.toString() == 'reload') {
+        iframe.src = iframe.src;
+        document.location.hash = 'ogpo-widget';
     }
 };
 

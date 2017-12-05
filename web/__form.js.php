@@ -474,3 +474,10 @@ $("#payment-online").change(function() {
         $("#inputEmail").attr("required", false);
     }
 });
+
+<?php if(isset($_SERVER['HTTP_REFERER'])): ?>
+$("#oneMorePolicy").click(function(e) {
+    e.preventDefault();
+    return false;
+});
+<?php endif; ?>

@@ -89,6 +89,17 @@ header("ETag: \"{$etag}\"");
             iframeHeight();
         });
 
+        //Ещё одна заявка
+        $("#oneMorePolicy").click(function(e) {
+
+            e.preventDefault();
+
+            if (parent.postMessage) {
+                parent.postMessage('reload', '<?= $_SERVER['HTTP_REFERER'] ?>');
+            }
+        });
+
+
 
     </script>
 </body>
