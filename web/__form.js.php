@@ -104,7 +104,11 @@ function checkIin(input) {
 
                         $("#how-much").prop('disabled', true);
 
-                        var $name = $('<div class="help-block text">' + '<span class="text-danger"><?= _("Неверно введен ИИН. Пожалуйста, проверьте еще раз.") ?></span>' + '</div>');
+                        if(data.code == 500) {
+                            var $name = $('<div class="help-block text">' + '<span class="text-danger"><?= _("К сожалению, произошла ошибка. Пожалуйста, загляните чуть позже или позвоните нас по телефонам 8&nbsp;800-080-00-99 или 5678") ?></span>' + '</div>');
+                        } else {
+                            var $name = $('<div class="help-block text">' + '<span class="text-danger"><?= _("Неверно введен ИИН. Пожалуйста, проверьте еще раз.") ?></span>' + '</div>');
+                        }
 
                     }
 
@@ -115,6 +119,7 @@ function checkIin(input) {
                     $iin.next(".help-block").fadeIn();
                 })
                 .fail(function(jqXHR, textStatus) {
+                    document.location.href = '/500.html';
                     $iin.removeClass("loading");
                     $("#how-much").prop('disabled', false);
                     console.log(textStatus);
@@ -290,7 +295,6 @@ $("#main-form").submit(function(e) {
 
     $("#how-much").prop("disabled", true).text("<?= _("Расчитываем стоимость...") ?>");
 
-//                $(".more-details").hide();
 
     $.ajax({
         method: "POST",
@@ -299,48 +303,52 @@ $("#main-form").submit(function(e) {
         dataType: "json"
     }).done(function( data ) {
 
-//                    $(".main-form__btn-container").hide();
+        if(data.cost) {
 
-            if(data.cost) {
+            price = Math.round(data.cost) + '';
+            priceByThree = Math.round(price/3) + '';
 
-                price = Math.round(data.cost) + '';
-                priceByThree = Math.round(price/3) + '';
+            price = price.replace(/(.)/g, function(c, i, o, a) {
+                return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
+            });
+            priceByThree = priceByThree.replace(/(.)/g, function(c, i, o, a) {
+                return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
+            });
 
-                price = price.replace(/(.)/g, function(c, i, o, a) {
-                    return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
-                });
-                priceByThree = priceByThree.replace(/(.)/g, function(c, i, o, a) {
-                    return (o == (a.length - 3) || o == (a.length - 6)) ? " " + c : c;
-                });
+            $("#how-much").prop("disabled", false).text("<?= _("Рассчитать стоимость") ?>");
 
-                $("#how-much").prop("disabled", false).text("<?= _("Рассчитать стоимость") ?>");
+            $("#order-form").find(".price").text(price + " <?= _("тенге") ?>");
+            $("#order-form").find(".price-post").text(priceByThree);
+        } else {
 
-                $("#order-form").find(".price").text(price + " <?= _("тенге") ?>");
-                $("#order-form").find(".price-post").text(priceByThree);
+            if( data.code == 500 ) {
+                document.location.href = '/500.html';
             } else {
                 $("#order-form").find(".price").parent().text("<?= _("Сервис временно недоступен. Но вы можете оставить заявку.") ?>")
             }
+        }
 
-            policyCost = data;
+        policyCost = data;
 
-            if(data.drivers[0].personal.name && data.drivers[0].personal.surename) {
-                $("#order-form #inputName").val(data.drivers[0].personal.name + " " + data.drivers[0].personal.surename);
+        if(data.drivers[0].personal.name && data.drivers[0].personal.surename) {
+            $("#order-form #inputName").val(data.drivers[0].personal.name + " " + data.drivers[0].personal.surename);
+        }
+
+        $("#order-form").slideDown(function(){
+            var target = $("#order-form");
+            if( target.length ) {
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500);
             }
-
-            $("#order-form").slideDown(function(){
-                var target = $("#order-form");
-                if( target.length ) {
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top
-                    }, 500);
-                }
-            });
-
-            $("#order-form input[name=phone]").val($("#inputPhone").val());
-        })
-        .fail(function(jqXHR, textStatus) {
-            console.log(textStatus);
         });
+
+        $("#order-form input[name=phone]").val($("#inputPhone").val());
+    })
+    .fail(function(jqXHR, textStatus) {
+        document.location.href = '/500.html';
+        console.log(textStatus);
+    });
 });
 
 // отправляем заявку на полис
@@ -394,14 +402,18 @@ $("#order-form").submit(function(e) {
                 $(".one-more-form").fadeIn();
             } else {
 
-//                        console.log(data.message)
+                if(data.code == 500) {
+                    document.location.href = '/500.html';
+                } else {
 
-                $("#result-msg").html(data.message).addClass('text-danger').fadeIn();
+                    $("#result-msg").html(data.message).addClass('text-danger').fadeIn();
 
-                $("#order-form button").text("<?= _("Заказать полис") ?>").prop('disabled', false);
+                    $("#order-form button").text("<?= _("Заказать полис") ?>").prop('disabled', false);
+                }
             }
         })
         .fail(function(jqXHR, textStatus) {
+            document.location.href = '/500.html';
             console.log(textStatus);
         });
 
@@ -432,13 +444,19 @@ $("#callback-form").submit(function(e) {
 
             } else {
 
-                $form.find(".help-block span").text(data.message);
-                $form.find(".help-block").slideDown();
+                if(data.code == 500) {
+                    document.location.href = '/500.html';
+                } else {
+                    $form.find(".help-block span").text(data.message);
+                    $form.find(".help-block").slideDown();
+                }
 
                 $("#callback-form button").prop("disabled", false);
+
             }
         })
         .fail(function(jqXHR, textStatus) {
+            document.location.href = '/500.html';
             console.log(textStatus);
         });
 

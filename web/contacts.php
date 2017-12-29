@@ -44,6 +44,10 @@ $data = '{}';
 $offices = EurasiaAPI::request($url, $data, 'get');
 $offices = json_decode($offices, true);
 
+if(isset($offices['code']) && $offices['code'] == 500) {
+    throw new Exception("WS down", 500);
+}
+
 ?><!DOCTYPE html>
 <html lang="ru">
     <head>
