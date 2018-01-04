@@ -144,7 +144,7 @@
                 <?= _("Стоимость вашей страховки") ?>
 
                 <strong class="price">&nbsp;</strong>
-                <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span>
+                <?php /** <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span> */ ?>
             </div>
         </div>
 
@@ -174,7 +174,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 order-hint">
-                <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках и рассрочке.") ?>
+                <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках.") ?>
             </div>
             <div class="col-sm-offset-3 col-sm-9 one-more-form">
                 <a href="/"><?= _("Заполнить еще одну заявку") ?></a>

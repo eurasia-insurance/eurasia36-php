@@ -180,10 +180,12 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                     </div>
                     <div class="col-sm-3 col-xs-12 footer__box">
                         <a href="https://box.eurasia36.kz"><?= _("Отправить нам документы") ?></a>
-                        <!--
+                        <?php
+                        /**
                         <br/>
                         <a href="https://creditpolis.theeurasia.kz/"><?= _("Страховка в рассрочку") ?></a>
-                        -->
+                         */
+                        ?>
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <div class="footer__grafica <?= $lang ?>-footer__grafica">
