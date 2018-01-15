@@ -14,7 +14,7 @@ if(container) {
         lang = '?lang=' + container.getAttribute('data-lang');
     }
 
-    var utm = '';
+    var utm = '&utm_source=theeurasia&utm_medium=widget';
     if(location.search) {
         utm = '&' + location.search.substr(1);
     }
