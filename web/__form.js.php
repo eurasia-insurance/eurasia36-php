@@ -10,11 +10,11 @@ var utm = {
     "campaign": '<?= isset($_GET['utm_campaign']) ? urldecode($_GET['utm_campaign']) : null ?>',
     "content": '<?= isset($_GET['utm_content']) ? urldecode($_GET['utm_content']) : null ?>',
     "term": '<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : null ?>'
-<?php elseif(isset($_GET['gclid']): ?>
+<?php elseif(isset($_GET['gclid'])): ?>
     "source": 'google',
     "medium": 'cpc',
     "campaign": 'undefined',
-    "content": 'gclid<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>'
+    "content": 'gclid-<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>'
 <?php endif; ?>
 };
 
