@@ -2,7 +2,7 @@
 require_once './../.settings.php';
 header('Content-Type: application/javascript');
 ?>
-var host = '<?=HOME_HOST?>';
+var host = '<?=$_SERVER['REQUEST_SCHEME']?>://<?=$_SERVER['HTTP_HOST']?>:<?=$_SERVER['SERVER_PORT']?>/';
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
