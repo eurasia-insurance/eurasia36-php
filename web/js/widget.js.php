@@ -7,7 +7,7 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
 */
-var host = '<?=$_SERVER['REQUEST_SCHEME']?>://<?=$_SERVER['HTTP_HOST']?>:<?=$_SERVER['SERVER_PORT']?>/';
+var host = '<?=$_SERVER['REQUEST_SCHEME']?>://<?=$_SERVER['HTTP_HOST']?>:<?=$_SERVER['SERVER_PORT']?>';
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
