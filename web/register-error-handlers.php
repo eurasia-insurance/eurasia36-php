@@ -10,7 +10,7 @@ function to500() {
     http_response_code(500);
 #    header("Location: /500.html");
 
-    include $_SERVER[DOCUMENT_ROOT].'/500.html';
+    include $_SERVER['DOCUMENT_ROOT'].'/500.html';
     die;
 }
 
