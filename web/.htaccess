@@ -17,3 +17,5 @@ php_value  auto_prepend_file    register-error-handlers.php
 
 # put line above to the host's main config file
 #    php_value include_path ".:PATH_TO_DOCUMENT_ROOT"
+
+RedirectPermanent /js/widget.js /js/widget.php
