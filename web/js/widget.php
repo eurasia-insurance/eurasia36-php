@@ -1,4 +1,8 @@
-var host = 'https://eurasia36.kz';
+<?
+require_once './../.settings.php';
+header('Content-Type: application/javascript');
+?>
+var host = '<?=HOME_HOST?>';
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
