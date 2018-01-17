@@ -1,3 +1,4 @@
+/*
 <?
 require_once './../.settings.php';
 header('Content-Type: application/javascript');
@@ -5,6 +6,7 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 ?>
+*/
 var host = '<?=$_SERVER['REQUEST_SCHEME']?>://<?=$_SERVER['HTTP_HOST']?>:<?=$_SERVER['SERVER_PORT']?>/';
 
 var container = document.getElementById("ogpo-widget");
