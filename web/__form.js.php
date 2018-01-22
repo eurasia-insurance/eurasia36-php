@@ -15,6 +15,11 @@ var utm = {
     "medium": 'cpc',
     "campaign": 'undefined',
     "content": 'gclid-<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>'
+<?php elseif(isset($_GET['yclid'])): ?>
+    "source": 'yandex',
+    "medium": 'cpc',
+    "campaign": 'undefined',
+    "content": 'yclid-<?= isset($_GET['yclid']) ? urldecode($_GET['yclid']) : '' ?>'
 <?php endif; ?>
 };
 
