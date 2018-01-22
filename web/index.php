@@ -244,6 +244,11 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="utm[medium]" value="cpc" />
                             <input type="hidden" name="utm[campaign]" value="undefined" />
                             <input type="hidden" name="utm[content]" value="gclid-<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>" />
+                            <?php elseif(isset($_GET['yclid'])) : ?>
+                            <input type="hidden" name="utm[source]" value="yandex" />
+                            <input type="hidden" name="utm[medium]" value="cpc" />
+                            <input type="hidden" name="utm[campaign]" value="undefined" />
+                            <input type="hidden" name="utm[content]" value="yclid-<?= isset($_GET['yclid']) ? urldecode($_GET['yclid']) : '' ?>" />
                             <?php endif; ?>
                             <input type="hidden" name="requester[language]" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="requester[name]" value="Не указано" />
