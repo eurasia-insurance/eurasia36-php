@@ -1,4 +1,6 @@
-var host = window.location.protocol + '//' + window.location.hostname;
+
+if (!host)
+	host = window.location.protocol + '//' + window.location.hostname;
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
