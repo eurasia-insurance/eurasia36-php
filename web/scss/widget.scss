@@ -3,14 +3,10 @@
 @import "_button";
 
 
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic');
-
-
 html, body {
   background: transparent !important;
 
-  font-family: 'PT Sans', sans-serif;
-  color: #fff;
+  font-family: 'Arial', sans-serif;
 }
 
 .main-form {
@@ -19,12 +15,10 @@ html, body {
   box-shadow: none;
 
   h3 {
-    color: #fff;
     margin-bottom: 0;
   }
 
   form {
-    color: #fff;
     margin: 0;
 
     .form-group {
@@ -52,7 +46,6 @@ html, body {
 
     .help-block {
       margin-bottom: 0;
-      color: #fff;
     }
   }
 }
@@ -113,17 +106,6 @@ html, body {
     display: none !important;
   }
 }
-.btn-additional {
-  border-color: #fff;
-  color: #fff;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: #fff;
-    color: #fff;
-  }
-}
 @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
   .more-details {
     text-align: center;
@@ -144,24 +126,12 @@ html, body {
   border: 0;
 }
 
-.main-form__additional-driver {
-  .close-form {
-    background: transparent url(/i/close-white.svg) no-repeat center !important;
-  }
-}
-.main-form__additional-auto {
-  @extend .main-form__additional-driver;
-}
-
 .order-form {
   margin: 30px 0 0 0 !important;
   padding: 20px 0 0 0;
   background: transparent;
   border-top: 1px dotted #999;
 
-  .price {
-    color: #fff;
-  }
 }
 .order-hint {
   color: #999;

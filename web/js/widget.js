@@ -14,7 +14,20 @@ if(container) {
         lang = '?lang=' + container.getAttribute('data-lang');
     }
 
-    var utm = '';
+    var widgetId = null;
+    if(container.getAttribute('data-id')) {
+        lang += '&widgetId=' + container.getAttribute('data-id');
+
+        widgetId = container.getAttribute('data-id');
+    }
+
+    var utm = '&utm_medium=widget';
+    if(widgetId == 1) {
+        utm += '&utm_source=theeurasia';
+    } else if(widgetId == 2) {
+        utm += '&utm_source=eubank'
+    }
+
     if(location.search) {
         utm = '&' + location.search.substr(1);
     }
