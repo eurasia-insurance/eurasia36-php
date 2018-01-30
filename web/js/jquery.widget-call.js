@@ -1,6 +1,6 @@
 ;(function($) {
 
-    var host = 'https://eurasia36.kz';
+    var host = window.location.protocol + '//' + window.location.hostname;
 
     var widgetCss = $('<link href="' + host + '/css/widget-caller.css" rel="stylesheet" type="text/css" />')
     $('head').append(widgetCss);

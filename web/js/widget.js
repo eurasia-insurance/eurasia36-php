@@ -1,4 +1,4 @@
-var host = 'https://eurasia36.kz';
+var host = window.location.protocol + '//' + window.location.hostname;
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
