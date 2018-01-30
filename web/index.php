@@ -239,8 +239,17 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="utm[campaign]" value="<?= isset($_GET['utm_campaign']) ? urldecode($_GET['utm_campaign']) : '' ?>" />
                             <input type="hidden" name="utm[content]" value="<?= isset($_GET['utm_content']) ? urldecode($_GET['utm_content']) : '' ?>" />
                             <input type="hidden" name="utm[term]" value="<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : '' ?>" />
+                            <?php elseif(isset($_GET['gclid'])) : ?>
+                            <input type="hidden" name="utm[source]" value="google" />
+                            <input type="hidden" name="utm[medium]" value="cpc" />
+                            <input type="hidden" name="utm[campaign]" value="undefined" />
+                            <input type="hidden" name="utm[content]" value="gclid-<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>" />
+                            <?php elseif(isset($_GET['yclid'])) : ?>
+                            <input type="hidden" name="utm[source]" value="yandex" />
+                            <input type="hidden" name="utm[medium]" value="cpc" />
+                            <input type="hidden" name="utm[campaign]" value="undefined" />
+                            <input type="hidden" name="utm[content]" value="yclid-<?= isset($_GET['yclid']) ? urldecode($_GET['yclid']) : '' ?>" />
                             <?php endif; ?>
-
                             <input type="hidden" name="requester[language]" value="<?= $langs[$lang][2] ?>" />
                             <input type="hidden" name="requester[name]" value="Не указано" />
                             <input type="tel" name="requester[phone]" class="form-control" placeholder="Телефон" />
