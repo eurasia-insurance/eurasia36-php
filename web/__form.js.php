@@ -4,11 +4,23 @@ var iinCache = {};
 var policyCost = null;
 
 var utm = {
+<?php if(isset($_GET['utm_source']) && trim($_GET['utm_source']) != ''): ?>
     "source": '<?= isset($_GET['utm_source']) ? urldecode($_GET['utm_source']) : null ?>',
     "medium": '<?= isset($_GET['utm_medium']) ? urldecode($_GET['utm_medium']) : null ?>',
     "campaign": '<?= isset($_GET['utm_campaign']) ? urldecode($_GET['utm_campaign']) : null ?>',
     "content": '<?= isset($_GET['utm_content']) ? urldecode($_GET['utm_content']) : null ?>',
     "term": '<?= isset($_GET['utm_term']) ? urldecode($_GET['utm_term']) : null ?>'
+<?php elseif(isset($_GET['gclid'])): ?>
+    "source": 'google',
+    "medium": 'cpc',
+    "campaign": 'undefined',
+    "content": 'gclid-<?= isset($_GET['gclid']) ? urldecode($_GET['gclid']) : '' ?>'
+<?php elseif(isset($_GET['yclid'])): ?>
+    "source": 'yandex',
+    "medium": 'cpc',
+    "campaign": 'undefined',
+    "content": 'yclid-<?= isset($_GET['yclid']) ? urldecode($_GET['yclid']) : '' ?>'
+<?php endif; ?>
 };
 
 $(function() {
@@ -373,7 +385,7 @@ $("#order-form").submit(function(e) {
     $.ajax({
         method: "POST",
         url: $(this).attr("action"),
-        data: { requester: requester<?= isset($_GET['utm_source']) && trim($_GET['utm_source']) != '' ? ', utm: utm' : '' ?>, policy: policyCost },
+        data: { requester: requester, utm: utm, policy: policyCost },
         dataType: "json"
     })
         .done(function( data ) {
