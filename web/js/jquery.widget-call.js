@@ -1,6 +1,7 @@
-;(function($) {
+if (!host)
+	host = window.location.protocol + '//' + window.location.hostname;
 
-    var host = window.location.protocol + '//' + window.location.hostname;
+;(function($) {
 
     var widgetCss = $('<link href="' + host + '/css/widget-caller.css" rel="stylesheet" type="text/css" />')
     $('head').append(widgetCss);
