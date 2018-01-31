@@ -7,9 +7,19 @@ if (!host)
     $('head').append(widgetCss);
 
     var container = $("#ogpo-widget-call");
-    var header = $("<span class='ogpo__head'>Раcсчёт и&nbsp;покупка автостраховки онлайн</span>");
-    var text = $("<span class='ogpo__text'>+ бонус до&nbsp;30% от&nbsp;суммы при&nbsp;оплате на&nbsp;сайте картой Евразийского банка</span>");
-    var btn = $("<button class='ogpo__btn'>Расчитать за 2 минуты</button>");
+
+    var headerTxt = 'Раcсчёт и&nbsp;покупка автостраховки онлайн';
+    var textTxt = '+ бонус до&nbsp;30% от&nbsp;суммы при&nbsp;оплате на&nbsp;сайте картой Евразийского банка';
+    var btnTxt = 'Расчитать за 2 минуты';
+    if(container.data('lang') == 'kz') {
+        headerTxt = 'Автосақтандыруды онлайн есептеу және сатып алу';
+        textTxt = '+ сайтта Еуразиялық банктің картасымен төлеу кезінде сомадан 30%  дейін бонус';
+        btnTxt = '2 минут ішінде есептеу';
+    }
+
+    var header = $("<span class='ogpo__head'>" + headerTxt + "</span>");
+    var text = $("<span class='ogpo__text'>" + textTxt + "</span>");
+    var btn = $("<button class='ogpo__btn'>" + btnTxt + "</button>");
 
     btn.click(function(e) {
         $(this).openPopup();
@@ -45,9 +55,17 @@ if (!host)
             });
         popup.append(popupcloser);
 
+
+        var headTxt = 'Расчёт и&nbsp;заказ полиса ОГПО онлайн';
+        var txtTxt = '<strong>Получите бонус до&nbsp;30%</strong> от&nbsp;стоимости страховки при&nbsp;оплате на&nbsp;сайте картой Евразийского банка';
+        if(container.data('lang') == 'kz') {
+            headTxt = 'АҚЖМС полисін онлайн есептеу және тапсырыс беру';
+            txtTxt = 'Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандырудың құнынан <strong>30% дейін бонус алыңыз</strong>';
+        }
+
         var leftCol = $('<div id="ogpo-popup__left">' +
-                '<span id="ogpo-popup__header">Расчёт и&nbsp;заказ полиса ОГПО онлайн</span>' +
-                '<span id="ogpo-popup__text"><strong>Получите бонус до&nbsp;30%</strong> от&nbsp;стоимости страховки при&nbsp;оплате на&nbsp;сайте картой Евразийского банка</span>' +
+                '<span id="ogpo-popup__header">' + headTxt + '</span>' +
+                '<span id="ogpo-popup__text">' + txtTxt + '</span>' +
             '</div>');
         var rightCol = $('<div id="ogpo-popup__right"></div>');
         var widgetRoot = $('<div id="ogpo-widget" data-id="2"></div>');
