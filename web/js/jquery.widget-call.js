@@ -50,6 +50,10 @@
             '</div>');
         var rightCol = $('<div id="ogpo-popup__right"></div>');
         var widgetRoot = $('<div id="ogpo-widget" data-id="2"></div>');
+        if(container.data('lang') != '') {
+            widgetRoot.attr('data-lang', container.data('lang'));
+        }
+
         var widgetScript = $('<script src="' + host + '/js/widget.js"></script>');
 
         popup
