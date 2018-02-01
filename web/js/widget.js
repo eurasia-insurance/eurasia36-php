@@ -1,4 +1,6 @@
-var host = 'https://eurasia36.kz';
+
+if (!host)
+	host = window.location.protocol + '//' + window.location.hostname;
 
 var container = document.getElementById("ogpo-widget");
 if(container) {
@@ -14,7 +16,20 @@ if(container) {
         lang = '?lang=' + container.getAttribute('data-lang');
     }
 
-    var utm = '&utm_source=theeurasia&utm_medium=widget';
+    var widgetId = null;
+    if(container.getAttribute('data-id')) {
+        lang += '&widgetId=' + container.getAttribute('data-id');
+
+        widgetId = container.getAttribute('data-id');
+    }
+
+    var utm = '&utm_medium=widget';
+    if(widgetId == 1) {
+        utm += '&utm_source=theeurasia';
+    } else if(widgetId == 2) {
+        utm += '&utm_source=eubank'
+    }
+
     if(location.search) {
         utm = '&' + location.search.substr(1);
     }

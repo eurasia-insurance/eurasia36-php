@@ -41,6 +41,20 @@ header("Last-Modified: $tsstring");
 header("ETag: \"{$etag}\"");
 }
 
+
+$widgetId = false;
+if(isset($_GET['widgetId']) && (int)$_GET['widgetId'] != 0) {
+    $widgetId = (int)$_GET['widgetId'];
+}
+
+
+$widgets = [
+    1 => 'theeurasia',
+    2 => 'eubank',
+];
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,6 +67,9 @@ header("ETag: \"{$etag}\"");
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/css/widget.css?<?= filemtime(__DIR__ .'/css/widget.css') ?>" rel="stylesheet"/>
+    <?php if($widgetId): ?>
+    <link href="/css/<?= $widgets[$widgetId] ?>.css?<?= filemtime(__DIR__ .'/css/'.$widgets[$widgetId].'.css') ?>" rel="stylesheet"/>
+    <?php endif; ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

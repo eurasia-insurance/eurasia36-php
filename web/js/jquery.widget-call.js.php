@@ -13,4 +13,4 @@ if ( ($_SERVER['REQUEST_SCHEME'] == 'https' && $_SERVER['SERVER_PORT'] != '443')
 ?>
 */
 var host = '<?=$host?>';
-<?php include_once 'widget.js'; ?>
+<?php include_once 'jquery.widget-call.js'; ?>
