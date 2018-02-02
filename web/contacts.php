@@ -2,6 +2,7 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
+require_once(__DIR__ . '/api/Util.php');
 
 $langs = ['ru' => ['Русский', 'ru_RU'], 'kz' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
 
@@ -91,15 +92,15 @@ if(isset($offices['code']) && $offices['code'] == 500) {
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/<?= $lang != 'ru' ? $lang : '' ?>"><img src="/i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></a>
+                        <a class="navbar-brand" href="/<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><img src="/i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
                             <li><span><?= _("Адреса и телефоны") ?></span></li>
-                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="contacts.php">RU</a><?php endif; ?></li>
-                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="?lang=kz">KZ</a><?php endif; ?></li>
+                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="contacts.php<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="<?= Util::passParameters('kz') ?>">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
