@@ -2,6 +2,8 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
+require_once(__DIR__ . '/api/Util.php');
+
 session_start();
 
 
@@ -105,9 +107,9 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         <ul class="nav navbar-nav navbar-right">
                             <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
-                            <li><a href="/contacts.php<?= $lang != 'ru' ? "?lang=$lang" : '' ?>"><?= _("Адреса и телефоны") ?></a></li>
-                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="/">RU</a><?php endif; ?></li>
-                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="/kz">KZ</a><?php endif; ?></li>
+                            <li><a href="/contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Адреса и телефоны") ?></a></li>
+                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="/<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="/kz<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
