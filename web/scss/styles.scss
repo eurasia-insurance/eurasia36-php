@@ -168,6 +168,21 @@ li.lang-li {
     }
 }
 
+.bonus__teaser {
+    max-width: 100%;
+    margin-top: 30px;
+    //margin-bottom: 30px;
+}
+#cashback {
+    p ~ h3 {
+        margin-top: 40px;
+    }
+    a {
+        color: #fff !important;
+        white-space: nowrap;
+    }
+}
+
 .about-company {
     margin-top: 50px;
 }

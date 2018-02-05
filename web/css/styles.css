@@ -285,6 +285,16 @@ input[type=number]::-webkit-outer-spin-button {
     float: right;
     margin-left: 30px; }
 
+.bonus__teaser {
+  max-width: 100%;
+  margin-top: 30px; }
+
+#cashback p ~ h3 {
+  margin-top: 40px; }
+#cashback a {
+  color: #fff !important;
+  white-space: nowrap; }
+
 .about-company {
   margin-top: 50px; }
 

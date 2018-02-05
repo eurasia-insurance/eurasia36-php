@@ -130,14 +130,23 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
         <div class="container">
 
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-xs-12 col-sm-8">
                     <?php require('./__form.php') ?>
                 </div>
-                <div class="col-sm-4 hidden-xs">
-                    <div class="rating">
+                <div class="col-xs-12 col-sm-4">
+                    <?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
+
+                        <a href="" data-toggle="modal" data-target="#cashback">
+                            <img src="/i/bonus-teaser_<?= $lang ?>.png" alt="" class="bonus__teaser" />
+                        </a>
+
+                    <?php endif; ?>
+
+                    <div class="rating hidden-xs">
                         <img src="/i/rating.png" alt="" />
                         <?= _("У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/kzAA- (S&P, 2017).") ?>
                     </div>
+
                 </div>
             </div>
 
@@ -262,6 +271,44 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 </div>
             </div>
         </div>
+
+
+    <?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
+    <!-- Кэшбэк -->
+    <div class="modal fade modal-transparent" id="cashback" tabindex="-1" role="dialog" aria-labelledby="cashback">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">&nbsp;</button>
+                </div>
+                <div class="modal-body">
+
+                    <h3><?= _("Как получить бонусы") ?></h3>
+                    <p><?= _("Оплатите страховку на&nbsp;сайте eurasia36.kz картой Евразийского Банка.") ?></p>
+
+                    <p>
+                        <?= _('Если карты нет, закажите её&nbsp;с&nbsp;доставкой на&nbsp;дом:
+                        <a href="https://pay.smartbank.kz/cards">https://pay.smartbank.kz/cards</a>.') ?>
+                    </p>
+
+                    <h3><?= _("Сколько я&nbsp;получу?") ?></h3>
+                    <p>
+                        <?= _("16% от&nbsp;стоимости страховки при оплате &laquo;Картой рассрочки&raquo;
+                        и&nbsp;30% при оплате любой другой картой Евразийского Банка.") ?>
+                    </p>
+
+                    <h3><?= _("Как воспользоваться бонусами") ?></h3>
+                    <p>
+                        <?= _("Банк зачисляет бонусы в&nbsp;течение 3&nbsp;дней, сразу после списания оплаты за&nbsp;страховку.
+                        После этого бонусами можно пользоваться&nbsp;&mdash; оплачивать покупки или переводить в&nbsp;&laquo;живые&raquo; деньги.") ?>
+                    </p>
+                    <p><?= _('Подробнее на&nbsp;<a href="https://bonus.eubank.kz">https://bonus.eubank.kz/</a>') ?></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
 
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
