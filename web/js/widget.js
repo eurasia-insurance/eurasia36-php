@@ -30,10 +30,6 @@ if(container) {
         utm += '&utm_source=eubank'
     }
 
-    if(location.search) {
-        utm = '&' + location.search.substr(1);
-    }
-
     iframe.setAttribute('src', host + "/widget.php" + lang + utm);
 
 
