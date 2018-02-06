@@ -11,6 +11,19 @@ class EurasiaAPI {
     const WS_PWD = PARAM_WS_PWD;
 
 
+    /**
+     * Проверка доступности вебсервиса
+     *
+     * @return array
+     */
+    public static function ping() {
+        $url = 'insurance/check/ping';
+
+        $return = self::request($url, '{}', 'get');
+
+        return json_decode($return, true);
+    }
+
     public static function getPersonByIIN($iin) {
 
         $data = [
@@ -48,7 +61,7 @@ class EurasiaAPI {
             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
             curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json', 'Accept: application/json', 'Accept-language: '.$apiLang]);
         } else {
-            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json', 'Accept-language: '.$apiLang]);
+            curl_setopt($curl, CURLOPT_HTTPHEADER, ['Accept: application/json, text/plain', 'Accept-language: '.$apiLang]);
         }
 
         curl_setopt($curl, CURLOPT_HEADER, FALSE);
