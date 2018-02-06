@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eurasia\n"
-"POT-Creation-Date: 2018-02-06 14:30+0600\n"
-"PO-Revision-Date: 2018-02-06 14:30+0600\n"
+"POT-Creation-Date: 2018-02-06 15:20+0600\n"
+"PO-Revision-Date: 2018-02-06 15:20+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: kk\n"
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Оплата наличными курьеру при получении."
 msgstr "Төлем қолқа алу кезінде курьерге қолма-қол ақшамен."
 
-#: index.php:58 widget.php:65
+#: index.php:58 widget.php:66
 msgid ""
 "Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая "
 "компания \"Евразия\""
@@ -483,11 +483,12 @@ msgstr ""
 #: index.php:300
 msgid ""
 "Если карты нет, закажите её&nbsp;с&nbsp;доставкой на&nbsp;дом:\n"
-"                        <a href=\"https://pay.smartbank.kz/cards\">https://"
-"pay.smartbank.kz/cards</a>."
+"                        <a href=\"https://pay.smartbank.kz/cards\" target="
+"\"_blank\">https://pay.smartbank.kz/cards</a>."
 msgstr ""
 "Егер картаңыз болмаса, оны үйге жеткізумен тапсырыс беріңіз: <a href="
-"\"https://pay.smartbank.kz/cards\">https://pay.smartbank.kz/cards</a>"
+"\"https://pay.smartbank.kz/cards\" target=\"_blank\">https://pay.smartbank."
+"kz/cards</a>"
 
 #: index.php:304
 msgid "Сколько я&nbsp;получу?"
@@ -519,10 +520,11 @@ msgstr ""
 
 #: index.php:315
 msgid ""
-"Подробнее на&nbsp;<a href=\"https://bonus.eubank.kz\">https://bonus.eubank."
-"kz/</a>"
+"Подробнее на&nbsp;<a href=\"https://bonus.eubank.kz\" target=\"_blank"
+"\">https://bonus.eubank.kz/</a>"
 msgstr ""
-"Толығырақ <a href=\"https://bonus.eubank.kz\">https://bonus.eubank.kz/</a>"
+"Толығырақ <a href=\"https://bonus.eubank.kz\" target=\"_blank\">https://"
+"bonus.eubank.kz/</a>"
 
 #: policy-request.php:128
 msgid "Вы забыли указать номер телефона"
