@@ -29,7 +29,9 @@ if (!host)
     });
 
     container.append(header);
-    container.append(text);
+    if(showBonus == 1) {
+        container.append(text);
+    }
     container.append(btn);
 
 
@@ -62,6 +64,11 @@ if (!host)
             headTxt = 'АҚЖМС полисін онлайн есептеу және тапсырыс беру';
             txtTxt = 'Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандырудың құнынан <strong>30% дейін бонус алыңыз</strong>';
         }
+
+        if(showBonus != 1) {
+            txtTxt = '';
+        }
+
 
         var leftCol = $('<div id="ogpo-popup__left">' +
                 '<span id="ogpo-popup__header">' + headTxt + '</span>' +

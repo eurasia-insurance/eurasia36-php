@@ -58,7 +58,7 @@ $('.main-form').on('keydown', '.inn', function (e) {
     }
 });
 
-$(".main-form").on('input', ".inn", function(e) {
+$(".main-form").on('input keyup change focusout', ".inn", function(e) {
 
     checkIin(this);
 });

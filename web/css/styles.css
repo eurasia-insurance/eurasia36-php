@@ -18,6 +18,10 @@ h1 {
 .gray {
   color: #999; }
 
+.flink {
+  border-bottom: 1px dashed;
+  text-decoration: none !important; }
+
 header {
   background: #265a88 url(/i/bg.jpg) no-repeat center/cover;
   background-attachment: fixed;
@@ -284,6 +288,42 @@ input[type=number]::-webkit-outer-spin-button {
   .rating img {
     float: right;
     margin-left: 30px; }
+
+.bonus-teaser {
+  position: relative;
+  display: block;
+  background: transparent url("/i/bonus-teaser.png") no-repeat center/cover;
+  padding: 20px 23px;
+  margin-top: 30px;
+  border-radius: 8px;
+  text-decoration: none; }
+  .bonus-teaser .bonus-teaser__header {
+    display: inline-block;
+    max-width: 60%;
+    font-size: 22px;
+    line-height: 26px;
+    color: #000000; }
+  .bonus-teaser .bonus-teaser__text {
+    display: inline-block;
+    margin-top: 10px;
+    max-width: 60%;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    line-height: 21px; }
+  .bonus-teaser .bonus-teaser__text_kz {
+    margin-top: 0;
+    margin-bottom: 10px; }
+  .bonus-teaser img {
+    display: block;
+    height: 20px;
+    margin-top: 20px; }
+
+#cashback p ~ h3 {
+  margin-top: 40px; }
+#cashback a {
+  color: #fff !important;
+  white-space: nowrap; }
 
 .about-company {
   margin-top: 50px; }
