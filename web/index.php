@@ -2,7 +2,15 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
+require_once(__DIR__ . '/api/EurasiaAPI.php');
 require_once(__DIR__ . '/api/Util.php');
+
+$ping = EurasiaAPI::ping();
+if($ping != '0') {
+
+    throw new Exception($ping['message'], 500);
+}
+
 
 session_start();
 
