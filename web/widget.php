@@ -4,6 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 session_start();
 
+require_once(__DIR__.'/.settings.php');
 
 $langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kz' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
 
@@ -80,6 +81,7 @@ $widgets = [
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
+    <?php $formFromWidget = true; ?>
     <?php require('./__form.php') ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -89,6 +91,7 @@ $widgets = [
     <script type="text/javascript" src="/js/detect-resize/jquery.resize.js"></script>
 
     <script>
+
         <?php require('./__form.js.php') ?>
 
         var iframeHeight = function() {

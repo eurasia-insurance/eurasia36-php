@@ -136,9 +136,19 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                 <div class="col-xs-12 col-sm-4">
                     <?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
 
-                        <a href="" data-toggle="modal" data-target="#cashback">
-                            <img src="/i/bonus-teaser_<?= $lang ?>.png" alt="" class="bonus__teaser" />
+                        <?php if($lang == 'ru'): ?>
+                        <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
+                            <span class="bonus-teaser__header">Получите<br/>бонус до 30%</span>
+                            <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте картой Евразийского банка</span>
+                            <img src="/i/eubank-logo.png" alt="" />
                         </a>
+                        <?php else: ?>
+                        <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
+                            <span class="bonus-teaser__text bonus-teaser__text_kz">Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
+                            <span class="bonus-teaser__header">30% дейін бонус алыңыз</span>
+                            <img src="/i/eubank-logo.png" alt="" />
+                        </a>
+                        <?php endif; ?>
 
                     <?php endif; ?>
 

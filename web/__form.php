@@ -154,7 +154,11 @@
                 <label for="payment-online"><?= _("оплатить банковской картой в интернете"); ?></label>
                 <?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
                     <br/>
+                    <?php if(isset($formFromWidget) && $formFromWidget === true): ?>
                     <small class="gray"><?= _('Бонус до 30% при оплате картой <img src="/i/eubank.png" alt="" /> Евразийского банка'); ?></small>
+                    <?php else: ?>
+                    <small class="gray"><?= _('<a href="" class="gray flink" data-toggle="modal" data-target="#cashback">Бонус до 30%</a> при оплате картой <img src="/i/eubank.png" alt="" /> Евразийского банка'); ?></small>
+                    <?php endif; ?>
                 <?php endif; ?>
             </div>
         </div>
