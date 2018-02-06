@@ -346,8 +346,8 @@ li.lang-li {
 
     .form-control {
         display: inline-block;
-        width: calc(100% - 150px);
-        margin-right: 25px;
+        width: calc((100% - 145px) / 2);
+        margin-right: 5px;
         white-space: normal;
         height: 56px;
         font-size: 16px;
