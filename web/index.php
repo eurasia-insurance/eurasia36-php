@@ -298,7 +298,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
                     <p>
                         <?= _('Если карты нет, закажите её&nbsp;с&nbsp;доставкой на&nbsp;дом:
-                        <a href="https://pay.smartbank.kz/cards">https://pay.smartbank.kz/cards</a>.') ?>
+                        <a href="https://pay.smartbank.kz/cards" target="_blank">https://pay.smartbank.kz/cards</a>.') ?>
                     </p>
 
                     <h3><?= _("Сколько я&nbsp;получу?") ?></h3>
@@ -312,7 +312,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                         <?= _("Банк зачисляет бонусы в&nbsp;течение 3&nbsp;дней, сразу после списания оплаты за&nbsp;страховку.
                         После этого бонусами можно пользоваться&nbsp;&mdash; оплачивать покупки или переводить в&nbsp;&laquo;живые&raquo; деньги.") ?>
                     </p>
-                    <p><?= _('Подробнее на&nbsp;<a href="https://bonus.eubank.kz">https://bonus.eubank.kz/</a>') ?></p>
+                    <p><?= _('Подробнее на&nbsp;<a href="https://bonus.eubank.kz" target="_blank">https://bonus.eubank.kz/</a>') ?></p>
 
                 </div>
             </div>
