@@ -1,4 +1,3 @@
-
 if (!host)
 	host = window.location.protocol + '//' + window.location.hostname;
 
@@ -28,10 +27,6 @@ if(container) {
         utm += '&utm_source=theeurasia';
     } else if(widgetId == 2) {
         utm += '&utm_source=eubank'
-    }
-
-    if(location.search) {
-        utm = '&' + location.search.substr(1);
     }
 
     iframe.setAttribute('src', host + "/widget.php" + lang + utm);
