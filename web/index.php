@@ -280,8 +280,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
                             <input type="hidden" name="utm[content]" value="yclid-<?= isset($_GET['yclid']) ? urldecode($_GET['yclid']) : '' ?>" />
                             <?php endif; ?>
                             <input type="hidden" name="requester[language]" value="<?= $langs[$lang][2] ?>" />
-                            <input type="hidden" name="requester[name]" value="Не указано" />
-                            <input type="tel" name="requester[phone]" class="form-control" placeholder="Телефон" />
+                            <input type="text" name="requester[name]" class="form-control" placeholder="<?= _("Имя") ?>" />
+                            <input type="tel" name="requester[phone]" class="form-control" placeholder="<?= _("Телефон") ?>" />
                             <button type="submit" class="btn btn-blue goal-callback-request <?= $lang ?>-btn"><?= _("Заказать") ?></button>
                             <div class="help-block" style="display: none"><span class="text-danger"></span></div>
                         </form>
