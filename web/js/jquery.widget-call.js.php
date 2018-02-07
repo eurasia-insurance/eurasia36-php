@@ -1,6 +1,15 @@
 /*
 <?php
-require_once './../.settings.php';
+
+require_once(__DIR__ . '/../api/EurasiaAPI.php');
+
+$ping = EurasiaAPI::ping();
+if($ping != '0') {
+
+   die();
+}
+
+
 header('Content-Type: application/javascript');
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
