@@ -56,10 +56,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 function sanitize_output($buffer) {
 
     $search = array(
-        '/\>[^\S ]+/s',     // strip whitespaces after tags, except space
-        '/[^\S ]+\</s',     // strip whitespaces before tags, except space
-        '/(\s)+/s',         // shorten multiple whitespace sequences
-        '/<!--(.|\s)*?-->/' // Remove HTML comments
+        '/\>[^\S ]+/su',     // strip whitespaces after tags, except space
+        '/[^\S ]+\</su',     // strip whitespaces before tags, except space
+        '/(\s)+/su',         // shorten multiple whitespace sequences
+        '/<!--(.|\s)*?-->/u' // Remove HTML comments
     );
 
     $replace = array(
