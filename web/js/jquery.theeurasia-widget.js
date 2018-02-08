@@ -9,8 +9,8 @@ if (!host)
     var headerTxt = 'Расчёт и&nbsp;заказ полиса ОГПО онлайн';
     var textTxt = ' — по&nbsp;бесплатным телефонам <a href="tel:88000800099" class="ogpo-widget__tel">8 800 080-00-99</a>&nbsp;или&nbsp;<a href="tel:5678" class="ogpo-widget__tel">5678</a>';
     if(container.data('lang') == 'kz') {
-        headerTxt = 'АҚЖМС полисін онлайн есептеу жəне тапсырыс беру ';
-        textTxt = ' — по бесплатным телефонам 8 800 080-00-99&nbsp;или&nbsp;5678';
+        headerTxt = 'АҚЖМС полисін онлайн есептеу жəне тапсырыс беру';
+        textTxt = ' — <a href="tel:88000800099" class="ogpo-widget__tel">8 800 080-00-99</a> немесе <a href="tel:5678" class="ogpo-widget__tel">5678</a> тегін телефондары бойынша';
     }
 
     if(typeof showPhones !== 'undefined' && showPhones === true) {// ws down. show phones
