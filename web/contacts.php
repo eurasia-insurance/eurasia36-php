@@ -49,7 +49,11 @@ if(isset($offices['code']) && $offices['code'] == 500) {
     throw new Exception("WS down", 500);
 }
 
-?><!DOCTYPE html>
+
+ob_start("Util::minifyHtml");
+
+?>
+<!DOCTYPE html>
 <html lang="ru">
     <head>
         <meta charset="utf-8" />
@@ -64,8 +68,10 @@ if(isset($offices['code']) && $offices['code'] == 500) {
         <title><?= _("Адреса и телефоны страховой компании \"Евразия\"") ?></title>
 
         <!-- Bootstrap core CSS -->
-        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet"/>
+        <style>
+            <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
+            <?php require(__DIR__.'/css/styles.css') ?>
+        </style>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -242,7 +248,9 @@ if(isset($offices['code']) && $offices['code'] == 500) {
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>
+        </script>
 
         <?php include './__jivosite.php'; ?>
 

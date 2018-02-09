@@ -52,34 +52,7 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 }
 
 
-// Жмём хтмл
-function minifyHtml($html) {
-    $search = array(
-        '/(\n|^)(\x20+|\t)/',
-        '/(\n|^)\/\/(.*?)(\n|$)/',
-        '/\n/',
-        '/\<\!--.*?-->/',
-        '/(\x20+|\t)/', # Delete multispace (Without \n)
-        '/\>\s+\</', # strip whitespaces between tags
-        '/(\"|\')\s+\>/', # strip whitespaces between quotation ("') and end tags
-        '/=\s+(\"|\')/'); # strip whitespaces between = "'
-
-    $replace = array(
-        "\n",
-        "\n",
-        " ",
-        "",
-        " ",
-        "><",
-        "$1>",
-        "=$1");
-
-    $html = preg_replace($search, $replace, $html);
-
-    return $html;
-}
-
-ob_start("minifyHtml");
+ob_start("Util::minifyHtml");
 
 ?>
 <!DOCTYPE html>
@@ -101,11 +74,6 @@ ob_start("minifyHtml");
             <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
             <?php require(__DIR__.'/css/styles.css') ?>
         </style>
-        <noscript>
-            <!-- Bootstrap core CSS -->
-            <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all" />
-            <link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet" media="all" />
-        </noscript>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
