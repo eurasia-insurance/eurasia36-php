@@ -51,6 +51,9 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
     header("ETag: \"{$etag}\"");
 }
 
+
+ob_start("Util::minifyHtml");
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -67,9 +70,10 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
         <title><?= _("Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая компания \"Евразия\"") ?></title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet"/>
+        <style>
+            <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
+            <?php require(__DIR__.'/css/styles.css') ?>
+        </style>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -330,11 +334,11 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
     </div>
     <?php endif; ?>
 
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/js/jquery.maskedinput.min.js"></script>
+
         <script>
+            <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>
+            <?php require(__DIR__.'/js/jquery.maskedinput.min.js') ?>
             <?php require('./__form.js.php') ?>
         </script>
 
