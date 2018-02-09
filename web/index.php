@@ -53,28 +53,33 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
 
 // Жмём хтмл
-function sanitize_output($buffer) {
-
+function minifyHtml($html) {
     $search = array(
-        '/\>[^\S ]+/su',     // strip whitespaces after tags, except space
-        '/[^\S ]+\</su',     // strip whitespaces before tags, except space
-        '/(\s)+/su',         // shorten multiple whitespace sequences
-        '/<!--(.|\s)*?-->/u' // Remove HTML comments
-    );
+        '/(\n|^)(\x20+|\t)/',
+        '/(\n|^)\/\/(.*?)(\n|$)/',
+        '/\n/',
+        '/\<\!--.*?-->/',
+        '/(\x20+|\t)/', # Delete multispace (Without \n)
+        '/\>\s+\</', # strip whitespaces between tags
+        '/(\"|\')\s+\>/', # strip whitespaces between quotation ("') and end tags
+        '/=\s+(\"|\')/'); # strip whitespaces between = "'
 
     $replace = array(
-        '>',
-        '<',
-        '\\1',
-        ''
-    );
+        "\n",
+        "\n",
+        " ",
+        "",
+        " ",
+        "><",
+        "$1>",
+        "=$1");
 
-    $buffer = preg_replace($search, $replace, $buffer);
+    $html = preg_replace($search, $replace, $html);
 
-    return $buffer;
+    return $html;
 }
 
-ob_start("sanitize_output");
+ob_start("minifyHtml");
 
 ?>
 <!DOCTYPE html>
@@ -92,8 +97,12 @@ ob_start("sanitize_output");
 
         <title><?= _("Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая компания \"Евразия\"") ?></title>
 
-        <!-- Bootstrap core CSS -->
+        <style>
+            <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
+            <?php require(__DIR__.'/css/styles.css') ?>
+        </style>
         <noscript>
+            <!-- Bootstrap core CSS -->
             <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all" />
             <link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet" media="all" />
         </noscript>
@@ -357,21 +366,11 @@ ob_start("sanitize_output");
     </div>
     <?php endif; ?>
 
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
         <script>
-            $(function() {
-                var css = $('<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="all" />' +
-                    '<link href="/css/styles.css?<?= filemtime(__DIR__ .'/css/styles.css') ?>" rel="stylesheet" media="all" />');
-
-                $("head").append(css);
-            });
-        </script>
-
-        <script src="/bootstrap/js/bootstrap.min.js"></script>
-        <script src="/js/jquery.maskedinput.min.js"></script>
-        <script>
+            <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>
+            <?php require(__DIR__.'/js/jquery.maskedinput.min.js') ?>
             <?php require('./__form.js.php') ?>
         </script>
 

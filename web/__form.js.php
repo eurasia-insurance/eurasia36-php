@@ -1,6 +1,6 @@
 var iinCache = {};
 
-// сюда запишем расчитанную стоимость
+/* сюда запишем расчитанную стоимость */
 var policyCost = null;
 
 var utm = {
@@ -41,18 +41,18 @@ var initialAuto = 1;
 
 
 $('.main-form').on('keydown', '.inn', function (e) {
-    // Allow: backspace, delete, tab, escape, enter and .
+    /* Allow: backspace, delete, tab, escape, enter and . */
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-        // Allow: Ctrl+A, Command+A
+    /* Allow: Ctrl+A, Command+A */
         (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
-        // Allow: Ctrl+R, Command+R
+     /* Allow: Ctrl+R, Command+R */
         (e.keyCode === 82 && (e.ctrlKey === true || e.metaKey === true)) ||
-        // Allow: home, end, left, right, down, up
+     /* Allow: home, end, left, right, down, up */
         (e.keyCode >= 35 && e.keyCode <= 40)) {
-        // let it happen, don't do anything
+     /* let it happen, don't do anything */
         return;
     }
-    // Ensure that it is a number and stop the keypress
+     /* Ensure that it is a number and stop the keypress */
     if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
         e.preventDefault();
     }
@@ -79,9 +79,9 @@ function checkIin(input) {
         iinInput = $iin.val();
     }
 
-    if( $iin.val() && $iin.val().length == 12 ) {// заполнен ли иин полностью?
+    if( $iin.val() && $iin.val().length == 12 ) {/* заполнен ли иин полностью? */
 
-        if(iinNumber != $iin.val()) {// введен новый иин?
+        if(iinNumber != $iin.val()) {/* введен новый иин? */
 
             iinNumber = $iin.val();
 
@@ -126,7 +126,7 @@ function checkIin(input) {
 
                     $iin.removeClass("loading");
 
-                    // показываем имя и класс или ошибку
+                    /* показываем имя и класс или ошибку */
                     $iin.after($name);
                     $iin.next(".help-block").fadeIn();
                 })
@@ -148,7 +148,7 @@ function checkIin(input) {
     }
 }
 
-// добавляем еще одно авто
+/* добавляем еще одно авто */
 $(".add-auto").click(function(e) {
     e.preventDefault();
 
@@ -180,11 +180,11 @@ $(".add-auto").click(function(e) {
     autoTemplate.slideDown();
 });
 
-// добавляем еще одного водителя
+/* добавляем еще одного водителя */
 $(".add-driver").click(function(e) {
     e.preventDefault();
 
-    // отключаем кнопку расчета
+    /* отключаем кнопку расчета */
     $("#how-much").prop('disabled', true);
 
     ++initialDriver;
@@ -209,11 +209,11 @@ $(".add-driver").click(function(e) {
 
     driverTemplate.slideDown();
 
-    //$('.inn').mask('999 999 999 999',{placeholder:"_"});
+    /* $('.inn').mask('999 999 999 999',{placeholder:"_"}); */
 });
 
 
-// удаляем еще одного водителя или авто
+/* удаляем еще одного водителя или авто */
 $(".main-form").on('click', '.close-form',  function(e) {
     e.preventDefault();
 
@@ -244,16 +244,16 @@ $(".main-form").on('click', '.close-form',  function(e) {
 
     $("#how-much").prop('disabled', false);
 
-    // проверяем заполненность иин полей
+    /* проверяем заполненность иин полей */
     $(".main-form .inn").each(function() {
 
         var iinValue = $(this).val().replace(/\s/g, '');
 
-        if(iinValue.match(/_/) || iinValue == '') {// пусто
+        if(iinValue.match(/_/) || iinValue == '') {/* пусто */
             $("#how-much").prop('disabled', true);
 
             return false;
-        } else if(iinCache.iinValue && iinCache.iinValue.error == true) {// с ошибкой
+        } else if(iinCache.iinValue && iinCache.iinValue.error == true) {/* с ошибкой */
             $("#how-much").prop('disabled', true);
 
             return false;
@@ -271,7 +271,7 @@ $(".main-form").on('change', '.region-select', function() {
     checkMajorityCity(this);
 });
 
-// город областного значения для алматы и астаны всегда отмечен
+/* город областного значения для алматы и астаны всегда отмечен */
 function checkMajorityCity(select) {
     if($(select).val().match(/^O/)) {
         $(select).parent().next().find('[type=checkbox]').prop('checked', false);
@@ -280,14 +280,14 @@ function checkMajorityCity(select) {
     }
 }
 
-// город областного значения для алматы и астаны всегда отмечен
+/* город областного значения для алматы и астаны всегда отмечен */
 $(".main-form").on('change', '.majorCity', function(e) {
     if(!$(this).parents(".major-city__container").prev().find('select').val().match(/^O/)) {
         $(this).prop("checked", "checked");
     }
 });
 
-// временный въезд
+ /* временный въезд */
 $(".main-form").on('change', ".temporary-entry", function() {
 
     var $fader = $(this).parents(".form-group").prev().find(".form-fader");
@@ -301,7 +301,7 @@ $(".main-form").on('change', ".temporary-entry", function() {
     }
 });
 
-// отправляем форму расчета страховки
+/* отправляем форму расчета страховки */
 $("#main-form").submit(function(e) {
     e.preventDefault();
 
@@ -363,7 +363,7 @@ $("#main-form").submit(function(e) {
     });
 });
 
-// отправляем заявку на полис
+/* отправляем заявку на полис */
 $("#order-form").submit(function(e) {
     e.preventDefault();
 
@@ -431,7 +431,7 @@ $("#order-form").submit(function(e) {
 
 });
 
-// отправляем форму обратной связи
+/* отправляем форму обратной связи */
 $("#callback-form").submit(function(e) {
     e.preventDefault();
 
