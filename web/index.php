@@ -335,6 +335,10 @@ ob_start("Util::minifyHtml");
     <?php endif; ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/TypeWatch/3.0.0/jquery.typewatch.min.js"
+                integrity="sha256-FxujckmwH9va59KHuSlfQWni2g0vQ6Fr+jWNzfcsROc="
+                crossorigin="anonymous"></script>
 
         <script>
             <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>

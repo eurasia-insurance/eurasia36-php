@@ -505,6 +505,111 @@ $("#payment-online").change(function() {
     }
 });
 
+
+$(".main-form").on('click', ".vehicle-group-opener", function(e)
+    {
+    e.preventDefault();
+
+    $(this).hide();
+    $("#vehicle-group").slideDown();
+    });
+
+var options = {
+    callback: function (value) {
+
+        var fillFields = function(data) {
+            if(data.typeClass != null) {
+                $("#inputAuto").val(data.typeClass);
+            }
+
+            if(data.ageClass != null) {
+                $(".age-class input").each(function () {
+                    if ($(this).val() == data.ageClass) {
+                        $(this).closest('label').click();
+                        $(this).closest('div').click();
+                    }
+                });
+            }
+
+            if(data.area != null) {
+                $("#regionSelect").val(data.area).change();
+            }
+
+            if(data.temporaryEntry != null) {
+                $("#vehicle-group .temporary-entry").attr("checked", true).change();
+            }
+        };
+
+        var inputReg = $("#inputRegNumber");
+        inputReg.removeClass('animated shake');
+
+        if(value === '') {
+            return ;
+        }
+
+        inputReg.addClass("loading");
+
+        $.ajax({
+            method: "POST",
+            url: "reg-number.php",
+            data:  { "regNumber" : value },
+            dataType: "json"
+        })
+            .done(function( data ) {
+
+                if(data.error != true) {
+
+                    /* has all data */
+                    if(data.typeClass != null && data.ageClass != null && data.area != null/* && data.temporaryEntry != null*/) {
+
+                        fillFields(data);
+
+                        var hint = data.name + ", " + data.year;
+
+                        $("#reg-msgs").html(hint);
+
+
+                    } else {/* not all data */
+
+                        fillFields(data);
+
+                        $("#reg-msgs").html('');
+
+                        $("#vehicle-group").slideDown();
+                    }
+
+                } else {
+
+                    if(data.code == 500) {
+                        document.location.href = '/500.html';
+                    } else {
+                        inputReg.addClass('animated shake');
+
+                        var msg = '<small class="text-danger">' + data.message[0].message + "</small><br/>"
+                            + '<a href="" class="vehicle-group-opener flink small"><?= _("Ввести данные вручную") ?></a>';
+
+                        $("#reg-msgs").html(msg);
+                    }
+
+                }
+
+                inputReg.removeClass("loading");
+
+            })
+            .fail(function(jqXHR, textStatus) {
+                document.location.href = '/500.html';
+            });
+
+        console.log('TypeWatch callback: (' + (this.type || this.nodeName) + ') ' + value);
+    },
+    wait: 1500,
+    highlight: true,
+    allowSubmit: false,
+    captureLength: 6
+};
+
+$("#inputRegNumber").typeWatch( options );
+
 <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
 $("#oneMorePolicy").click(function(e) {
     e.preventDefault();
