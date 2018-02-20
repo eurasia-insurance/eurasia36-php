@@ -177,6 +177,8 @@ $(".add-auto").click(function(e) {
         }
     });
 
+    $(".input-reg-number").typeWatch( options );
+
     autoTemplate.slideDown();
 });
 
@@ -273,10 +275,52 @@ $(".main-form").on('change', '.region-select', function() {
 
 /* город областного значения для алматы и астаны всегда отмечен */
 function checkMajorityCity(select) {
+
+    $(select).parent().next().find('select').remove();
+
     if($(select).val().match(/^O/)) {
-        $(select).parent().next().find('[type=checkbox]').prop('checked', false);
+        $(select).parent().next().find('[type=hidden]').val(0);
+
+        $.ajax({
+            method: "POST",
+            url: "city.php",
+            data:  { "region" : $(select).val() },
+            dataType: "json"
+        }).done(function( data ) {
+
+            if(data.error != true) {
+
+                var citiesSelect = $('<select class="form-control сity-select"></select>');
+                citiesSelect.append('<option disabled selected value="0"><?= _('Выберите город') ?></option>');
+
+                for (var prop in data) {
+                    citiesSelect.append('<option value="'+ prop +'">'+ data[prop]['SHORT'] +'</option>');
+                }
+
+                citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
+
+                citiesSelect.change(function() {
+                    if($(this).val() == '0') {
+                        citiesSelect.prev('input').val(0);
+                    } else {
+                        citiesSelect.prev('input').val(1);
+                    }
+                });
+
+                $(select).closest('div').next().append(citiesSelect);
+
+            } else {
+                document.location.href = '/500.html';
+            }
+
+
+        })
+        .fail(function(jqXHR, textStatus) {
+            document.location.href = '/500.html';
+        });
+
     } else {
-        $(select).parent().next().find('[type=checkbox]').prop('checked', 'checked');
+        $(select).parent().next().find('[type=hidden]').val(1);
     }
 }
 
@@ -387,47 +431,46 @@ $("#order-form").submit(function(e) {
         url: $(this).attr("action"),
         data: { requester: requester, utm: utm, policy: policyCost },
         dataType: "json"
-    })
-        .done(function( data ) {
+    }).done(function( data ) {
 
-            if(data.message == 'Success') {
-                $("#order-form button").fadeOut(function() {
-                    $("#result-msg").text("<?= _("Спасибо. Мы получили вашу заявку") ?>").removeClass('text-danger').fadeIn();
+        if(data.message == 'Success') {
+            $("#order-form button").fadeOut(function() {
+                $("#result-msg").text("<?= _("Спасибо. Мы получили вашу заявку") ?>").removeClass('text-danger').fadeIn();
 
-                    if(data.paymentLink != null) {
+                if(data.paymentLink != null) {
 
-                        $("#result-msg").append("<br/><br/><?= _("Сейчас вы будете перенаправлены на страницу оплаты") ?>");
+                    $("#result-msg").append("<br/><br/><?= _("Сейчас вы будете перенаправлены на страницу оплаты") ?>");
 
 
-                        <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
-                        if (parent.postMessage) {
-                            parent.postMessage(data.paymentLink, '<?= $_SERVER['HTTP_REFERER'] ?>');
-                        }
-                        <?php else: ?>
-                        window.setTimeout('document.location.href="' + data.paymentLink + '"', 3000);
-                        <?php endif; ?>
+                    <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
+                    if (parent.postMessage) {
+                        parent.postMessage(data.paymentLink, '<?= $_SERVER['HTTP_REFERER'] ?>');
                     }
-                });
+                    <?php else: ?>
+                    window.setTimeout('document.location.href="' + data.paymentLink + '"', 3000);
+                    <?php endif; ?>
+                }
+            });
 
-                $("#payment-online-block, #email-block").fadeOut();
+            $("#payment-online-block, #email-block").fadeOut();
 
-                $(".one-more-form").fadeIn();
+            $(".one-more-form").fadeIn();
+        } else {
+
+            if(data.code == 500) {
+                document.location.href = '/500.html';
             } else {
 
-                if(data.code == 500) {
-                    document.location.href = '/500.html';
-                } else {
+                $("#result-msg").html(data.message).addClass('text-danger').fadeIn();
 
-                    $("#result-msg").html(data.message).addClass('text-danger').fadeIn();
-
-                    $("#order-form button").text("<?= _("Заказать полис") ?>").prop('disabled', false);
-                }
+                $("#order-form button").text("<?= _("Заказать полис") ?>").prop('disabled', false);
             }
-        })
-        .fail(function(jqXHR, textStatus) {
-            document.location.href = '/500.html';
-            console.log(textStatus);
-        });
+        }
+    })
+    .fail(function(jqXHR, textStatus) {
+        document.location.href = '/500.html';
+        console.log(textStatus);
+    });
 
 });
 
@@ -445,35 +488,34 @@ $("#callback-form").submit(function(e) {
         url: $(this).attr("action"),
         data: $form.serialize(),
         dataType: "json"
-    })
-        .done(function( data ) {
+    }).done(function( data ) {
 
-            $("#callback-form .form-control").removeClass("loading");
+        $("#callback-form .form-control").removeClass("loading");
 
-            if(data.message == 'Success') {
+        if(data.message == 'Success') {
 
-                $($form).replaceWith("<strong class='callback-sent'><?= _("Спасибо, мы приняли вашу заявку.") ?></strong>");
+            $($form).replaceWith("<strong class='callback-sent'><?= _("Спасибо, мы приняли вашу заявку.") ?></strong>");
 
+        } else {
+
+            if(data.code == 500) {
+                document.location.href = '/500.html';
             } else {
-
-                if(data.code == 500) {
-                    document.location.href = '/500.html';
-                } else {
-                    $form.find(".help-block span").text(data.message);
-                    $form.find(".help-block").slideDown();
-                }
-
-                $("#callback-form button").prop("disabled", false);
-
+                $form.find(".help-block span").text(data.message);
+                $form.find(".help-block").slideDown();
             }
-        })
-        .fail(function(jqXHR, textStatus) {
-            document.location.href = '/500.html';
-            console.log(textStatus);
-        });
 
+            $("#callback-form button").prop("disabled", false);
+
+        }
+    })
+    .fail(function(jqXHR, textStatus) {
+        document.location.href = '/500.html';
+        console.log(textStatus);
+    });
 
 });
+
 
 $('input[type=tel]').mask('+7 (999) 999-99-99',{placeholder:"_"});
 
@@ -511,19 +553,19 @@ $(".main-form").on('click', ".vehicle-group-opener", function(e)
     e.preventDefault();
 
     $(this).hide();
-    $("#vehicle-group").slideDown();
+    $(this).closest('.reg-number-group').next('.vehicle-group').slideDown();
     });
 
 var options = {
     callback: function (value) {
 
-        var fillFields = function(data) {
+        var fillFields = function(vehicleGroup, data) {
             if(data.typeClass != null) {
-                $("#inputAuto").val(data.typeClass);
+                $(vehicleGroup).find(".input-auto").val(data.typeClass);
             }
 
             if(data.ageClass != null) {
-                $(".age-class input").each(function () {
+                $(vehicleGroup).find(".age-class input").each(function () {
                     if ($(this).val() == data.ageClass) {
                         $(this).closest('label').click();
                         $(this).closest('div').click();
@@ -532,16 +574,19 @@ var options = {
             }
 
             if(data.area != null) {
-                $("#regionSelect").val(data.area).change();
+                $(vehicleGroup).find(".region-select").val(data.area).change();
             }
 
             if(data.temporaryEntry != null) {
-                $("#vehicle-group .temporary-entry").attr("checked", true).change();
+                $(vehicleGroup).find(".temporary-entry").attr("checked", true).change();
             }
         };
 
-        var inputReg = $("#inputRegNumber");
+        var inputReg = $(this);
         inputReg.removeClass('animated shake');
+
+        var regMsgs = $(this).next('.reg-msgs');
+        var vehicleGroup = $(this).closest('.reg-number-group').next('.vehicle-group');
 
         if(value === '') {
             return ;
@@ -554,61 +599,99 @@ var options = {
             url: "reg-number.php",
             data:  { "regNumber" : value },
             dataType: "json"
-        })
-            .done(function( data ) {
+        }).done(function( data ) {
 
-                if(data.error != true) {
+            if(data.error != true) {
 
-                    /* has all data */
-                    if(data.typeClass != null && data.ageClass != null && data.area != null/* && data.temporaryEntry != null*/) {
+                fillFields(vehicleGroup, data);
 
-                        fillFields(data);
+                /* has all data */
+                if(data.typeClass != null && data.ageClass != null && data.area != null/* && data.temporaryEntry != null*/) {
 
-                        var hint = data.name + ", " + data.year;
+                    var hint = data.name + ", " + data.year + " <?= _('г.') ?>";
 
-                        $("#reg-msgs").html(hint);
+                    $(regMsgs).html(hint);
+
+                    if(data.majorCity == null) {
+
+                        /* спрашиваем город */
+                        $.ajax({
+                            method: "POST",
+                            url: "city.php",
+                            data:  { "region" : data.area },
+                            dataType: "json"
+                        }).done(function( data ) {
+
+                            if(data.error != true) {
+
+                                if($(vehicleGroup).is(':hidden')) {
+
+                                    var citiesSelect = $('<select class="form-control сity-select"></select>');
+                                    citiesSelect.append('<option disabled selected value="0"><?= _('Выберите город') ?></option>');
+
+                                    for (var prop in data) {
+                                        citiesSelect.append('<option value="' + prop + '">' + data[prop]['SHORT'] + '</option>');
+                                    }
+
+                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
+
+                                    citiesSelect.change(function () {
+
+                                        $(vehicleGroup).find('.сity-select').val($(this).val()).change();
+                                    });
+
+                                    $(inputReg).closest('div').append(citiesSelect);
+                                }
+
+                            } else {
+                                document.location.href = '/500.html';
+                            }
 
 
-                    } else {/* not all data */
+                        }).fail(function(jqXHR, textStatus) {
+                            document.location.href = '/500.html';
+                        });
 
-                        fillFields(data);
-
-                        $("#reg-msgs").html('');
-
-                        $("#vehicle-group").slideDown();
                     }
 
                 } else {
 
-                    if(data.code == 500) {
-                        document.location.href = '/500.html';
-                    } else {
-                        inputReg.addClass('animated shake');
+                    $(regMsgs).html('');
 
-                        var msg = '<small class="text-danger">' + data.message[0].message + "</small><br/>"
-                            + '<a href="" class="vehicle-group-opener flink small"><?= _("Ввести данные вручную") ?></a>';
-
-                        $("#reg-msgs").html(msg);
-                    }
-
+                    $(vehicleGroup).slideDown();
                 }
 
-                inputReg.removeClass("loading");
+            } else {
 
-            })
-            .fail(function(jqXHR, textStatus) {
-                document.location.href = '/500.html';
-            });
+                if(data.code == 500) {
+                    document.location.href = '/500.html';
+                } else {
+                    inputReg.addClass('animated shake');
+
+                    var msg = '<small class="text-danger">' + data.message[0].message + "</small><br/>"
+                        + '<a href="" class="vehicle-group-opener flink small"><?= _("Ввести данные вручную") ?></a>';
+
+                    $(regMsgs).html(msg);
+                }
+
+            }
+
+            inputReg.removeClass("loading");
+
+        })
+        .fail(function(jqXHR, textStatus) {
+            document.location.href = '/500.html';
+        });
 
         console.log('TypeWatch callback: (' + (this.type || this.nodeName) + ') ' + value);
     },
-    wait: 1500,
+    wait: 1000,
     highlight: true,
     allowSubmit: false,
     captureLength: 6
 };
 
-$("#inputRegNumber").typeWatch( options );
+$(".input-reg-number").typeWatch( options );
 
 <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
 $("#oneMorePolicy").click(function(e) {
