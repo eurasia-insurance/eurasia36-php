@@ -3,6 +3,91 @@ var iinCache = {};
 /* сюда запишем расчитанную стоимость */
 var policyCost = null;
 
+
+var kzRegions = {
+    "OMNG": {
+        "NORMAL": "Мангистауская область",
+        "SHORT": "Мангистауская обл.",
+        "FULL": "Мангистауская область"
+    },
+    "OKZL": {
+        "NORMAL": "Кызылординская область",
+        "SHORT": "Кызылординская обл.",
+        "FULL": "Кызылординская область"
+    },
+    "OZK": {
+        "NORMAL": "Западно-Казахстанская область",
+        "SHORT": "З.-Казахстанская обл.",
+        "FULL": "Западно-Казахстанская область"
+    },
+    "OALM": {
+        "NORMAL": "Алматинская область",
+        "SHORT": "Алматинская обл.",
+        "FULL": "Алматинская область"
+    },
+    "OKST": {
+        "NORMAL": "Костанайская область",
+        "SHORT": "Костанайская обл.",
+        "FULL": "Костанайская область"
+    },
+    "OPVL": {
+        "NORMAL": "Павлодарская область",
+        "SHORT": "Павлодарская обл.",
+        "FULL": "Павлодарская область"
+    },
+    "OKGD": {
+        "NORMAL": "Карагандинская область",
+        "SHORT": "Карагандинская обл.",
+        "FULL": "Карагандинская область"
+    },
+    "OATY": {
+        "NORMAL": "Атырауская область",
+        "SHORT": "Атырауская обл.",
+        "FULL": "Атырауская область"
+    },
+    "GAST": {
+        "NORMAL": "город Астана",
+        "SHORT": "г. Астана",
+        "FULL": "город Астана"
+    },
+    "OAKT": {
+        "NORMAL": "Актюбинская область",
+        "SHORT": "Актюбинская обл.",
+        "FULL": "Актюбинская область"
+    },
+    "GALM": {
+        "NORMAL": "город Алматы",
+        "SHORT": "г. Алматы",
+        "FULL": "город Алматы"
+    },
+    "OSK": {
+        "NORMAL": "Северо-Казахстанская область",
+        "SHORT": "С.-Казахстанская обл.",
+        "FULL": "Северо-Казахстанская область"
+    },
+    "OZHM": {
+        "NORMAL": "Жамбылская область",
+        "SHORT": "Жамбылская обл.",
+        "FULL": "Жамбылская область"
+    },
+    "OAKM": {
+        "NORMAL": "Акмолинская область",
+        "SHORT": "Акмолинская обл.",
+        "FULL": "Акмолинская область"
+    },
+    "OVK": {
+        "NORMAL": "Восточно-Казахстанская область",
+        "SHORT": "В.-Казахстанская обл.",
+        "FULL": "Восточно-Казахстанская область"
+    },
+    "OUK": {
+        "NORMAL": "Южно-Казахстанская область",
+        "SHORT": "Ю.-Казахстанская обл.",
+        "FULL": "Южно-Казахстанская область"
+    }
+};
+
+
 var utm = {
 <?php if(isset($_GET['utm_source']) && trim($_GET['utm_source']) != ''): ?>
     "source": '<?= isset($_GET['utm_source']) ? urldecode($_GET['utm_source']) : null ?>',
@@ -291,13 +376,11 @@ function checkMajorityCity(select) {
             if(data.error != true) {
 
                 var citiesSelect = $('<select class="form-control сity-select"></select>');
-                citiesSelect.append('<option disabled selected value="0"><?= _('Выберите город') ?></option>');
+                citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
 
                 for (var prop in data) {
                     citiesSelect.append('<option value="'+ prop +'">'+ data[prop]['SHORT'] +'</option>');
                 }
-
-                citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
 
                 citiesSelect.change(function() {
                     if($(this).val() == '0') {
@@ -614,6 +697,8 @@ var options = {
 
                     if(data.majorCity == null) {
 
+                         var selectCity = '<br/>' + kzRegions[data.area]['FULL'] + '<br/><strong class="mt"><?= _('Выберите город') ?></strong>';
+
                         /* спрашиваем город */
                         $.ajax({
                             method: "POST",
@@ -626,14 +711,14 @@ var options = {
 
                                 if($(vehicleGroup).is(':hidden')) {
 
+                                    $(regMsgs).html( $(regMsgs).html()+ selectCity );
+
                                     var citiesSelect = $('<select class="form-control сity-select"></select>');
-                                    citiesSelect.append('<option disabled selected value="0"><?= _('Выберите город') ?></option>');
+                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
 
                                     for (var prop in data) {
                                         citiesSelect.append('<option value="' + prop + '">' + data[prop]['SHORT'] + '</option>');
                                     }
-
-                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
 
                                     citiesSelect.change(function () {
 
@@ -683,7 +768,6 @@ var options = {
             document.location.href = '/500.html';
         });
 
-        console.log('TypeWatch callback: (' + (this.type || this.nodeName) + ') ' + value);
     },
     wait: 1000,
     highlight: true,
