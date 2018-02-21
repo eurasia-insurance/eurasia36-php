@@ -233,6 +233,40 @@ function checkIin(input) {
     }
 }
 
+
+function checkCitiesFilled() {
+
+    var itsOk = true;
+
+    $(".сity-select:visible").each(function(i, e) {
+
+        console.log($(e).val());
+
+        if($(e).val() == null || $(e).val() == '-1') {
+
+            console.log(3);
+
+            var target = $(e);
+            if( target.length ) {
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500, function() {
+                    $(e).addClass('animated shake').one("animationend webkitAnimationEnd", function () {
+                        $(this).removeClass('shake');
+                    });
+                });
+            }
+
+            itsOk = false;
+
+            return false;
+        }
+    });
+
+    return itsOk;
+}
+
+
 /* добавляем еще одно авто */
 $(".add-auto").click(function(e) {
     e.preventDefault();
@@ -296,7 +330,6 @@ $(".add-driver").click(function(e) {
 
     driverTemplate.slideDown();
 
-    /* $('.inn').mask('999 999 999 999',{placeholder:"_"}); */
 });
 
 
@@ -376,14 +409,16 @@ function checkMajorityCity(select) {
             if(data.error != true) {
 
                 var citiesSelect = $('<select class="form-control сity-select"></select>');
-                citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
+                citiesSelect.append('<option disabled selected value="-1"><?= _('Выберите город') ?></option>');
 
                 for (var prop in data) {
                     citiesSelect.append('<option value="'+ prop +'">'+ data[prop]['SHORT'] +'</option>');
                 }
 
+                citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
+
                 citiesSelect.change(function() {
-                    if($(this).val() == '0') {
+                    if($(this).val() == '0' || $(this).val() == '-1') {
                         citiesSelect.prev('input').val(0);
                     } else {
                         citiesSelect.prev('input').val(1);
@@ -431,6 +466,10 @@ $(".main-form").on('change', ".temporary-entry", function() {
 /* отправляем форму расчета страховки */
 $("#main-form").submit(function(e) {
     e.preventDefault();
+
+    if(false == checkCitiesFilled()) {
+        return false;
+    }
 
     $("#how-much").prop("disabled", true).text("<?= _("Расчитываем стоимость...") ?>");
 
@@ -697,7 +736,7 @@ var options = {
 
                     if(data.majorCity == null) {
 
-                         var selectCity = '<br/>' + kzRegions[data.area]['FULL'] + '<br/><strong class="mt"><?= _('Выберите город') ?></strong>';
+                         var selectCity = '<br/>' + kzRegions[data.area]['FULL'];
 
                         /* спрашиваем город */
                         $.ajax({
@@ -714,7 +753,7 @@ var options = {
                                     $(regMsgs).html( $(regMsgs).html()+ selectCity );
 
                                     var citiesSelect = $('<select class="form-control сity-select"></select>');
-                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
+                                    citiesSelect.append('<option disabled selected value="-1"><?= _('Выберите город') ?></option>');
 
                                     for (var prop in data) {
                                         citiesSelect.append('<option value="' + prop + '">' + data[prop]['SHORT'] + '</option>');
@@ -724,6 +763,8 @@ var options = {
 
                                         $(vehicleGroup).find('.сity-select').val($(this).val()).change();
                                     });
+
+                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
 
                                     $(inputReg).closest('div').append(citiesSelect);
                                 }
