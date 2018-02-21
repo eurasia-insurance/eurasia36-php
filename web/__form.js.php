@@ -240,11 +240,7 @@ function checkCitiesFilled() {
 
     $(".сity-select:visible").each(function(i, e) {
 
-        console.log($(e).val());
-
         if($(e).val() == null || $(e).val() == '-1') {
-
-            console.log(3);
 
             var target = $(e);
             if( target.length ) {
