@@ -245,8 +245,8 @@ function checkCitiesFilled() {
             var target = $(e);
             if( target.length ) {
                 $('html, body').stop().animate({
-                    scrollTop: target.offset().top
-                }, 500, function() {
+                    scrollTop: (target.offset().top - 10)
+                }, 700, function() {
                     $(e)
                         .focus()
                         .addClass('animated shake')
@@ -645,6 +645,15 @@ $('input[type=tel]').keydown(function(e) {
     if($(this).val().match(/\+7 \(___\) ___-__-__/) && e.key == 8) {
         return false;
     }
+});
+
+$("input:required").on("invalid", function(event) {
+    $(this)
+        .focus()
+        .addClass('animated shake')
+        .one("animationend webkitAnimationEnd", function () {
+            $(this).removeClass('shake');
+        });
 });
 
 $('a[href^="#"]').on('click', function(event) {
