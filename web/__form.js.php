@@ -247,9 +247,12 @@ function checkCitiesFilled() {
                 $('html, body').stop().animate({
                     scrollTop: target.offset().top
                 }, 500, function() {
-                    $(e).addClass('animated shake').one("animationend webkitAnimationEnd", function () {
-                        $(this).removeClass('shake');
-                    });
+                    $(e)
+                        .focus()
+                        .addClass('animated shake')
+                        .one("animationend webkitAnimationEnd", function () {
+                            $(this).removeClass('shake');
+                        });
                 });
             }
 
@@ -704,6 +707,9 @@ var options = {
         inputReg.removeClass('animated shake');
 
         var regMsgs = $(this).next('.reg-msgs');
+        regMsgs.html('');
+        regMsgs.next('.сity-select').remove();
+
         var vehicleGroup = $(this).closest('.reg-number-group').next('.vehicle-group');
 
         if(value === '') {
