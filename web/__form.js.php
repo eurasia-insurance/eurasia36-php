@@ -624,6 +624,7 @@ var options = {
         var vehicleGroup = $(this).closest('.reg-number-group').next('.vehicle-group');
 
         vehicleGroup.children('.form-group').slideUp(function() {
+            vehicleGroup.find(".input-auto").val('CAR').change();
             vehicleGroup.find(".region-select").attr('disabled', false).val('GAST').change();
             vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
         });
@@ -654,8 +655,12 @@ var options = {
                     hint = data.typeClass;
                 }
 
-                if(hint != '') {
+                if(data.year != null) {
                     hint += " " + data.year + " <?= _('г.') ?>";
+                }
+
+                if(data.area != null && data.majorCity != null) {
+                    hint += " <?= _('на учёте в ') ?>" + vehicleGroup.find('.region-select option[value=' + data.area + ']').text();
                 }
 
                 $(regMsgs).html(hint);

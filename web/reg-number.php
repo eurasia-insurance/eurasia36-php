@@ -31,7 +31,7 @@ if (!isset($_SESSION['regRequestActivity'])) {
 }
 $_SESSION['iinRequestActivity'] = time();  // update creation time
 
-
+/**
 if(isset($_SESSION['regRequest'])) {
 
     if($_SESSION['regRequest'] >= 20) {
@@ -43,6 +43,7 @@ if(isset($_SESSION['regRequest'])) {
 } else {
     $_SESSION['regRequest'] = 1;
 }
+*/
 
 
 
