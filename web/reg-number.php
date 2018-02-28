@@ -48,7 +48,7 @@ if(isset($_SESSION['regRequest'])) {
 
 $url = 'insurance/policy/fetch-vehicle';
 
-$data = array('regNumber' => preg_replace('/[^\da-z]/i', '', $_POST['regNumber']));
+$data = array('regNumber' => $_POST['regNumber']);
 $data = json_encode($data);
 
 

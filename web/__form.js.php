@@ -4,90 +4,6 @@ var iinCache = {};
 var policyCost = null;
 
 
-var kzRegions = {
-    "OMNG": {
-        "NORMAL": "Мангистауская область",
-        "SHORT": "Мангистауская обл.",
-        "FULL": "Мангистауская область"
-    },
-    "OKZL": {
-        "NORMAL": "Кызылординская область",
-        "SHORT": "Кызылординская обл.",
-        "FULL": "Кызылординская область"
-    },
-    "OZK": {
-        "NORMAL": "Западно-Казахстанская область",
-        "SHORT": "З.-Казахстанская обл.",
-        "FULL": "Западно-Казахстанская область"
-    },
-    "OALM": {
-        "NORMAL": "Алматинская область",
-        "SHORT": "Алматинская обл.",
-        "FULL": "Алматинская область"
-    },
-    "OKST": {
-        "NORMAL": "Костанайская область",
-        "SHORT": "Костанайская обл.",
-        "FULL": "Костанайская область"
-    },
-    "OPVL": {
-        "NORMAL": "Павлодарская область",
-        "SHORT": "Павлодарская обл.",
-        "FULL": "Павлодарская область"
-    },
-    "OKGD": {
-        "NORMAL": "Карагандинская область",
-        "SHORT": "Карагандинская обл.",
-        "FULL": "Карагандинская область"
-    },
-    "OATY": {
-        "NORMAL": "Атырауская область",
-        "SHORT": "Атырауская обл.",
-        "FULL": "Атырауская область"
-    },
-    "GAST": {
-        "NORMAL": "город Астана",
-        "SHORT": "г. Астана",
-        "FULL": "город Астана"
-    },
-    "OAKT": {
-        "NORMAL": "Актюбинская область",
-        "SHORT": "Актюбинская обл.",
-        "FULL": "Актюбинская область"
-    },
-    "GALM": {
-        "NORMAL": "город Алматы",
-        "SHORT": "г. Алматы",
-        "FULL": "город Алматы"
-    },
-    "OSK": {
-        "NORMAL": "Северо-Казахстанская область",
-        "SHORT": "С.-Казахстанская обл.",
-        "FULL": "Северо-Казахстанская область"
-    },
-    "OZHM": {
-        "NORMAL": "Жамбылская область",
-        "SHORT": "Жамбылская обл.",
-        "FULL": "Жамбылская область"
-    },
-    "OAKM": {
-        "NORMAL": "Акмолинская область",
-        "SHORT": "Акмолинская обл.",
-        "FULL": "Акмолинская область"
-    },
-    "OVK": {
-        "NORMAL": "Восточно-Казахстанская область",
-        "SHORT": "В.-Казахстанская обл.",
-        "FULL": "Восточно-Казахстанская область"
-    },
-    "OUK": {
-        "NORMAL": "Южно-Казахстанская область",
-        "SHORT": "Ю.-Казахстанская обл.",
-        "FULL": "Южно-Казахстанская область"
-    }
-};
-
-
 var utm = {
 <?php if(isset($_GET['utm_source']) && trim($_GET['utm_source']) != ''): ?>
     "source": '<?= isset($_GET['utm_source']) ? urldecode($_GET['utm_source']) : null ?>',
@@ -683,45 +599,27 @@ $(".main-form").on('click', ".vehicle-group-opener", function(e)
     e.preventDefault();
 
     $(this).hide();
-    $(this).closest('.reg-number-group').next('.vehicle-group').slideDown();
+    $(this).closest('.reg-number-group').next('.vehicle-group').children('.form-group').slideDown();
     });
 
 var options = {
     callback: function (value) {
-
-        var fillFields = function(vehicleGroup, data) {
-            if(data.typeClass != null) {
-                $(vehicleGroup).find(".input-auto").val(data.typeClass);
-            }
-
-            if(data.ageClass != null) {
-                $(vehicleGroup).find(".age-class input").each(function () {
-                    if ($(this).val() == data.ageClass) {
-                        $(this).closest('label').click();
-                        $(this).closest('div').click();
-                    }
-                });
-            }
-
-            if(data.area != null) {
-                $(vehicleGroup).find(".region-select").val(data.area).change();
-            }
-
-            if(data.temporaryEntry != null) {
-                $(vehicleGroup).find(".temporary-entry").attr("checked", true).change();
-            }
-        };
 
         var inputReg = $(this);
         inputReg.removeClass('animated shake');
 
         var regMsgs = $(this).next('.reg-msgs');
         regMsgs.html('');
-        regMsgs.next('.сity-select').remove();
 
         var vehicleGroup = $(this).closest('.reg-number-group').next('.vehicle-group');
 
+        vehicleGroup.children('.form-group').slideUp(function() {
+            vehicleGroup.find(".region-select").attr('disabled', false).val('GAST').change();
+            vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
+        });
+
         if(value === '') {
+            regMsgs.html('<a href="" class="vehicle-group-opener flink small"><?= _("Не помню гос. номер") ?></a>');
             return ;
         }
 
@@ -734,69 +632,73 @@ var options = {
             dataType: "json"
         }).done(function( data ) {
 
+            inputReg.removeClass("loading");
+
             if(data.error != true) {
 
-                fillFields(vehicleGroup, data);
+                var hint = '';
 
-                /* has all data */
-                if(data.typeClass != null && data.ageClass != null && data.area != null/* && data.temporaryEntry != null*/) {
+                if(data.name != null) {
+                    hint = data.name;
+                } else if(data.typeClass != null) {
+                    hint = data.typeClass;
+                }
 
-                    var hint = data.name + ", " + data.year + " <?= _('г.') ?>";
+                if(hint != '') {
+                    hint += " " + data.year + " <?= _('г.') ?>";
+                }
 
-                    $(regMsgs).html(hint);
-
-                    if(data.majorCity == null) {
-
-                         var selectCity = '<br/>' + kzRegions[data.area]['FULL'];
-
-                        /* спрашиваем город */
-                        $.ajax({
-                            method: "POST",
-                            url: "city.php",
-                            data:  { "region" : data.area },
-                            dataType: "json"
-                        }).done(function( data ) {
-
-                            if(data.error != true) {
-
-                                if($(vehicleGroup).is(':hidden')) {
-
-                                    $(regMsgs).html( $(regMsgs).html()+ selectCity );
-
-                                    var citiesSelect = $('<select class="form-control сity-select"></select>');
-                                    citiesSelect.append('<option disabled selected value="-1"><?= _('Выберите город') ?></option>');
-
-                                    for (var prop in data) {
-                                        citiesSelect.append('<option value="' + prop + '">' + data[prop]['SHORT'] + '</option>');
-                                    }
-
-                                    citiesSelect.change(function () {
-
-                                        $(vehicleGroup).find('.сity-select').val($(this).val()).change();
-                                    });
-
-                                    citiesSelect.append('<option value="0"><?= _('Нет в списке') ?></option>');
-
-                                    $(inputReg).closest('div').append(citiesSelect);
-                                }
-
-                            } else {
-                                document.location.href = '/500.html';
-                            }
+                $(regMsgs).html(hint);
 
 
-                        }).fail(function(jqXHR, textStatus) {
-                            document.location.href = '/500.html';
-                        });
+                if(data.regNumber != null) {
+                    inputReg.val(data.regNumber);
+                }
 
-                    }
+                if(data.typeClass != null) {
+                    $(vehicleGroup).find(".input-auto").val(data.typeClass);
+                } else {
+                    $(vehicleGroup).find(".typeAuto").slideDown();
+                }
 
+                if(data.ageClass != null) {
+                    $(vehicleGroup).find(".age-class input").each(function () {
+                        if ($(this).val() == data.ageClass) {
+                            $(this).closest('label').click();
+                            $(this).closest('div').click();
+                        }
+                    });
+                } else {
+                    $(vehicleGroup).find(".ageAuto").slideDown();
+                }
+
+                if(data.temporaryEntry == true) {
+                    $(vehicleGroup).find(".temporary-entry").prop("checked", true).attr('disabled', true).change();
+                    $(vehicleGroup).find(".temporaryAuto").slideDown();
                 } else {
 
-                    $(regMsgs).html('');
+                    if (data.area != null) {
+                        $(vehicleGroup).find(".region-select").val(data.area).change();
+                    } else {
+                        $(vehicleGroup).find(".regionAuto").slideDown();
+                    }
 
-                    $(vehicleGroup).slideDown();
+                    if (data.majorCity == null) {
+                        if (data.area != null) {
+                            $(vehicleGroup).find(".region-select").attr('disabled', true);
+                        }
+
+                        $(vehicleGroup).find(".regionAuto").slideDown();
+                    }
+
+
+                    if (data.temporaryEntry != null) {
+                        $(vehicleGroup).find(".temporary-entry").attr("checked", data.temporaryEntry).change();
+                    } else {
+                        $(vehicleGroup).find(".temporaryAuto").slideDown();
+                    }
                 }
+
 
             } else {
 
@@ -810,11 +712,7 @@ var options = {
 
                     $(regMsgs).html(msg);
                 }
-
             }
-
-            inputReg.removeClass("loading");
-
         })
         .fail(function(jqXHR, textStatus) {
             document.location.href = '/500.html';

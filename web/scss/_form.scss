@@ -218,3 +218,15 @@ input[type=number]::-webkit-outer-spin-button {
     border-color: #0366B4;
   }
 }
+
+.typeAuto,
+.ageAuto,
+.regionAuto,
+.temporaryAuto {
+  display: none;
+}
+.temporaryAuto {
+  .checkbox {
+    padding-top: 0;
+  }
+}

@@ -45,8 +45,8 @@
             </div>
         </div>
 
-        <div class="vehicle-group" style="display: none">
-            <div class="form-group widget-two-col">
+        <div class="vehicle-group">
+            <div class="form-group widget-two-col typeAuto">
                 <label for="inputAuto" class="col-sm-3 control-label"><?= _("Тип авто") ?></label>
                 <div class="col-sm-9">
                     <select class="form-control input-auto" id="inputAuto" name="vehicles[0][typeClass]">
@@ -59,7 +59,7 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group widget-two-col">
+            <div class="form-group widget-two-col ageAuto">
                 <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
                 <div class="col-sm-9 radio-toggles age-class">
                     <div class="radio active">
@@ -76,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group widget-two-col">
+            <div class="form-group widget-two-col regionAuto">
                 <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
                 <div class="col-sm-9" id="inputReg">
                     <select class="form-control region-select" id="regionSelect" name="vehicles[0][area]">
@@ -103,7 +103,7 @@
                 </div>
                 <div class="form-fader"></div>
             </div>
-            <div class="form-group widget-two-col widget-checkbox">
+            <div class="form-group widget-two-col widget-checkbox temporaryAuto">
                 <div class="col-sm-9 col-sm-offset-3">
                     <div class="checkbox">
                         <input type="hidden" value="0" name="vehicles[0][temporaryEntry]" />
@@ -138,7 +138,7 @@
     <div class="more-details">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-9">
-                <?= _('Добавить ещё<br class="visible-xs"/> <a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or"> <br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
+                <?= _('Добавить ещё<br class="visible-xs"/>&nbsp;<a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or">&nbsp;<br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
             </div>
         </div>
     </div>
@@ -259,8 +259,8 @@
         </div>
     </div>
 
-    <div class="vehicle-group" style="display: none">
-        <div class="form-group widget-two-col">
+    <div class="vehicle-group">
+        <div class="form-group widget-two-col typeAuto">
             <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
             <div class="col-sm-9">
                 <select class="form-control input-auto" id="inputAuto" name="vehicles[][typeClass]">
@@ -274,7 +274,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group widget-two-col">
+        <div class="form-group widget-two-col ageAuto">
             <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
             <div class="col-sm-9 radio-toggles age-class">
                 <div class="radio active">
@@ -291,7 +291,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group widget-two-col">
+        <div class="form-group widget-two-col regionAuto">
             <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
             <div class="col-sm-9" id="inputReg">
                 <select class="form-control region-select" name="vehicles[][area]">
@@ -318,9 +318,15 @@
             </div>
             <div class="form-fader"></div>
         </div>
-        <div class="form-group widget-two-col widget-checkbox">
-            <div class="col-sm-9 col-sm-offset-3">
-                <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />
+        <div class="form-group widget-two-col widget-checkbox temporaryAuto">
+            <div class=" col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />
+                    <label>
+                        <input type="checkbox" value="1" name="vehicles[][temporaryEntry]" class="temporary-entry" />
+                        <?= _("временный въезд на территорию РК") ?>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
