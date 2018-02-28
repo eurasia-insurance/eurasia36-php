@@ -122,8 +122,8 @@ foreach($_POST['vehicles'] as $key => $vehicle) {
 //    $vehicle['temporaryEntry'] = false;
     $vehicle['temporaryEntry'] = (boolean)$vehicle['temporaryEntry'];
     if($vehicle['temporaryEntry'] == 1) {
-        $vehicle['area'] = 'UNDEFINED';
-        $vehicle['majorCity'] = false;
+        $vehicle['area'] = null;
+        $vehicle['majorCity'] = null;
     }
 
     $vehicles[] = $vehicle;

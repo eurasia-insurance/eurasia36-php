@@ -364,7 +364,7 @@ $(".main-form").on('change', '.majorCity', function(e) {
     }
 });
 
- /* временный въезд */
+/* временный въезд */
 $(".main-form").on('change', ".temporary-entry", function() {
 
     var $fader = $(this).parents(".form-group").prev().find(".form-fader");
@@ -381,6 +381,11 @@ $(".main-form").on('change', ".temporary-entry", function() {
 /* отправляем форму расчета страховки */
 $("#main-form").submit(function(e) {
     e.preventDefault();
+
+    $("#main-form input:disabled, #main-form select:disabled").each(function() {
+        $(this).removeAttr('disabled');
+        $(this).attr('readonly', true);
+    });
 
     if(false == checkCitiesFilled()) {
         return false;
@@ -437,6 +442,11 @@ $("#main-form").submit(function(e) {
         });
 
         $("#order-form input[name=phone]").val($("#inputPhone").val());
+
+        $("#main-form input[readonly], #main-form select[readonly]").each(function() {
+            $(this).removeAttr('readonly');
+            $(this).attr('disabled', true);
+        });
     })
     .fail(function(jqXHR, textStatus) {
         document.location.href = '/500.html';
