@@ -34,78 +34,84 @@
                 </div>
             </div>
         </div>
-        <div class="form-group widget-two-col">
-            <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
+
+        <div class="form-group widget-two-col reg-number-group">
+            <label for="inputRegNumber" class="col-sm-3 control-label"><strong><?= _("Гос. номер") ?></strong></label>
             <div class="col-sm-9">
-                <select class="form-control" id="inputAuto" name="vehicles[0][typeClass]">
-                    <option value="CAR" selected="selected"><?= _("Легковая машина") ?></option>
-                    <option value="MOTO"><?= _("Мотоцикл") ?></option>
-                    <option value="CARGO"><?= _("Грузовик") ?></option>
-                    <option value="TRAILER"><?= _("Прицеп") ?></option>
-                    <option value="BUS16"><?= _("Автобус (до 16 пассажиров)") ?></option>
-                    <option value="BUSOVR16"><?= _("Автобус (более 16 пассажиров)") ?></option>
-                    <!--<option value="TRAM"><?= _("Троллейбус или трамвай") ?></option>-->
-                </select>
+                <input type="text" name="regNumber" class="form-control input-reg-number" id="inputRegNumber" placeholder="" maxlength="10" autocomplete="Off" />
+                <span class="reg-msgs">
+                    <a href="" class="vehicle-group-opener flink small"><?= _("Не помню гос. номер") ?></a>
+                </span>
             </div>
         </div>
-        <div class="form-group widget-two-col">
-            <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
-            <div class="col-sm-9 radio-toggles">
-                <div class="radio active">
-                    <label>
-                        <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios1" value="OVER7" checked>
-                        <?= sprintf(_("до %d"), date('Y') - 7) ?>
-                    </label>
-                </div><!--
-                                    --><div class="radio">
-                    <label>
-                        <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios2" value="UNDER7">
-                        <?= sprintf(_("%d и новее"), date('Y') - 6) ?>
-                    </label>
+
+        <div class="vehicle-group">
+            <div class="form-group widget-two-col typeAuto">
+                <label for="inputAuto" class="col-sm-3 control-label"><?= _("Тип авто") ?></label>
+                <div class="col-sm-9">
+                    <select class="form-control input-auto" id="inputAuto" name="vehicles[0][typeClass]">
+                        <option value="CAR" selected="selected"><?= _("Легковая машина") ?></option>
+                        <option value="MOTO"><?= _("Мотоцикл") ?></option>
+                        <option value="CARGO"><?= _("Грузовик") ?></option>
+                        <option value="TRAILER"><?= _("Прицеп") ?></option>
+                        <option value="BUS16"><?= _("Автобус (до 16 пассажиров)") ?></option>
+                        <option value="BUSOVR16"><?= _("Автобус (более 16 пассажиров)") ?></option>
+                    </select>
                 </div>
             </div>
-        </div>
-        <div class="form-group widget-two-col">
-            <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
-            <div class="col-sm-9" id="inputReg">
-                <select class="form-control region-select" name="vehicles[0][area]">
-                    <option value="GAST"><?= _("Астане") ?></option>
-                    <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
-                    <option value="OAKM"><?= _("Акмолинской области") ?></option>
-                    <option value="OALM"><?= _("Алматинской области") ?></option>
-                    <option value="OAKT"><?= _("Актюбинской области") ?></option>
-                    <option value="OATY"><?= _("Атырауской области") ?></option>
-                    <option value="OVK"><?= _("Восточно-Казахстанской области") ?></option>
-                    <option value="OZHM"><?= _("Жамбылской области") ?></option>
-                    <option value="OZK"><?= _("Западно-Казахстанской области") ?></option>
-                    <option value="OKGD"><?= _("Карагандинской области") ?></option>
-                    <option value="OKST"><?= _("Костанайской области") ?></option>
-                    <option value="OKZL"><?= _("Кызылординской области") ?></option>
-                    <option value="OMNG"><?= _("Мангистауской области") ?></option>
-                    <option value="OPVL"><?= _("Павлодарской области") ?></option>
-                    <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
-                    <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
-                </select>
+            <div class="form-group widget-two-col ageAuto">
+                <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
+                <div class="col-sm-9 radio-toggles age-class">
+                    <div class="radio active">
+                        <label>
+                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios1" value="OVER7" checked>
+                            <?= sprintf(_("до %d"), date('Y') - 7) ?>
+                        </label>
+                    </div><!--
+                                        --><div class="radio">
+                        <label>
+                            <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios2" value="UNDER7">
+                            <?= sprintf(_("%d и новее"), date('Y') - 6) ?>
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-9 col-sm-offset-3 major-city__container">
-                <div class="checkbox">
+            <div class="form-group widget-two-col regionAuto">
+                <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
+                <div class="col-sm-9" id="inputReg">
+                    <select class="form-control region-select" id="regionSelect" name="vehicles[0][area]">
+                        <option value="GAST"><?= _("Астане") ?></option>
+                        <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
+                        <option value="OAKM"><?= _("Акмолинской области") ?></option>
+                        <option value="OALM"><?= _("Алматинской области") ?></option>
+                        <option value="OAKT"><?= _("Актюбинской области") ?></option>
+                        <option value="OATY"><?= _("Атырауской области") ?></option>
+                        <option value="OVK"><?= _("Восточно-Казахстанской области") ?></option>
+                        <option value="OZHM"><?= _("Жамбылской области") ?></option>
+                        <option value="OZK"><?= _("Западно-Казахстанской области") ?></option>
+                        <option value="OKGD"><?= _("Карагандинской области") ?></option>
+                        <option value="OKST"><?= _("Костанайской области") ?></option>
+                        <option value="OKZL"><?= _("Кызылординской области") ?></option>
+                        <option value="OMNG"><?= _("Мангистауской области") ?></option>
+                        <option value="OPVL"><?= _("Павлодарской области") ?></option>
+                        <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
+                        <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
+                    </select>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 major-city__container">
                     <input type="hidden" name="vehicles[0][majorCity]" value="0" />
-                    <label>
-                        <input type="checkbox" name="vehicles[0][majorCity]" class="majorCity" checked="checked" value="1" />
-                        <?= _("город областного значения") ?>
-                    </label>
                 </div>
+                <div class="form-fader"></div>
             </div>
-            <div class="form-fader"></div>
-        </div>
-        <div class="form-group widget-two-col widget-checkbox">
-            <div class="col-sm-9 col-sm-offset-3">
-                <div class="checkbox">
-                    <input type="hidden" value="0" name="vehicles[0][temporaryEntry]" />
-                    <label>
-                        <input type="checkbox" value="1" name="vehicles[0][temporaryEntry]" class="temporary-entry" />
-                        <?= _("временный въезд на территорию РК") ?>
-                    </label>
+            <div class="form-group widget-two-col widget-checkbox temporaryAuto">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="checkbox">
+                        <input type="hidden" value="0" name="vehicles[0][temporaryEntry]" />
+                        <label>
+                            <input type="checkbox" value="1" name="vehicles[0][temporaryEntry]" class="temporary-entry" />
+                            <?= _("временный въезд на территорию РК") ?>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -132,7 +138,7 @@
     <div class="more-details">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-9">
-                <?= _('Добавить ещё<br class="visible-xs"/> <a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or"> <br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
+                <?= _('Добавить ещё<br class="visible-xs"/>&nbsp;<a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or">&nbsp;<br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
             </div>
         </div>
     </div>
@@ -242,78 +248,85 @@
             <h3 class="driver-num"><?= _("Ещё один автомобиль") ?></h3>
         </div>
     </div>
-    <div class="form-group widget-two-col">
-        <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
+
+    <div class="form-group widget-two-col reg-number-group">
+        <label for="inputRegNumber" class="col-sm-3 control-label"><strong><?= _("Гос. номер") ?></strong></label>
         <div class="col-sm-9">
-            <select class="form-control" id="inputAuto" name="vehicles[][typeClass]">
-                <option value="CAR" selected="selected"><?= _("Легковая машина") ?></option>
-                <option value="MOTO"><?= _("Мотоцикл") ?></option>
-                <option value="CARGO"><?= _("Грузовик") ?></option>
-                <option value="TRAILER"><?= _("Прицеп") ?></option>
-                <option value="BUS16"><?= _("Автобус (до 16 пассажиров)") ?></option>
-                <option value="BUSOVR16"><?= _("Автобус (более 16 пассажиров)") ?></option>
-                <!--<option value="TRAM"><?= _("Троллейбус или трамвай") ?></option>-->
-            </select>
+            <input type="text" name="regNumber" class="form-control input-reg-number" id="inputRegNumber" placeholder="" maxlength="10" autocomplete="Off" />
+            <span class="reg-msgs">
+                <a href="" class="vehicle-group-opener flink small"><?= _("Не помню гос. номер") ?></a>
+            </span>
         </div>
     </div>
-    <div class="form-group widget-two-col">
-        <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
-        <div class="col-sm-9 radio-toggles">
-            <div class="radio active">
-                <label>
-                    <input type="radio" value="OVER7" name="vehicles[][ageClass]" checked />
-                    до <?= date('Y') - 7 ?>
-                </label>
-            </div><!--
-                    --><div class="radio">
-                <label>
-                    <input type="radio" value="UNDER7" name="vehicles[][ageClass]" />
-                    <?= date('Y') - 6 ?> и новее
-                </label>
+
+    <div class="vehicle-group">
+        <div class="form-group widget-two-col typeAuto">
+            <label for="inputAuto" class="col-sm-3 control-label"><strong><?= _("Ваше авто") ?></strong></label>
+            <div class="col-sm-9">
+                <select class="form-control input-auto" id="inputAuto" name="vehicles[][typeClass]">
+                    <option value="CAR" selected="selected"><?= _("Легковая машина") ?></option>
+                    <option value="MOTO"><?= _("Мотоцикл") ?></option>
+                    <option value="CARGO"><?= _("Грузовик") ?></option>
+                    <option value="TRAILER"><?= _("Прицеп") ?></option>
+                    <option value="BUS16"><?= _("Автобус (до 16 пассажиров)") ?></option>
+                    <option value="BUSOVR16"><?= _("Автобус (более 16 пассажиров)") ?></option>
+                    <!--<option value="TRAM"><?= _("Троллейбус или трамвай") ?></option>-->
+                </select>
             </div>
         </div>
-    </div>
-    <div class="form-group widget-two-col">
-        <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
-        <div class="col-sm-9" id="inputReg">
-            <select class="form-control region-select" name="vehicles[][area]">
-                <option value="GAST"><?= _("Астане") ?></option>
-                <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
-                <option value="OAKM"><?= _("Акмолинской области") ?></option>
-                <option value="OALM"><?= _("Алматинской области") ?></option>
-                <option value="OAKT"><?= _("Актюбинской области") ?></option>
-                <option value="OATY"><?= _("Атырауской области") ?></option>
-                <option value="OVK"><?= _("Восточно-Казахстанской области") ?></option>
-                <option value="OZHM"><?= _("Жамбылской области") ?></option>
-                <option value="OZK"><?= _("Западно-Казахстанской области") ?></option>
-                <option value="OKGD"><?= _("Карагандинской области") ?></option>
-                <option value="OKST"><?= _("Костанайской области") ?></option>
-                <option value="OKZL"><?= _("Кызылординской области") ?></option>
-                <option value="OMNG"><?= _("Мангистауской области") ?></option>
-                <option value="OPVL"><?= _("Павлодарской области") ?></option>
-                <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
-                <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
-            </select>
+        <div class="form-group widget-two-col ageAuto">
+            <label class="col-sm-3 control-label toggle-label"><?= _("год выпуска") ?></label>
+            <div class="col-sm-9 radio-toggles age-class">
+                <div class="radio active">
+                    <label>
+                        <input type="radio" value="OVER7" name="vehicles[][ageClass]" checked />
+                        до <?= date('Y') - 7 ?>
+                    </label>
+                </div><!--
+                        --><div class="radio">
+                    <label>
+                        <input type="radio" value="UNDER7" name="vehicles[][ageClass]" />
+                        <?= date('Y') - 6 ?> и новее
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 major-city__container">
-            <div class="checkbox">
+        <div class="form-group widget-two-col regionAuto">
+            <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
+            <div class="col-sm-9" id="inputReg">
+                <select class="form-control region-select" name="vehicles[][area]">
+                    <option value="GAST"><?= _("Астане") ?></option>
+                    <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
+                    <option value="OAKM"><?= _("Акмолинской области") ?></option>
+                    <option value="OALM"><?= _("Алматинской области") ?></option>
+                    <option value="OAKT"><?= _("Актюбинской области") ?></option>
+                    <option value="OATY"><?= _("Атырауской области") ?></option>
+                    <option value="OVK"><?= _("Восточно-Казахстанской области") ?></option>
+                    <option value="OZHM"><?= _("Жамбылской области") ?></option>
+                    <option value="OZK"><?= _("Западно-Казахстанской области") ?></option>
+                    <option value="OKGD"><?= _("Карагандинской области") ?></option>
+                    <option value="OKST"><?= _("Костанайской области") ?></option>
+                    <option value="OKZL"><?= _("Кызылординской области") ?></option>
+                    <option value="OMNG"><?= _("Мангистауской области") ?></option>
+                    <option value="OPVL"><?= _("Павлодарской области") ?></option>
+                    <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
+                    <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
+                </select>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 major-city__container">
                 <input type="hidden" name="vehicles[][majorCity]" value="0" />
-                <label>
-                    <input type="checkbox" name="vehicles[][majorCity]" class="majorCity" value="1" checked="checked" />
-                    <?= _("город областного значения") ?>
-                </label>
             </div>
+            <div class="form-fader"></div>
         </div>
-        <div class="form-fader"></div>
-    </div>
-    <div class="form-group widget-two-col widget-checkbox">
-        <div class="col-sm-9 col-sm-offset-3">
-            <div class="checkbox">
-                <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />
-                <label>
-                    <input type="checkbox" value="1" name="vehicles[][temporaryEntry]" class="temporary-entry" />
-                    <?= _("временный въезд на территорию РК") ?>
-                </label>
+        <div class="form-group widget-two-col widget-checkbox temporaryAuto">
+            <div class=" col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <input type="hidden" value="0" name="vehicles[][temporaryEntry]" />
+                    <label>
+                        <input type="checkbox" value="1" name="vehicles[][temporaryEntry]" class="temporary-entry" />
+                        <?= _("временный въезд на территорию РК") ?>
+                    </label>
+                </div>
             </div>
         </div>
     </div>

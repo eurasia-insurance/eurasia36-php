@@ -117,7 +117,7 @@ ob_start("Util::minifyHtml");
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a> <br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
+                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a>&nbsp;<br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
                             <li><a href="/contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Адреса и телефоны") ?></a></li>
                             <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="/<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
@@ -335,6 +335,10 @@ ob_start("Util::minifyHtml");
     <?php endif; ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/TypeWatch/3.0.0/jquery.typewatch.min.js"
+                integrity="sha256-FxujckmwH9va59KHuSlfQWni2g0vQ6Fr+jWNzfcsROc="
+                crossorigin="anonymous"></script>
 
         <script>
             <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>

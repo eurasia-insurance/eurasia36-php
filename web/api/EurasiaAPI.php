@@ -83,7 +83,7 @@ class EurasiaAPI {
             // запишем ошибку в лог
             file_put_contents($logPath.date('Ymd').'.log', date("y-m-d H:i:s")." Code $code, message $out, URL $url, data $data" . PHP_EOL, FILE_APPEND);
 
-            return json_encode(['error' => true, 'code' => $code, 'message' => $out]);
+            return json_encode(['error' => true, 'code' => $code, 'message' => json_decode($out, true)]);
         } else {
             // всё ок, вернем результат
             return $out;
