@@ -65,8 +65,8 @@ ob_start("Util::minifyHtml");
 
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-favicon.png" />
+        <link rel="icon" type="image/png" href="./favicon.png" />
+        <link rel="apple-touch-icon" href="./apple-touch-favicon.png" />
 
         <title><?= _("Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая компания \"Евразия\"") ?></title>
 
@@ -99,7 +99,7 @@ ob_start("Util::minifyHtml");
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class="navbar-brand"><img src="/i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></span>
+                        <span class="navbar-brand"><img src="./i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></span>
 
 <!--                        <div class="dropdown langs">
                             <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -109,7 +109,7 @@ ob_start("Util::minifyHtml");
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                 <?php foreach($langs as $key => $l): ?>
                                 <?php if($key != $lang): ?>
-                                <li><a href="/<?= $key != 'ru' ? $key : '' ?>"><?= $l[0] ?></a></li>
+                                <li><a href="./<?= $key != 'ru' ? $key : '' ?>"><?= $l[0] ?></a></li>
                                 <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
@@ -119,9 +119,9 @@ ob_start("Util::minifyHtml");
                         <ul class="nav navbar-nav navbar-right">
                             <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a>&nbsp;<br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
-                            <li><a href="/contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Адреса и телефоны") ?></a></li>
-                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="/<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
-                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="/kz<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
+                            <li><a href="./contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Адреса и телефоны") ?></a></li>
+                            <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="./<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="./kz<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
@@ -129,14 +129,14 @@ ob_start("Util::minifyHtml");
 
             <div class="container">
                 <!--
-                <span class="ogpo-vts"><?= _("ОГПО ВТС") ?></span> <a href="/order/casco/index.html" class="avto-kasko">Авто Каско</a>
+                <span class="ogpo-vts"><?= _("ОГПО ВТС") ?></span> <a href="./order/casco/index.html" class="avto-kasko">Авто Каско</a>
                 -->
                 <h1><?= _("Обязательная автостраховка с&nbsp;бесплатной доставкой") ?></h1>
 
                 <div class="row pluses">
-                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
-                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> <?= _("Минимальная цена + скидка") ?></div>
-                    <div class="col-sm-4"><img src="/i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + скидка") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
                 </div>
             </div>
         </header>
@@ -154,20 +154,20 @@ ob_start("Util::minifyHtml");
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
                             <span class="bonus-teaser__header">Получите<br/>бонус до 30%</span>
                             <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте картой Евразийского банка</span>
-                            <img src="/i/eubank-logo.png" alt="" />
+                            <img src="./i/eubank-logo.png" alt="" />
                         </a>
                         <?php else: ?>
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
                             <span class="bonus-teaser__text bonus-teaser__text_kz">Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
                             <span class="bonus-teaser__header">30% дейін бонус алыңыз</span>
-                            <img src="/i/eubank-logo.png" alt="" />
+                            <img src="./i/eubank-logo.png" alt="" />
                         </a>
                         <?php endif; ?>
 
                     <?php endif; ?>
 
                     <div class="rating hidden-xs">
-                        <img src="/i/rating.png" alt="" />
+                        <img src="./i/rating.png" alt="" />
                         <?= _("У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/kzAA- (S&P, 2017).") ?>
                     </div>
 
@@ -223,7 +223,7 @@ ob_start("Util::minifyHtml");
                     <div class="col-sm-5 col-xs-12">
                         <div class="footer__grafica <?= $lang ?>-footer__grafica">
                             <a href="http://grafica.kz">
-                                <img src="/i/grafica.svg" alt="Grafica" />
+                                <img src="./i/grafica.svg" alt="Grafica" />
                                 <?= _("Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»") ?></span>
                             </a>
                         </div>

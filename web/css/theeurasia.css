@@ -18,7 +18,7 @@ html, body {
     color: #fff; }
 
 .main-form__additional-driver .close-form, .main-form__additional-auto .close-form {
-  background: transparent url(/i/close-white.svg) no-repeat center !important; }
+  background: transparent url(./i/close-white.svg) no-repeat center !important; }
 
 .order-form .price {
   color: #fff; }

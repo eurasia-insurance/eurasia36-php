@@ -7,7 +7,7 @@
     <title>Форма расчета строховки</title>
 
     <link rel="stylesheet" type="text/css"
-          href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <script src="https://ru.vuejs.org/js/vue.js"></script>
 </head>
 <body>
@@ -15,6 +15,6 @@
     {{ message }}
   </div>
 
-  <script src="js/vue.form.js"></script>
+  <script src="./js/vue.form.js"></script>
 </body>
 </html>

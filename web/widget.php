@@ -66,10 +66,10 @@ $widgets = [
     <title><?= _("Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая компания \"Евразия\"") ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="/css/widget.css?<?= filemtime(__DIR__ .'/css/widget.css') ?>" rel="stylesheet"/>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="./css/widget.css?<?= filemtime(__DIR__ .'/css/widget.css') ?>" rel="stylesheet"/>
     <?php if($widgetId): ?>
-    <link href="/css/<?= $widgets[$widgetId] ?>.css?<?= filemtime(__DIR__ .'/css/'.$widgets[$widgetId].'.css') ?>" rel="stylesheet"/>
+    <link href="./css/<?= $widgets[$widgetId] ?>.css?<?= filemtime(__DIR__ .'/css/'.$widgets[$widgetId].'.css') ?>" rel="stylesheet"/>
     <?php endif; ?>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -85,10 +85,10 @@ $widgets = [
     <?php require('./__form.php') ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/jquery.maskedinput.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script>
 
-    <script type="text/javascript" src="/js/detect-resize/jquery.resize.js"></script>
+    <script type="text/javascript" src="./js/detect-resize/jquery.resize.js"></script>
 
     <script>
 

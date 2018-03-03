@@ -115,7 +115,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: left;
 }
 .loading {
-  background: #fff url(/i/loader.gif) no-repeat 95% center;
+  background: #fff url(./i/loader.gif) no-repeat 95% center;
 }
 #inputRegNumber {
   margin-bottom: 5px;
@@ -136,7 +136,7 @@ input[type=number]::-webkit-outer-spin-button {
     width: 33px;
     height: 33px;
     position: absolute;
-    background: transparent url(/i/close-form.svg) no-repeat center;
+    background: transparent url(./i/close-form.svg) no-repeat center;
     top: 25px;
     right: 0;
     z-index: 1;
@@ -146,7 +146,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     &:hover {
       transform: rotate(360deg);
-      background: transparent url(/i/close-form-hover.svg) no-repeat center;
+      background: transparent url(./i/close-form-hover.svg) no-repeat center;
     }
   }
 }

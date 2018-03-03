@@ -62,8 +62,8 @@ ob_start("Util::minifyHtml");
 
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-favicon.png" />
+        <link rel="icon" type="image/png" href="./favicon.png" />
+        <link rel="apple-touch-icon" href="./apple-touch-favicon.png" />
 
         <title><?= _("Адреса и телефоны страховой компании \"Евразия\"") ?></title>
 
@@ -98,7 +98,7 @@ ob_start("Util::minifyHtml");
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><img src="/i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></a>
+                        <a class="navbar-brand" href="./<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><img src="./i/logo-<?= $lang ?>.svg" alt="Евразия" class="navbar-brand__logo" /></a>
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
