@@ -1,5 +1,5 @@
 <div class="main-form" id="form-container">
-    <form action="/price.php" method="post" class="form-horizontal" id="main-form">
+    <form action="./price.php" method="post" class="form-horizontal" id="main-form">
         <div class="form-group widget-two-col">
             <label for="inputInn" class="col-sm-3 control-label"><strong><?= _("Ваш ИИН") ?></strong></label>
             <div class="col-sm-9">
@@ -161,9 +161,9 @@
                 <?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
                     <br/>
                     <?php if(isset($formFromWidget) && $formFromWidget === true): ?>
-                    <small class="gray"><?= _('Бонус до 30% при оплате картой <img src="/i/eubank.png" alt="" /> Евразийского банка'); ?></small>
+                    <small class="gray"><?= _('Бонус до 30% при оплате картой <img src="./i/eubank.png" alt="" /> Евразийского банка'); ?></small>
                     <?php else: ?>
-                    <small class="gray"><?= _('<a href="" class="gray flink" data-toggle="modal" data-target="#cashback">Бонус до 30%</a> при оплате картой <img src="/i/eubank.png" alt="" /> Евразийского банка'); ?></small>
+                    <small class="gray"><?= _('<a href="" class="gray flink" data-toggle="modal" data-target="#cashback">Бонус до 30%</a> при оплате картой <img src="./i/eubank.png" alt="" /> Евразийского банка'); ?></small>
                     <?php endif; ?>
                 <?php endif; ?>
             </div>
@@ -191,7 +191,7 @@
                 <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках.") ?>
             </div>
             <div class="col-sm-offset-3 col-sm-9 one-more-form">
-                <a href="/" id="oneMorePolicy"><?= _("Заполнить еще одну заявку") ?></a>
+                <a href="./" id="oneMorePolicy"><?= _("Заполнить еще одну заявку") ?></a>
             </div>
         </div>
     </form>

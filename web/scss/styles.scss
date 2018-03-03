@@ -27,7 +27,7 @@ h1 {
     text-decoration: none !important;
 }
 header {
-    background: #265a88 url(/i/bg.jpg) no-repeat center / cover;
+    background: #265a88 url(../i/bg.jpg) no-repeat center / cover;
     background-attachment: fixed;
     color: #fff;
     
@@ -175,7 +175,7 @@ li.lang-li {
 .bonus-teaser {
     position: relative;
     display: block;
-    background: transparent url("/i/bonus-teaser.png") no-repeat center / cover;
+    background: transparent url("../i/bonus-teaser.png") no-repeat center / cover;
     padding: 20px 23px;
     margin-top: 30px;
     border-radius: 8px;
@@ -323,14 +323,14 @@ li.lang-li {
         display: inline-block;
         width: 33px;
         height: 33px;
-        background: transparent url(/i/close-white.svg) no-repeat center;
+        background: transparent url(../i/close-white.svg) no-repeat center;
         opacity: 1;
 
         transition: all 500ms;
 
         &:hover {
             transform: rotate(360deg);
-            background: transparent url(/i/close-form-hover.svg) no-repeat center;
+            background: transparent url(../i/close-form-hover.svg) no-repeat center;
         }
     }
 
