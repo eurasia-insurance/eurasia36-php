@@ -102,7 +102,7 @@ foreach($_POST['drivers'] as $key => $driver) {
         if(!isset($clientByIin['expirienceClass'])) {
             $clientByIin['expirienceClass'] = $driver['expirienceClass'];
         }
-        if(!isset($clientByIin['privileger'])) {
+        if(!isset($clientByIin['privileger']) || $clientByIin['privileger'] == null) {
             $clientByIin['privileger'] = (boolean)$driver['privileger'];
         }
 
