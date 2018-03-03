@@ -63,7 +63,7 @@ $vehicles = [];
 
 foreach($_POST['drivers'] as $key => $driver) {
 
-//    var_dump($driver);
+//    print_r($driver);
 
     /**
      * Проверим клиента по ИИНу
@@ -72,6 +72,8 @@ foreach($_POST['drivers'] as $key => $driver) {
 
     // предполагаем, что всё ок и ответ в json
     $clientByIin = json_decode($clientByIin, TRUE);
+
+//    print_r($clientByIin);
 
 
     if(!isset($clientByIin['error'])) { // нашли по ИИН
@@ -102,7 +104,7 @@ foreach($_POST['drivers'] as $key => $driver) {
         if(!isset($clientByIin['expirienceClass'])) {
             $clientByIin['expirienceClass'] = $driver['expirienceClass'];
         }
-        if(!isset($clientByIin['privileger'])) {
+        if(!isset($clientByIin['privileger']) || $clientByIin['privileger'] == null) {
             $clientByIin['privileger'] = (boolean)$driver['privileger'];
         }
 
@@ -119,11 +121,10 @@ foreach($_POST['vehicles'] as $key => $vehicle) {
 
     $vehicle['majorCity'] = (boolean)$vehicle['majorCity'];
 
-//    $vehicle['temporaryEntry'] = false;
     $vehicle['temporaryEntry'] = (boolean)$vehicle['temporaryEntry'];
     if($vehicle['temporaryEntry'] == 1) {
-        $vehicle['area'] = 'UNDEFINED';
-        $vehicle['majorCity'] = false;
+        $vehicle['area'] = null;
+        $vehicle['majorCity'] = null;
     }
 
     $vehicles[] = $vehicle;
