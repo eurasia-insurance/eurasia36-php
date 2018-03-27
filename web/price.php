@@ -147,12 +147,6 @@ $data = json_encode($data);
 //    echo '</pre>';
 //    die();
 
-$url = 'insurance/policy/fetch-policy/';
-
-$price = EurasiaAPI::request($url, $data, 'post', $apiLang);
-
-echo $price;
-
 
 
 
@@ -168,20 +162,32 @@ if(isset($phone)) {
 
     $url = 'insurance/check/phone/'.$phone;
 
-    $data = '{}';
+    $dataPhone = '{}';
 
-    $checkPhone = EurasiaAPI::request($url, $data, 'get', $apiLang);
+    $checkPhone = EurasiaAPI::request($url, $dataPhone, 'get', $apiLang);
     $checkPhoneArr = json_decode($checkPhone, true);
 
     if(isset($checkPhoneArr['error'])) {
-        $error = ['error' => true, 'message' => 'Неверно указан номер телефона'];
-//        die(json_encode($error));
+        $error = ['error' => true, 'message' => 'Неверно указан номер телефона', 'type' => 'phone'];
+        die(json_encode($error));
     }
 
 } else {
-    $error = ['error' => true, 'message' => 'Вы забыли указать номер телефона'];
-//    die(json_encode($error));
+    $error = ['error' => true, 'message' => 'Вы забыли указать номер телефона', 'type' => 'phone'];
+    die(json_encode($error));
 }
+
+
+
+
+$url = 'insurance/policy/fetch-policy/';
+
+$price = EurasiaAPI::request($url, $data, 'post', $apiLang);
+
+echo $price;
+
+
+
 
 
 
