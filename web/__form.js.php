@@ -378,7 +378,7 @@ $(".main-form").on('change', ".temporary-entry", function() {
     }
 });
 
-$(".main-form").on('focus', "#inputPhone", function() {
+$(".main-form").on('focus keypress', "#inputPhone", function() {
     $(this).next(".help-block").remove();
 });
 
