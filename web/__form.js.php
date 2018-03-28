@@ -378,6 +378,10 @@ $(".main-form").on('change', ".temporary-entry", function() {
     }
 });
 
+$(".main-form").on('focus keypress', "#inputPhone", function() {
+    $(this).next(".help-block").remove();
+});
+
 /* отправляем форму расчета страховки */
 $("#main-form").submit(function(e) {
     e.preventDefault();
@@ -421,6 +425,21 @@ $("#main-form").submit(function(e) {
 
             if( data.code == 500 ) {
                 document.location.href = '/500.html';
+            } else if (data.error && data.type == 'phone') {
+                $("#inputPhone")
+                    .focus()
+                    .addClass('animated shake')
+                    .one("animationend webkitAnimationEnd", function () {
+                        $("#inputPhone").removeClass('shake');
+                    });
+
+                var errorTxt = $('<div class="help-block text">' + data.message + '</div>').show();
+
+                $("#inputPhone").after(errorTxt);
+
+                $("#how-much").prop("disabled", false).text("<?= _("Рассчитать стоимость") ?>");
+
+                return false;
             } else {
                 $("#order-form").find(".price").parent().text("<?= _("Сервис временно недоступен. Но вы можете оставить заявку.") ?>")
             }
