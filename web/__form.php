@@ -71,7 +71,7 @@
                                         --><div class="radio">
                         <label>
                             <input type="radio" name="vehicles[0][ageClass]" id="optionsRadios2" value="UNDER7">
-                            <?= sprintf(_("%d и новее"), date('Y') - 6) ?>
+                            <?= sprintf(_("%d и новее"), date('Y') - 7) ?>
                         </label>
                     </div>
                 </div>
