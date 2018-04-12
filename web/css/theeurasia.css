@@ -1,26 +1,2 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic");
-html, body {
-  font-family: 'PT Sans', sans-serif;
-  color: #fff; }
-
-.main-form h3 {
-  color: #fff; }
-.main-form form {
-  color: #fff; }
-  .main-form form .help-block {
-    color: #fff; }
-
-.btn-additional {
-  border-color: #fff;
-  color: #fff; }
-  .btn-additional:hover, .btn-additional:active, .btn-additional:focus {
-    border-color: #fff;
-    color: #fff; }
-
-.main-form__additional-driver .close-form, .main-form__additional-auto .close-form {
-  background: transparent url(../i/close-white.svg) no-repeat center !important; }
-
-.order-form .price {
-  color: #fff; }
-
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=cyrillic");html,body{font-family:'PT Sans', sans-serif;color:#fff}.main-form h3{color:#fff}.main-form form{color:#fff}.main-form form .help-block{color:#fff}.btn-additional{border-color:#fff;color:#fff}.btn-additional:hover,.btn-additional:active,.btn-additional:focus{border-color:#fff;color:#fff}.main-form__additional-driver .close-form,.main-form__additional-auto .close-form{background:transparent url(../i/close-white.svg) no-repeat center !important}.order-form .price{color:#fff}.vehicle-group{display:flex;flex-wrap:wrap}.widget-two-col{flex:0 0 50%;align-self:center}.typeAuto,.ageAuto,.regionAuto,.temporaryAuto{display:none}
 /*# sourceMappingURL=theeurasia.css.map */

@@ -49,3 +49,19 @@ html, body {
     color: #fff;
   }
 }
+
+.vehicle-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.widget-two-col {
+  flex: 0 0 50%;
+  align-self: center;
+}
+
+.typeAuto,
+.ageAuto,
+.regionAuto,
+.temporaryAuto {
+  display: none;
+}

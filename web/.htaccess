@@ -86,8 +86,8 @@ ErrorDocument 500 /500.html
 #    ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
 
-php_flag   display_errors       Off
-php_value  auto_prepend_file    register-error-handlers.php
+#php_flag   display_errors       Off
+#php_value  auto_prepend_file    register-error-handlers.php
 
 # put line above to the host's main config file
 #    php_value include_path ".:PATH_TO_DOCUMENT_ROOT"
