@@ -1,5 +1,5 @@
 /*
-<?
+<?php
 require_once './../.settings.php';
 header('Content-Type: application/javascript');
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
