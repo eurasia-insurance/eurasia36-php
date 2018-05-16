@@ -37,13 +37,12 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 }
 
 
-
 $url = 'eurasia/pos/all/';
-#.($lang == 'kz' ? 'kk' : $lang);
 
 $data = '{}';
 
-$offices = EurasiaAPI::request($url, $data, 'get');
+$apiLang = $lang == 'kz' ? 'kk' : $lang;
+$offices = EurasiaAPI::request($url, $data, 'get', $apiLang);
 $offices = json_decode($offices, true);
 
 if(isset($offices['code']) && $offices['code'] == 500) {
