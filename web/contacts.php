@@ -38,7 +38,8 @@ if ((($if_none_match && $if_none_match == $etag) || (!$if_none_match)) &&
 
 
 
-$url = 'insurance/pos/all/'.($lang == 'kz' ? 'kk' : $lang);
+$url = 'eurasia/pos/all/';
+#.($lang == 'kz' ? 'kk' : $lang);
 
 $data = '{}';
 
