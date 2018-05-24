@@ -191,12 +191,11 @@ $(".add-auto").click(function(e) {
     var autoTemplate = $("#autoTemplate").clone();
     autoTemplate.attr('id', 'autoTemplate' + initialAuto);
 
-    $(".main-form__btn-container").before(autoTemplate);
+    $(".more-details").before(autoTemplate);
 
     autoTemplate.find(".driver-num").text(driversCountRu[initialAuto] + ' <?= _("автомобиль") ?>');
 
     $(".add-driver").hide();
-    $(".add-car__or").hide();
 
     if(initialAuto == 5) {
         $(".more-details").hide();
@@ -228,11 +227,11 @@ $(".add-driver").click(function(e) {
     var driverTemplate = $("#driverTemplate").clone();
     driverTemplate.attr('id', 'driverTemplate' + initialDriver);
 
-    $(".main-form__btn-container").before(driverTemplate);
+    $(".more-details").before(driverTemplate);
 
     driverTemplate.find(".driver-num").text(driversCountRu[initialDriver] + ' <?= _("водитель") ?>');
 
-    $(".add-car").hide();
+    $(".add-auto").hide();
 
     if(initialDriver == 5) {
         $(".more-details").hide();
@@ -260,7 +259,7 @@ $(".main-form").on('click', '.close-form',  function(e) {
         }
 
         if(initialAuto == 1) {
-            $(".add-car__or").show();
+            $(".add-auto").show();
             $(".add-driver").show();
         }
     } else {
@@ -271,7 +270,7 @@ $(".main-form").on('click', '.close-form',  function(e) {
         }
 
         if(initialDriver == 1) {
-            $(".add-car").show();
+            $(".add-auto").show();
         }
     }
 
