@@ -37,6 +37,13 @@ header {
         width: 70%
     }
 }
+.nav > li > a {
+    padding: 15px 12px;
+
+    @media only screen and (max-width: 767px) {
+        padding: 10px;
+    }
+}
 .navbar {
     padding-top: 20px;
     margin-bottom: 60px;
@@ -44,7 +51,7 @@ header {
     .navbar-nav {
         a {
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             text-decoration: underline;
 
             &:hover, &:focus {
@@ -54,8 +61,8 @@ header {
         }
         span {
             display: inline-block;
-            font-size: 16px;
-            padding: 15px;
+            font-size: 14px;
+            padding: 15px 10px 0;
         }
     }
 }
@@ -69,7 +76,7 @@ header {
     height: auto;
 }
 .navbar-brand__logo {
-    width: 220px;
+    width: 200px;
 }
 .navbar-header {
 
@@ -116,7 +123,7 @@ li.lang-li {
     }
 }
 .first-lang-li {
-    margin-left: 30px;
+    margin-left: 5px;
 }
 .current-lang {
     border: 1px solid #ddddddb3;
