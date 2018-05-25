@@ -134,7 +134,7 @@
             <div class="col-sm-3">&nbsp;</div>
             <div class="col-sm-9">
                 <a href="" class="btn-additional add-driver"><?= _('Добавить водителя') ?></a>
-                <a href="" class="btn-additional add-auto"><?= _('Добавить автомобиль') ?></a>
+                <a href="" class="btn-additional add-auto"><?= _('Добавить авто') ?></a>
             </div>
         </div>
 
