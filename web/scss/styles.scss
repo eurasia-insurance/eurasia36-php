@@ -37,27 +37,44 @@ header {
         width: 70%
     }
 }
+.nav > li > a {
+  padding: 15px 12px;
+
+  @media only screen and (max-width: 767px) {
+    padding: 10px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding: 15px;
+  }
+}
 .navbar {
-    padding-top: 20px;
-    margin-bottom: 60px;
+  padding-top: 20px;
+  margin-bottom: 60px;
 
-    .navbar-nav {
-        a {
-            color: #fff;
-            font-size: 16px;
-            text-decoration: underline;
+  .navbar-nav {
+    a {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: underline;
 
-            &:hover, &:focus {
-                background: transparent !important;
-                color: #6ECFFF;
-            }
-        }
-        span {
-            display: inline-block;
-            font-size: 16px;
-            padding: 15px;
-        }
+      &:hover, &:focus {
+        background: transparent !important;
+        color: #6ECFFF;
+      }
     }
+    span {
+      display: inline-block;
+      font-size: 14px;
+      padding: 15px 10px 0;
+    }
+
+    @media only screen and (min-width: 1200px) {
+      a, span {
+        font-size: 16px;
+      }
+    }
+  }
 }
 .header-tel {
     text-decoration: none !important;
@@ -69,7 +86,11 @@ header {
     height: auto;
 }
 .navbar-brand__logo {
-    width: 220px;
+    width: 200px;
+
+    @media only screen and (min-width: 1200px) {
+        width: 220px;
+    }
 }
 .navbar-header {
 
@@ -116,7 +137,11 @@ li.lang-li {
     }
 }
 .first-lang-li {
-    margin-left: 30px;
+  margin-left: 5px;
+
+  @media only screen and (min-width: 1200px) {
+    margin-left: 15px;
+  }
 }
 .current-lang {
     border: 1px solid #ddddddb3;
