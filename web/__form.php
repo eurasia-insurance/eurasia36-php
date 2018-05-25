@@ -80,8 +80,9 @@
                 <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
                 <div class="col-sm-9" id="inputReg">
                     <select class="form-control region-select" id="regionSelect" name="vehicles[0][area]">
+                        <option value="0" selected disabled><?= _("Выберите регион") ?></option>
                         <option value="GAST"><?= _("Астане") ?></option>
-                        <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
+                        <option value="GALM"><?= _("Алматы") ?></option>
                         <option value="OAKM"><?= _("Акмолинской области") ?></option>
                         <option value="OALM"><?= _("Алматинской области") ?></option>
                         <option value="OAKT"><?= _("Актюбинской области") ?></option>
@@ -295,8 +296,9 @@
             <label for="inputReg" class="col-sm-3 control-label"><?= _("на учёте в") ?></label>
             <div class="col-sm-9" id="inputReg">
                 <select class="form-control region-select" name="vehicles[][area]">
+                    <option value="0" selected disabled><?= _("Выберите регион") ?></option>
                     <option value="GAST"><?= _("Астане") ?></option>
-                    <option value="GALM" selected="selected"><?= _("Алматы") ?></option>
+                    <option value="GALM"><?= _("Алматы") ?></option>
                     <option value="OAKM"><?= _("Акмолинской области") ?></option>
                     <option value="OALM"><?= _("Алматинской области") ?></option>
                     <option value="OAKT"><?= _("Актюбинской области") ?></option>

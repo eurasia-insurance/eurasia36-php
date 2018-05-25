@@ -150,6 +150,38 @@ function checkIin(input) {
 }
 
 
+function checkRegionFilled() {
+
+    var itsOk = true;
+
+    $(".main-form .region-select").each(function(i, e) {
+
+        if($(e).val() == null) {
+
+            $(e).closest(".form-group").slideDown();
+
+            var target = $(e);
+            if( target.length ) {
+                $('html, body').stop().animate({
+                    scrollTop: (target.offset().top - 10)
+                }, 700, function() {
+                    $(e)
+                        .focus()
+                        .addClass('animated shake')
+                        .one("animationend webkitAnimationEnd", function () {
+                            $(this).removeClass('shake');
+                        });
+                });
+            }
+
+            itsOk = false;
+
+            return false;
+        }
+    });
+
+    return itsOk;
+}
 function checkCitiesFilled() {
 
     var itsOk = true;
@@ -311,6 +343,10 @@ function checkMajorityCity(select) {
 
     $(select).parent().next().find('select').remove();
 
+    if($(select).val() === null) {
+        return ;
+    }
+
     if($(select).val().match(/^O/)) {
         $(select).parent().next().find('[type=hidden]').val(0);
 
@@ -391,7 +427,7 @@ $("#main-form").submit(function(e) {
         $(this).attr('readonly', true);
     });
 
-    if(false == checkCitiesFilled()) {
+    if(false == checkRegionFilled() || false == checkCitiesFilled()) {
         return false;
     }
 
@@ -644,7 +680,7 @@ var options = {
 
         vehicleGroup.children('.form-group').slideUp(function() {
             vehicleGroup.find(".input-auto").val('CAR').change();
-            vehicleGroup.find(".region-select").attr('disabled', false).val('GAST').change();
+            vehicleGroup.find(".region-select").attr('disabled', false).val(0).change();
             vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
         });
 
