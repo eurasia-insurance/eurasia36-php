@@ -135,7 +135,7 @@ ob_start("Util::minifyHtml");
 
                 <div class="row pluses">
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + скидка") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
                 </div>
             </div>
@@ -242,7 +242,7 @@ ob_start("Util::minifyHtml");
                         <h4 class="modal-title" id="myModalLabel"><?= _("Доставка и оплата") ?></h4>
                     </div>
                     <div class="modal-body">
-                        <p class="delivery-time"><?= _("Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни.") ?></p>
+                        <p class="delivery-time"><?= _("Доставляем полисы по&nbsp;Алматы и&nbsp;Астане в&nbsp;будние дни с&nbsp;9:00 до&nbsp;22:00, в&nbsp;субботу с&nbsp;9:00 до&nbsp;18:00.") ?></p>
 
                         <p><?= _("Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.") ?></p>
 
