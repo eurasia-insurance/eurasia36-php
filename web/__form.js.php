@@ -680,6 +680,7 @@ var options = {
 
         vehicleGroup.children('.form-group').slideUp(function() {
             vehicleGroup.find(".input-auto").val('CAR').change();
+            vehicleGroup.find(".region-select-text").remove();
             vehicleGroup.find(".region-select").attr('disabled', false).val(0).change();
             vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
         });
