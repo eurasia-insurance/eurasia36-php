@@ -1,10 +1,13 @@
 #!/bin/bash
 
+test -z `which msgfmt 2>/dev/null` && exit
+
 recompile_cmd() {
     src=$1
     target=${src/.po/.mo}
+    test -f "$target" && action="rewriten" || action="created"
     msgfmt $src -o $target
-    echo "$target created"
+    echo "$target $action"
 }
 
 export -f recompile_cmd
