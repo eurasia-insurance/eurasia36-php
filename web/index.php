@@ -166,6 +166,23 @@ ob_start("Util::minifyHtml");
 
                     <?php endif; ?>
 
+                    <div class="check-policy">
+                        <h3>Проверка полиса</h3>
+
+                        <form class="form-inline check-policy__form" action="check-policy.php" method="post">
+                            <input
+                                    type="text"
+                                    name="policyNumber"
+                                    class="form-control"
+                                    id="check-policy"
+                                    placeholder="Номер полиса"
+                            />
+
+                            <button type="submit" class="btn btn-blue pull-right">Проверить</button>
+                        </form>
+                        <div class="check-policy__result"></div>
+                    </div>
+
                     <div class="rating hidden-xs">
                         <img src="./i/rating.png" alt="" />
                         <?= _("У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/kzAA- (S&P, 2017).") ?>
@@ -344,6 +361,7 @@ ob_start("Util::minifyHtml");
             <?php require(__DIR__.'/bootstrap/js/bootstrap.min.js') ?>
             <?php require(__DIR__.'/js/jquery.maskedinput.min.js') ?>
             <?php require('./__form.js.php') ?>
+            <?php require('./__check-policy.js.php') ?>
         </script>
 
         <?php include './__jivosite.php'; ?>

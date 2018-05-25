@@ -446,6 +446,7 @@ li.lang-li {
     animation-name: shake;
 }
 
+@import '_check-policy.scss';
 @import '_notebook.scss';
 @import '_tablet.scss';
 @import '_mobile.scss';
