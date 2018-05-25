@@ -117,9 +117,19 @@ ob_start("Util::minifyHtml");
                     </div>
                     <div id="navbar" class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><span><a href="tel:88000800099" class="header-tel">8 800 080-00-99</a>&nbsp;<br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small></span></li>
+                            <li>
+                                <span>
+                                    <a href="tel:88000800099" class="header-tel">8 800 080-00-99</a>&nbsp;<br class="visible-sm-inline"/><?= _("или") ?> <a href="tel:5678" class="header-tel">5678</a><br/><small><?= _("звонок бесплатный") ?></small>
+                                </span>
+                                <br/>
+                                <a href="#callback"
+                                   data-toggle="modal" data-target="#callback"
+                                   style="display: inline-block; font-size: 12px;padding-top: 0;padding-left: 10px;"
+                                   class="">Перезвоните мне</a>
+                            </li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
-                            <li><a href="./contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Адреса и телефоны") ?></a></li>
+                            <li><a href="https://box.eurasia36.kz"><?= _("Отправить документы") ?></a></li>
+                            <li><a href="./contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Контакты") ?></a></li>
                             <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="./<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
                             <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="./kz<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
                         </ul>
@@ -135,7 +145,7 @@ ob_start("Util::minifyHtml");
 
                 <div class="row pluses">
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + скидка") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
                 </div>
             </div>
@@ -242,7 +252,7 @@ ob_start("Util::minifyHtml");
                         <h4 class="modal-title" id="myModalLabel"><?= _("Доставка и оплата") ?></h4>
                     </div>
                     <div class="modal-body">
-                        <p class="delivery-time"><?= _("Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни.") ?></p>
+                        <p class="delivery-time"><?= _("Доставляем полисы по&nbsp;Алматы и&nbsp;Астане в&nbsp;будние дни с&nbsp;9:00 до&nbsp;22:00, в&nbsp;субботу с&nbsp;9:00 до&nbsp;18:00.") ?></p>
 
                         <p><?= _("Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.") ?></p>
 

@@ -679,8 +679,14 @@ var options = {
 
         vehicleGroup.children('.form-group').slideUp(function() {
             vehicleGroup.find(".input-auto").val('CAR').change();
+            vehicleGroup.find(".region-select-text").remove();
             vehicleGroup.find(".region-select").attr('disabled', false).val(0).change();
-            vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
+            vehicleGroup.find(".temporary-entry")
+                .prop("checked", false)
+                .attr('disabled', false)
+                .change()
+                .show()
+                .parent().css('padding-left', '20px');
         });
 
         if(value === '') {
@@ -696,6 +702,8 @@ var options = {
             data:  { "regNumber" : value },
             dataType: "json"
         }).done(function( data ) {
+
+            var $regionSelect = $(vehicleGroup).find(".region-select");
 
             inputReg.removeClass("loading");
 
@@ -742,19 +750,26 @@ var options = {
                 }
 
                 if(data.temporaryEntry == true) {
-                    $(vehicleGroup).find(".temporary-entry").prop("checked", true).attr('disabled', true).change();
+                    $(vehicleGroup).find(".temporary-entry")
+                        .prop("checked", true)
+                        .attr('disabled', true)
+                        .change()
+                        .hide()
+                        .parent().css('padding-left', 0);
+
                     $(vehicleGroup).find(".temporaryAuto").slideDown();
                 } else {
 
                     if (data.area != null) {
-                        $(vehicleGroup).find(".region-select").val(data.area).change();
+                        $regionSelect.val(data.area).change();
                     } else {
                         $(vehicleGroup).find(".regionAuto").slideDown();
                     }
 
                     if (data.majorCity == null) {
                         if (data.area != null) {
-                            $(vehicleGroup).find(".region-select").attr('disabled', true);
+                            $regionSelect.after("<span class='region-select-text'>" + $regionSelect.find("option:selected").text() + "</span>");
+                            $regionSelect.hide();
                         }
 
                         $(vehicleGroup).find(".regionAuto").slideDown();
