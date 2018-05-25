@@ -1,0 +1,13 @@
+#!/bin/bash
+
+recompile_cmd() {
+    src=$1
+    target=${src/.po/.mo}
+    msgfmt $src -o $target
+    echo "$target created"
+}
+
+export -f recompile_cmd
+
+find . -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
+
