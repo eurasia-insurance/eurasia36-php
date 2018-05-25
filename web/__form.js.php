@@ -682,7 +682,12 @@ var options = {
             vehicleGroup.find(".input-auto").val('CAR').change();
             vehicleGroup.find(".region-select-text").remove();
             vehicleGroup.find(".region-select").attr('disabled', false).val(0).change();
-            vehicleGroup.find(".temporary-entry").prop("checked", false).attr('disabled', false).change();
+            vehicleGroup.find(".temporary-entry")
+                .prop("checked", false)
+                .attr('disabled', false)
+                .change()
+                .show()
+                .parent().css('padding-left', '20px');
         });
 
         if(value === '') {
@@ -746,7 +751,13 @@ var options = {
                 }
 
                 if(data.temporaryEntry == true) {
-                    $(vehicleGroup).find(".temporary-entry").prop("checked", true).attr('disabled', true).change();
+                    $(vehicleGroup).find(".temporary-entry")
+                        .prop("checked", true)
+                        .attr('disabled', true)
+                        .change()
+                        .hide()
+                        .parent().css('padding-left', 0);
+
                     $(vehicleGroup).find(".temporaryAuto").slideDown();
                 } else {
 
