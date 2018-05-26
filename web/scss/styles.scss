@@ -52,7 +52,8 @@ header {
   padding-top: 20px;
   margin-bottom: 60px;
 
-  .navbar-nav {
+  &-nav {
+
     a {
       color: #fff;
       font-size: 14px;
