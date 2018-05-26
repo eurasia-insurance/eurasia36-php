@@ -2,6 +2,8 @@
 
 test -z `which msgfmt 2>/dev/null` && exit
 
+echo "Rebuilding i18n bundles"
+
 recompile_cmd() {
     source=$1
     target=`echo $source | sed -e 's/\.po$/\.mo/'`
@@ -14,3 +16,4 @@ export -f recompile_cmd
 
 find . -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
 
+echo "Done"
