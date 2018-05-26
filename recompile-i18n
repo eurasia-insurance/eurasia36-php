@@ -3,10 +3,10 @@
 test -z `which msgfmt 2>/dev/null` && exit
 
 recompile_cmd() {
-    src=$1
-    target=${src/.po/.mo}
+    source=$1
+    target=`echo $source | sed -e 's/\.po$/\.mo/'`
     test -f "$target" && action="rewriten" || action="created"
-    msgfmt $src -o $target
+    msgfmt $source -o $target
     echo "$target $action"
 }
 
