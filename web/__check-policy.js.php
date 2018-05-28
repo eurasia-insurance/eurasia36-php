@@ -1,11 +1,11 @@
 $(function() {
     var policyStatuses = {
-        PENDING: "полис настоящий, но еще не действителен (дата начала покрытия еще не наступила)",
-        VALID: "полис настоящий, действует",
-        EXPIRED: "полис настоящий, но уже не действителен по сроку действия",
-        TERMINATED: "полис настоящий, договор был расторгнут по инициативе страхователя",
-        PAID: "полис настоящий, но уже не действителен, т.к. по нему уже произведена выплата",
-        null: "полис не найден в системе"
+        PENDING: "<?= _("полис настоящий, но еще не действителен (дата начала покрытия еще не наступила)") ?>",
+        VALID: "<?= _("полис настоящий, действует") ?>",
+        EXPIRED: "<?= _("полис настоящий, но уже не действителен по сроку действия") ?>",
+        TERMINATED: "<?= _("полис настоящий, договор был расторгнут по инициативе страхователя") ?>",
+        PAID: "<?= _("полис настоящий, но уже не действителен, т.к. по нему уже произведена выплата") ?>",
+        null: "<?= _("полис не найден в системе") ?>"
     };
 
     /* отправляем форму расчета страховки */
@@ -16,10 +16,13 @@ $(function() {
         var $button = $(this).find('button');
 
         $input.addClass("loading").prop('readonly', true);
-        $button.text("Проверяем...").prop('disabled', true);
+        $button.text("<?= _("Проверяем...") ?>").prop('disabled', true);
 
         if($input.val().length != 12) {
-            $(".check-policy__result").text("Неверно введен номер полиса");
+            $(".check-policy__result").text("<?= _("Неверно введен номер полиса") ?>");
+
+            $input.removeClass("loading").prop('readonly', false);
+            $button.text("<?= _("Проверить") ?>").prop('disabled', false);
 
             return false;
         }
@@ -41,7 +44,7 @@ $(function() {
             }
 
             $input.removeClass("loading").prop('readonly', false);
-            $button.text("Проверить").prop('disabled', false);
+            $button.text("<?= _("Проверить") ?>").prop('disabled', false);
 
         })
         .fail(function(jqXHR, textStatus) {
