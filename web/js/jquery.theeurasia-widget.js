@@ -7,9 +7,11 @@ if (!host)
     container.addClass("row");
 
     var headerTxt = 'Расчёт и&nbsp;заказ полиса ОГПО онлайн';
+    var bonusTxt = '<strong>Получите бонус до 30%</strong><br/>от&nbsp;стоимости страховки при&nbsp;оплате на&nbsp;сайте картой Евразийского банка';
     var textTxt = ' — по&nbsp;бесплатным телефонам <a href="tel:88000800099" class="ogpo-widget__tel">8 800 080-00-99</a>&nbsp;или&nbsp;<a href="tel:5678" class="ogpo-widget__tel">5678</a>';
     if(container.data('lang') == 'kz') {
         headerTxt = 'АҚЖМС полисін онлайн есептеу жəне тапсырыс беру';
+        bonusTxt = 'Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандырудың құнынан <strong>30% дейін бонус алыңыз</strong>';
         textTxt = ' — <a href="tel:88000800099" class="ogpo-widget__tel">8 800 080-00-99</a> немесе <a href="tel:5678" class="ogpo-widget__tel">5678</a> тегін телефондары бойынша';
     }
 
@@ -23,7 +25,10 @@ if (!host)
         container.append(phonesHeader);
     } else {
 
-        var leftCol = $('<div class="col-xs-12 col-md-3 ogpo-header">' + headerTxt + '</div>');
+        var leftCol = $('<div class="col-xs-12 col-md-3">' +
+            '<h3 class="ogpo-header">' + headerTxt + '</h3>' +
+            '<p class="ogpo-bonus">' + bonusTxt + '</p>' +
+            '</div>');
         container.append(leftCol);
 
         var rightCol = $('<div class="col-xs-12 col-md-8 col-md-offset-1"></div>');
