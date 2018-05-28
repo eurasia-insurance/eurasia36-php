@@ -167,7 +167,7 @@ ob_start("Util::minifyHtml");
                     <?php endif; ?>
 
                     <div class="check-policy">
-                        <h3>Проверка полиса</h3>
+                        <h3><?= _("Проверка полиса") ?></h3>
 
                         <form class="form-inline check-policy__form" action="check-policy.php" method="post">
                             <input
@@ -175,10 +175,10 @@ ob_start("Util::minifyHtml");
                                     name="policyNumber"
                                     class="form-control"
                                     id="check-policy"
-                                    placeholder="Номер полиса"
+                                    placeholder="<?= _("Номер полиса") ?>"
+                                    required
                             />
-
-                            <button type="submit" class="btn btn-blue pull-right">Проверить</button>
+                            <button type="submit" class="btn btn-blue pull-right"><?= _("Проверить") ?></button>
                         </form>
                         <div class="check-policy__result"></div>
                     </div>
