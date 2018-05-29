@@ -3,6 +3,9 @@
 echo "Rebuilding scss bundles"
 test -z `which sass 2>/dev/null` && { echo "No sass installed. Skiped"; exit 1; }
 
+rm -f web/css/*.css
+rm -f web/css/*.css.map
+
 sass --update web/scss/:web/css/
 
 echo "Done"
