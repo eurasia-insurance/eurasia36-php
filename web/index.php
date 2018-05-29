@@ -125,7 +125,7 @@ ob_start("Util::minifyHtml");
                                 <a href="#callback"
                                    data-toggle="modal" data-target="#callback"
                                    style="display: inline-block; font-size: 12px;padding-top: 0;padding-left: 10px;"
-                                   class="">Перезвоните мне</a>
+                                   class=""><?= _("Перезвоните мне") ?></a>
                             </li>
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
                             <li><a href="https://box.eurasia36.kz"><?= _("Отправить документы") ?></a></li>
