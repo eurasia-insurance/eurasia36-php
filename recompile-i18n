@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Rebuilding i18n bundles"
-test -z `which msgfmt 2>/dev/null` && { echo "No msgfmt installed. Skipping..."; exit 1; }
+test -z `which msgfmt 2>/dev/null` && { echo "No msgfmt installed. Skiped"; exit 1; }
 
 recompile_cmd() {
     source=$1
