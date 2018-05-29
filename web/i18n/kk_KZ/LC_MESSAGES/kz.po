@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eurasia\n"
-"POT-Creation-Date: 2018-05-29 11:14+0600\n"
-"PO-Revision-Date: 2018-05-29 11:16+0600\n"
+"POT-Creation-Date: 2018-05-29 11:20+0600\n"
+"PO-Revision-Date: 2018-05-29 11:20+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: kk\n"
@@ -389,6 +389,10 @@ msgid ""
 msgstr ""
 "Тегін жеткізумен автомобильді міндетті сақтандыру (АҚЖМС) — \"Евразия\" "
 "сақтандыру компаниясы"
+
+#: index.php:128
+msgid "Перезвоните мне"
+msgstr "Маған қоңырау шалыңыз"
 
 #: index.php:131
 msgid "Отправить документы"
