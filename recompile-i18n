@@ -13,6 +13,6 @@ recompile_cmd() {
 
 export -f recompile_cmd
 
-find . -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
+find web/i18n -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
 
 echo "Done"

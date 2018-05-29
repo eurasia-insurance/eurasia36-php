@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Minifying css"
+test -z `which yc 2>/dev/null` && { echo "No yc installed. Skiped"; exit 1; }
+
+yc  -o '.css$:.css' web/css/*.css
+
+echo "Done"
