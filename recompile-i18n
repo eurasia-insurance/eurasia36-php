@@ -1,8 +1,7 @@
 #!/bin/bash
 
-test -z `which msgfmt 2>/dev/null` && exit
-
 echo "Rebuilding i18n bundles"
+test -z `which msgfmt 2>/dev/null` && { echo "No msgfmt installed. Skiped"; exit 1; }
 
 recompile_cmd() {
     source=$1
@@ -14,6 +13,6 @@ recompile_cmd() {
 
 export -f recompile_cmd
 
-find . -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
+find web/i18n -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
 
 echo "Done"
