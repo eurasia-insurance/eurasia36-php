@@ -1,18 +1,26 @@
 #!/bin/bash
 
-echo "Rebuilding i18n bundles"
-test -z `which msgfmt 2>/dev/null` && { echo "No msgfmt installed. Skiped"; exit 1; }
+export GREEN='\033[0;32m'
+export NC='\033[0m' # No Color
+
+
+echo "`date` Rebuilding i18n bundles"
+test -z `which msgfmt 2>/dev/null` && { echo "`date` No msgfmt installed. Skiped"; exit 1; }
 
 recompile_cmd() {
     source=$1
     target=`echo $source | sed -e 's/\.po$/\.mo/'`
-    test -f "$target" && action="rewriten" || action="created"
+#    test -f "$target" && action="write" || action="create"
     msgfmt $source -o $target
-    echo "$target $action"
+    echo -e "      ${GREEN}write $target${NC}"
 }
 
 export -f recompile_cmd
 
-find web/i18n -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \;
+echo "`date` Cleanup..."
+find web/i18n -type f -name *.mo -exec rm -f {} \;
 
-echo "Done"
+echo "`date` Building..."
+find web/i18n -type f -name *.po -exec bash -c 'recompile_cmd "$0"' {} \; && {
+    echo "`date` Done"
+}
