@@ -8,6 +8,6 @@ test -z `which yc 2>/dev/null` && { echo "`date` No yc installed. Skiped"; exit 
 
 echo "`date` Building..."
 yc --type css -o '.css$:.css' web/css/*.css && {
-    find web/css/ -name *.css -exec echo -e "      ${GREEN}`date` {} minified ${NC}" \;
+    find web/css/ -name *.css -exec echo -e "      ${GREEN}write {}${NC}" \;
     echo "`date` Done"
 }

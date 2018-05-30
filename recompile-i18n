@@ -10,9 +10,9 @@ test -z `which msgfmt 2>/dev/null` && { echo "`date` No msgfmt installed. Skiped
 recompile_cmd() {
     source=$1
     target=`echo $source | sed -e 's/\.po$/\.mo/'`
-    test -f "$target" && action="rewriten" || action="created"
+#    test -f "$target" && action="write" || action="create"
     msgfmt $source -o $target
-    echo -e "      ${GREEN}$target $action${NC}"
+    echo -e "      ${GREEN}write $target${NC}"
 }
 
 export -f recompile_cmd
