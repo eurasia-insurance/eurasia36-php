@@ -130,12 +130,21 @@
             </div>
         </div>
 
+        <div class="form-group widget-two-col more-details">
+            <div class="col-sm-3">&nbsp;</div>
+            <div class="col-sm-9">
+                <a href="" class="btn-additional add-driver"><?= _('Добавить водителя') ?></a>
+                <a href="" class="btn-additional add-auto"><?= _('Добавить авто') ?></a>
+            </div>
+        </div>
+
         <div class="form-group main-form__btn-container">
             <div class="col-sm-offset-3 col-sm-9">
                 <button type="submit" class="btn btn-blue goal-policy-calculate" disabled="disabled" id="how-much"><?= _("Рассчитать стоимость") ?></button>
             </div>
         </div>
     </form>
+    <?php /** ?>
     <div class="more-details">
         <div class="row">
             <div class="col-sm-offset-3 col-sm-9">
@@ -143,6 +152,7 @@
             </div>
         </div>
     </div>
+    <?php */ ?>
     <form action="policy-request.php" method="post" class="form-horizontal order-form" id="order-form">
         <input type="hidden" name="language" value="<?= $langs[$lang][2] ?>" />
         <input type="hidden" name="phone" value="" />
