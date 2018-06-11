@@ -1,17 +1,33 @@
 $(function() {
     var policyStatuses = {
-        PENDING: "<?= _("полис настоящий, но еще не действителен (дата начала покрытия еще не наступила)") ?>",
-        VALID: "<?= _("полис настоящий, действует") ?>",
-        EXPIRED: "<?= _("полис настоящий, но уже не действителен по сроку действия") ?>",
-        TERMINATED: "<?= _("полис настоящий, договор был расторгнут по инициативе страхователя") ?>",
-        PAID: "<?= _("полис настоящий, но уже не действителен, т.к. по нему уже произведена выплата") ?>",
-        null: "<?= _("полис не найден в системе") ?>"
+        PENDING: "<?= _("Полис настоящий, начнёт действовать %s") ?>",
+        VALID: "<?= _("Полис настоящий, действует до&nbsp;%s") ?>",
+        EXPIRED: "<?= _("Полис настоящий, закончил действие %s") ?>",
+        TERMINATED: "<?= _("Полис настоящий, не&nbsp;действует, потому что&nbsp;страхователь расторгнул договор") ?>",
+        PAID: "<?= _("Полис настоящий, не&nbsp;действует, потому что&nbsp;произведена выплата") ?>",
+        null: "<?= _("Полис не&nbsp;найден. Убедитесь, что&nbsp;ввели номер без&nbsp;ошибок, или&nbsp;свяжитесь с&nbsp;нами") ?>"
+    };
+
+    var month = {
+        '01': '<?= _("января") ?>',
+        '02': '<?= _("февраля") ?>',
+        '03': '<?= _("марта") ?>',
+        '04': '<?= _("апреля") ?>',
+        '05': '<?= _("мая") ?>',
+        '06': '<?= _("июня") ?>',
+        '07': '<?= _("июля") ?>',
+        '08': '<?= _("августа") ?>',
+        '09': '<?= _("сентября") ?>',
+        '10': '<?= _("октября") ?>',
+        '11': '<?= _("ноября") ?>',
+        '12': '<?= _("декабря") ?>'
     };
 
     /* отправляем форму расчета страховки */
     $(".check-policy__form").submit(function(e) {
         e.preventDefault();
 
+        var $container = $(".check-policy");
         var $input = $(this).find('input');
         var $button = $(this).find('button');
 
@@ -38,9 +54,33 @@ $(function() {
 
                 console.log(data);
 
-                $(".check-policy__result").text(policyStatuses[data.policyStatus]);
+                var dateStr = '';
+
+                if(data.policyStatus == 'PENDING') {
+                    var dateRaw = data.validFrom.split("-");
+
+                    dateStr = dateRaw[2] + " " + month.dateRaw[1] + " " + dateRaw[0];
+                } else if (data.policyStatus == 'VALID' || data.policyStatus == 'EXPIRED') {
+                    var dateRaw = data.validTill.split("-");
+
+                    dateStr = dateRaw[2] + " " + month.dateRaw[1] + " " + dateRaw[0];
+                }
+
+                var message = policyStatuses[data.policyStatus];
+                message.replace(new RegExp(/%s/gi), dateStr);
+
+
+                if(data.policyStatus == 'PENDING' || data.policyStatus == 'VALID') {
+                    $container.addClass('check-policy_green');
+                } else if(data.policyStatus == 'EXPIRED' || data.policyStatus == 'TERMINATED' || data.policyStatus == 'PAID'  ) {
+                    $container.addClass('check-policy_yellow');
+                } else {
+                    $container.addClass('check-policy_red');
+                }
+
+                $(".check-policy__result").text(message);
             } else if( data.code == 500 ) {
-//                document.location.href = '/500.html';
+                document.location.href = '/500.html';
             }
 
             $input.removeClass("loading").prop('readonly', false);
@@ -48,7 +88,7 @@ $(function() {
 
         })
         .fail(function(jqXHR, textStatus) {
-//            document.location.href = '/500.html';
+            document.location.href = '/500.html';
         });
     });
 

@@ -177,7 +177,9 @@ ob_start("Util::minifyHtml");
                     <?php endif; ?>
 
                     <div class="check-policy">
-                        <h3><?= _("Проверка полиса") ?></h3>
+                        <h3><?= _("Проверка подлинности страхового полиса Евразии") ?></h3>
+
+                        <p><?= _("Введите 12 цифр номера страховки") ?></p>
 
                         <form class="form-inline check-policy__form" action="check-policy.php" method="post">
                             <input
@@ -188,7 +190,7 @@ ob_start("Util::minifyHtml");
                                     placeholder="<?= _("Номер полиса") ?>"
                                     required
                             />
-                            <button type="submit" class="btn btn-blue pull-right"><?= _("Проверить") ?></button>
+                            <button type="submit" class="btn btn_transparent pull-right"><?= _("Проверить") ?></button>
                         </form>
                         <div class="check-policy__result"></div>
                     </div>
