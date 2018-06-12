@@ -31,6 +31,9 @@ $(function() {
         var $input = $(this).find('input');
         var $button = $(this).find('button');
 
+        $container.removeClass("check-policy_green check-policy_yellow check-policy_red");
+        $(".check-policy__result").text('');
+
         $input.addClass("loading").prop('readonly', true);
         $button.text("<?= _("Проверяем...") ?>").prop('disabled', true);
 
@@ -50,25 +53,21 @@ $(function() {
             dataType: "json"
         }).done(function( data ) {
 
-            if (data.policyStatus) {
-
-                console.log(data);
+            if (data.policyStatus !== undefined) {
 
                 var dateStr = '';
 
                 if(data.policyStatus == 'PENDING') {
                     var dateRaw = data.validFrom.split("-");
 
-                    dateStr = dateRaw[2] + " " + month.dateRaw[1] + " " + dateRaw[0];
+                    dateStr = parseInt(dateRaw[2]) + " " + month[dateRaw[1]] + " " + dateRaw[0];
                 } else if (data.policyStatus == 'VALID' || data.policyStatus == 'EXPIRED') {
                     var dateRaw = data.validTill.split("-");
 
-                    dateStr = dateRaw[2] + " " + month.dateRaw[1] + " " + dateRaw[0];
+                    dateStr = parseInt(dateRaw[2]) + " " + month[dateRaw[1]] + " " + dateRaw[0];
                 }
 
-                var message = policyStatuses[data.policyStatus];
-                message.replace(new RegExp(/%s/gi), dateStr);
-
+                var message = policyStatuses[data.policyStatus].replace("%s", dateStr);
 
                 if(data.policyStatus == 'PENDING' || data.policyStatus == 'VALID') {
                     $container.addClass('check-policy_green');
@@ -78,7 +77,7 @@ $(function() {
                     $container.addClass('check-policy_red');
                 }
 
-                $(".check-policy__result").text(message);
+                $(".check-policy__result").html(message);
             } else if( data.code == 500 ) {
                 document.location.href = '/500.html';
             }

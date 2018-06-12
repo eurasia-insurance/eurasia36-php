@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eurasia\n"
-"POT-Creation-Date: 2018-06-11 17:56+0600\n"
-"PO-Revision-Date: 2018-06-11 17:59+0600\n"
+"POT-Creation-Date: 2018-06-12 15:07+0600\n"
+"PO-Revision-Date: 2018-06-12 15:18+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: kk\n"
@@ -18,33 +18,35 @@ msgstr ""
 #: __check-policy.js.php:3
 #, php-format
 msgid "Полис настоящий, начнёт действовать %s"
-msgstr ""
+msgstr "Берілген полистің қолданылуы %s бастап басталады"
 
 #: __check-policy.js.php:4
 #, php-format
 msgid "Полис настоящий, действует до&nbsp;%s"
-msgstr ""
+msgstr "Берілген полис %s дейін қолданылады"
 
 #: __check-policy.js.php:5
 #, php-format
 msgid "Полис настоящий, закончил действие %s"
-msgstr ""
+msgstr "Берілген полис қолданылуын %s аяқтаған"
 
 #: __check-policy.js.php:6
 msgid ""
 "Полис настоящий, не&nbsp;действует, потому что&nbsp;страхователь расторгнул "
 "договор"
-msgstr ""
+msgstr "Берілген полис қолданылмайды, себебі Сақтанушы шартты бұзған"
 
 #: __check-policy.js.php:7
 msgid "Полис настоящий, не&nbsp;действует, потому что&nbsp;произведена выплата"
-msgstr ""
+msgstr "Берілген полис қолданылмайды, себебі төлем жүзеге асырылған"
 
 #: __check-policy.js.php:8
 msgid ""
 "Полис не&nbsp;найден. Убедитесь, что&nbsp;ввели номер без&nbsp;ошибок, "
 "или&nbsp;свяжитесь с&nbsp;нами"
 msgstr ""
+"Полис табылған жоқ. Нөмірді қатесіз тергеніңізге көз жеткізіңіз, немесе "
+"бізбен байланысыңыз"
 
 #: __check-policy.js.php:12
 msgid "января"
@@ -94,19 +96,17 @@ msgstr "қараша"
 msgid "декабря"
 msgstr "желтоқсан"
 
-#: __check-policy.js.php:35
-msgid "Проверяем..."
-msgstr ""
-
 #: __check-policy.js.php:38
-#, fuzzy
-#| msgid "Неверно указана эл. почта"
-msgid "Неверно введен номер полиса"
-msgstr "Жарамсыз эл. пошта көрсетілді"
+msgid "Проверяем..."
+msgstr "Тексереміз..."
 
-#: __check-policy.js.php:41 __check-policy.js.php:87 index.php:193
+#: __check-policy.js.php:41
+msgid "Неверно введен номер полиса"
+msgstr "Полистің нөмірі қате енгізілген"
+
+#: __check-policy.js.php:44 __check-policy.js.php:86 index.php:193
 msgid "Проверить"
-msgstr ""
+msgstr "Тексеру"
 
 #: __form.js.php:35
 msgid "Второй"
@@ -516,22 +516,16 @@ msgid "Работаем c 1995 года"
 msgstr "1995 ж. бастап жұмыс істейміз"
 
 #: index.php:180
-#, fuzzy
-#| msgid "Адреса и телефоны страховой компании \"Евразия\""
 msgid "Проверка подлинности страхового полиса Евразии"
-msgstr "«Евразия» сақтандыру компаниясының байланыстары"
+msgstr "Евразияның сақтандыру полисінің шынайылығын тексеру"
 
 #: index.php:182
-#, fuzzy
-#| msgid "Узнать стоимость страховки"
 msgid "Введите 12 цифр номера страховки"
-msgstr "Сақтандыру құны білу"
+msgstr "Сақтандырудың нөмірінің 12 санын енгізіңіз"
 
 #: index.php:190
-#, fuzzy
-#| msgid "Заказать полис"
 msgid "Номер полиса"
-msgstr "Полиске тапсырыс беру"
+msgstr "Полистің нөмірі"
 
 #: index.php:200
 msgid ""
