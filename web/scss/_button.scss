@@ -34,3 +34,17 @@
     box-shadow: none;
   }
 }
+
+.btn_transparent {
+  border: 1px solid #0099E6;
+  border-radius: 3px;
+  padding: 15px 20px;
+  background: transparent;
+
+  font-size: 16px;
+  color: #0099E6;
+
+  &:hover {
+    border: 1px solid #0366B4;
+  }
+}
