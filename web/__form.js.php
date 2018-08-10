@@ -544,6 +544,8 @@ $("#order-form").submit(function(e) {
 
 
                     <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
+                    alert(parent);
+                    alert(parent.postMessage);
                     if (parent.postMessage) {
                         parent.postMessage(data.paymentLink, '<?= $_SERVER['HTTP_REFERER'] ?>');
                     }
