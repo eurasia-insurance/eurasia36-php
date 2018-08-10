@@ -40,8 +40,8 @@ class EurasiaAPI {
     /**
      * Запрос к API
      *
-     * @param type $url адрес АПИ метода
-     * @param type $data данные
+     * @param string $url адрес АПИ метода
+     * @param object $data данные
      */
     public static function request($url, $data, $method = 'post', $apiLang = 'ru') {
 
