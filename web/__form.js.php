@@ -542,14 +542,7 @@ $("#order-form").submit(function(e) {
 
                     $("#result-msg").append("<br/><br/><?= _("Сейчас вы будете перенаправлены на страницу оплаты") ?>");
 
-
-                    <?php if(isset($_SERVER['HTTP_REFERER'])): ?>
-                    if (parent.postMessage) {
-                        parent.postMessage(data.paymentLink, '<?= $_SERVER['HTTP_REFERER'] ?>');
-                    }
-                    <?php else: ?>
-                    window.setTimeout('document.location.href="' + data.paymentLink + '"', 3000);
-                    <?php endif; ?>
+                    window.setTimeout('window.top.location.href="' + data.paymentLink + '"', 3000);
                 }
             });
 
