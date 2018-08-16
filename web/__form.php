@@ -96,7 +96,7 @@
                         <option value="OMNG"><?= _("Мангистауской области") ?></option>
                         <option value="OPVL"><?= _("Павлодарской области") ?></option>
                         <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
-                        <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
+                        <option value="OUK"><?= _("Туркестанской области") ?></option>
                     </select>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 major-city__container">
