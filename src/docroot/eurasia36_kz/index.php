@@ -2,13 +2,12 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-require_once(__DIR__ . '/api/EurasiaAPI.php');
-require_once(__DIR__ . '/api/Util.php');
+require_once __DIR__ . '/api/EurasiaAPI.php';
+require_once __DIR__ . '/api/Util.php';
 
 $ping = EurasiaAPI::ping();
 if($ping != '0') {
-
-    throw new Exception($ping['message'], 500);
+    throw new Exception("Exception is '" . $ping['message'] . "'", 500);
 }
 
 
@@ -72,7 +71,7 @@ ob_start("Util::minifyHtml");
 
         <style>
             <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
-            <?php require(__DIR__.'/css/styles.css') ?>
+            <?php require(__DIR__.'/css/styles.min.css') ?>
         </style>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

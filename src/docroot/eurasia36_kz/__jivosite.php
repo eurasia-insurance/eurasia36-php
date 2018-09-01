@@ -1,5 +1,5 @@
 <?php 
-require_once './.settings.php';
+require_once __DIR__ . '/settings.php';
 if (defined('PARAM_JIVOSITE_WIDGET_ID')):
 ?>
 
