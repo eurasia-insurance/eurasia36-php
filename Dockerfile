@@ -1,7 +1,7 @@
 FROM lapsatech/centos7-httpd-php
 MAINTAINER "Vadim Isaev" <vadim.o.isaev@gmail.com>
 
-COPY docroot/ /var/www/
+COPY sites/ /var/www/
 COPY conf.d/ /etc/httpd/conf.d/
 COPY pki/ /etc/pki/tls/
 

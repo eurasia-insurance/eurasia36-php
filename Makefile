@@ -35,10 +35,12 @@ _docker-build: compile
 	docker build -t $(IMAGE_NAME) -f $(CURRENT_DIR)/Dockerfile $(TARGET_DIR)
 
 run: _docker-build
-	docker run -it -p 80:80 -p 443:443 $(IMAGE_NAME)
+	mkdir -p $(TARGET_DIR)/sites/html
+	docker run -it -p 80:80 -p 443:443 -v $(TARGET_DIR)/sites:/var/www $(IMAGE_NAME)
 
 start: _docker-build
-	docker run -d  -p 80:80 -p 443:443 --name $(CONTAINER_NAME) $(IMAGE_NAME)
+	mkdir -p $(TARGET_DIR)/sites/html
+	docker run -d  -p 80:80 -p 443:443 -v $(TARGET_DIR)/sites:/var/www --name $(CONTAINER_NAME) $(IMAGE_NAME)
 
 stop:
 	docker container stop $(CONTAINER_NAME)
