@@ -2,7 +2,7 @@
 
 header('Content-Type: text/html; charset=utf-8');
 
-require_once(__DIR__ . '/api/Util.php');
+require_once __DIR__ . '/api/Util.php';
 
 $langs = ['ru' => ['Русский', 'ru_RU'], 'kz' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
 
@@ -70,7 +70,7 @@ ob_start("Util::minifyHtml");
         <!-- Bootstrap core CSS -->
         <style>
             <?php require(__DIR__.'/bootstrap/css/bootstrap.min.css') ?>
-            <?php require(__DIR__.'/css/styles.css') ?>
+            <?php require(__DIR__.'/css/styles.min.css') ?>
         </style>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

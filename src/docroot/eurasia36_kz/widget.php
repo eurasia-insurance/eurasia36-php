@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 session_start();
 
-require_once(__DIR__.'/.settings.php');
+require_once __DIR__ . './settings.php';
 
 $langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kz' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
 
@@ -67,7 +67,7 @@ $widgets = [
 
     <!-- Bootstrap core CSS -->
     <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="./css/widget.css?<?= filemtime(__DIR__ .'/css/widget.css') ?>" rel="stylesheet"/>
+    <link href="./css/widget.css?<?= filemtime(__DIR__ .'/css/widget.min.css') ?>" rel="stylesheet"/>
     <?php if($widgetId): ?>
     <link href="./css/<?= $widgets[$widgetId] ?>.css?<?= filemtime(__DIR__ .'/css/'.$widgets[$widgetId].'.css') ?>" rel="stylesheet"/>
     <?php endif; ?>

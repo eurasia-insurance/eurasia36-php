@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__.'/../.settings.php'); # settings needs to be in a separate file due to requirements of portability
+require_once __DIR__ . '/../settings.php'; # settings needs to be in a separate file due to requirements of portability
 
 class EurasiaAPI {
 
@@ -45,8 +45,6 @@ class EurasiaAPI {
      */
     public static function request($url, $data, $method = 'post', $apiLang = 'ru') {
 
-        $logPath = __DIR__.'/../logs/';
-
         $curl = curl_init();
 
         // WS под паролем
@@ -76,12 +74,8 @@ class EurasiaAPI {
         // ошибка вызова
         if($code != 200) {
 
-            if(!is_dir($logPath)) {
-                mkdir($logPath, 0777, true);
-            }
-
             // запишем ошибку в лог
-            file_put_contents($logPath.date('Ymd').'.log', date("y-m-d H:i:s")." Code $code, message $out, URL $url, data $data" . PHP_EOL, FILE_APPEND);
+            error_log("Code $code, message $out, URL $url, data $data");
 
             return json_encode(['error' => true, 'code' => $code, 'message' => json_decode($out, true)]);
         } else {
