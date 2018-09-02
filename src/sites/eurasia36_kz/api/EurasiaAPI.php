@@ -4,12 +4,19 @@ require_once __DIR__ . '/../settings.php'; # settings needs to be in a separate 
 
 class EurasiaAPI {
 
-    const WS_HOST = PARAM_WS_HOST;
-
-    const WS_USER = PARAM_WS_USER;
-
-    const WS_PWD = PARAM_WS_PWD;
-
+    private $WS_HOST;
+    
+    private $WS_USER;
+    
+    private $WS_PWD;
+    
+    public function __construct() {
+        global $PARAM_WS_HOST, $PARAM_WS_USER, $PARAM_WS_PWD;
+        self::$WS_HOST = $$PARAM_WS_HOST;
+        self::$WS_USER = $$PARAM_WS_USER;
+        self::$WS_PWD = $$PARAM_WS_PWD;
+    }
+    
 
     /**
      * Проверка доступности вебсервиса
@@ -48,11 +55,11 @@ class EurasiaAPI {
         $curl = curl_init();
 
         // WS под паролем
-        curl_setopt($curl, CURLOPT_USERPWD, self::WS_USER . ":" . self::WS_PWD);
+        curl_setopt($curl, CURLOPT_USERPWD, self::$WS_USER . ":" . self::$WS_PWD);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($curl, CURLOPT_USERAGENT, 'grafica-API-client/1.0');
-        curl_setopt($curl, CURLOPT_URL, self::WS_HOST.$url);
+        curl_setopt($curl, CURLOPT_URL, self::$WS_HOST.$url);
 
         if($method == 'post') {
             curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
