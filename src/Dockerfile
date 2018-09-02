@@ -5,7 +5,8 @@ COPY docroot/ /var/www/
 COPY conf/ /etc/httpd/conf.d/
 COPY pki/ /etc/pki/tls/
 
-ENV PAYARA_AJP_HOST payara.local
-ENV PAYARA_AJP_PORT 8009
+ENV EURASIA36_WS_URL https://payara.local:443/
+ENV EURASIA36_WS_USER admin
+ENV EURASIA36_WS_PASSWORD admin
 
 WORKDIR /var/www/

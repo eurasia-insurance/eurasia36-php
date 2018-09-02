@@ -1,10 +1,15 @@
 <?php
+if ($_ENV["EURASIA36_WS_URL"]) {
+    const PARAM_WS_HOST = $_ENV["EURASIA36_WS_URL"];
+}
 
-const PARAM_WS_HOST = 'https://payara:8181/';
+if ($_ENV["EURASIA36_WS_USER"]) {
+    const PARAM_WS_USER = $_ENV["EURASIA36_WS_USER"];
+}
 
-const PARAM_WS_USER = 'admin';
-
-const PARAM_WS_PWD = 'admin';
+if ($_ENV["EURASIA36_WS_PASSWORD"]) {
+    const PARAM_WS_PWD = $_ENV["EURASIA36_WS_PASSWORD"];
+}
 
 // const PARAM_JIVOSITE_WIDGET_ID = 'JIVOSITE_WIDGET_ID';
 
