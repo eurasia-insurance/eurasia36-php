@@ -15,11 +15,11 @@ if($ping != '0') {
 session_start();
 
 
-$langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kz' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
+$langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kk' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
 
 
 $lang = (isset($_GET['lang']) && array_key_exists($_GET['lang'], $langs)) ? $_GET['lang'] : 'ru';
-$apiLang = $lang == 'kz' ? 'kk' : $lang;
+$apiLang = $lang;
 
 $_SESSION['apiLang'] = $apiLang;
 
@@ -131,7 +131,7 @@ ob_start("Util::minifyHtml");
                             <li><a href="https://box.eurasia36.kz"><?= _("Отправить документы") ?></a></li>
                             <li><a href="./contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Контакты") ?></a></li>
                             <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="./<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
-                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="./kz<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kk'): ?><span class="current-lang">KZ</span><?php else: ?><a href="./kk<?= Util::passParameters() ?>">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>
