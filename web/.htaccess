@@ -9,7 +9,8 @@ ErrorDocument 500 /500.html
     RewriteCond %{REQUEST_FILENAME} -l [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^.*$ - [NC,L]
-    RewriteRule ^(ru|kz|en)/?$ index.php?lang=$1 [QSA,L]
+    RewriteRule ^kz/?$ index.php?lang=kk [QSA,L]
+    RewriteRule ^(ru|kz|kk|en)/?$ index.php?lang=$1 [QSA,L]
 </IfModule>
 
 <IfModule mod_deflate.c>

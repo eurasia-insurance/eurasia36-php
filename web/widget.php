@@ -6,11 +6,11 @@ session_start();
 
 require_once(__DIR__.'/.settings.php');
 
-$langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kz' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
+$langs = ['ru' => ['Русский', 'ru_RU', 'RUSSIAN'], 'kk' => ['Қазақша', 'kk_KZ', 'KAZAKH']/*, 'en' => ['English', 'en_US']*/];
 
 
 $lang = (isset($_GET['lang']) && array_key_exists($_GET['lang'], $langs)) ? $_GET['lang'] : 'ru';
-$apiLang = $lang == 'kz' ? 'kk' : $lang;
+$apiLang = $lang;
 
 $_SESSION['apiLang'] = $apiLang;
 
