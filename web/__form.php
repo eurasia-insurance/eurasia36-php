@@ -83,6 +83,7 @@
                         <option value="0" selected disabled><?= _("Выберите регион") ?></option>
                         <option value="GAST"><?= _("Астане") ?></option>
                         <option value="GALM"><?= _("Алматы") ?></option>
+                        <option value="GSHM"><?= _("Шымкенте") ?></option>
                         <option value="OAKM"><?= _("Акмолинской области") ?></option>
                         <option value="OALM"><?= _("Алматинской области") ?></option>
                         <option value="OAKT"><?= _("Актюбинской области") ?></option>
