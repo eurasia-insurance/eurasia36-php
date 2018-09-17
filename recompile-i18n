@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker run --rm -it -v $(pwd)/web:/web -v $(pwd)/src/i18n:/src -v $(pwd)/web/i18n:/i18n lapsatech/msgfmt:latest msgfmt
+make compile
+
