@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-17 16:07+0000\n"
+"POT-Creation-Date: 2018-09-17 16:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __form.php:74 /web/__form.php:74
+#: /web/__form.php:74
 #, php-format
 msgid "%d и новее"
 msgstr ""
 
-#: index.php:215 index.php:230 /web/index.php:215 /web/index.php:230
+#: /web/index.php:215 /web/index.php:230
 msgid "10 000 тенге  в&nbsp;минуту"
 msgstr ""
 
-#: index.php:349 /web/index.php:349
+#: /web/index.php:349
 msgid ""
 "16% от&nbsp;стоимости страховки при оплате &laquo;Картой рассрочки&raquo;\n"
 "                        и&nbsp;30% при оплате любой другой картой "
 "Евразийского Банка."
 msgstr ""
 
-#: __form.php:21 __form.php:238 /web/__form.php:21 /web/__form.php:237
-#: /web/__form.php:238
+#: /web/__form.php:21 /web/__form.php:238
 msgid "2 года и больше"
 msgstr ""
 
-#: contacts.php:126 /web/contacts.php:126
+#: /web/contacts.php:126
 msgid "5678 — бесплатно с мобильного"
 msgstr ""
 
-#: contacts.php:125 /web/contacts.php:125
+#: /web/contacts.php:125
 msgid "8 800 080-00-99 — бесплатная горячая линия по Казахстану"
 msgstr ""
 
-#: __form.php:178 /web/__form.php:177 /web/__form.php:178
+#: /web/__form.php:178
 msgid ""
 "<a href=\"\" class=\"gray flink\" data-toggle=\"modal\" data-target="
 "\"#cashback\">Бонус до 30%</a> при оплате картой <img src=\"./i/eubank.png\" "
@@ -56,64 +55,55 @@ msgstr ""
 #. echo '<pre>';
 #. print_r($offices);
 #. echo '</pre>';
-#: contacts.php:222 index.php:241 /web/index.php:241 /web/contacts.php:222
+#: /web/index.php:241 /web/contacts.php:222
 msgid "© АО «Страховая компания «Евразия»"
 msgstr ""
 
-#: index.php:210 /web/index.php:210
+#: /web/index.php:210
 msgid "«Евразия» основана в 1995 году, и работает в 75 странах мира."
 msgstr ""
 
-#: __form.php:58 __form.php:284 /web/__form.php:58 /web/__form.php:283
-#: /web/__form.php:284
+#: /web/__form.php:58 /web/__form.php:284
 msgid "Автобус (более 16 пассажиров)"
 msgstr ""
 
-#: __form.php:57 __form.php:283 /web/__form.php:57 /web/__form.php:282
-#: /web/__form.php:283
+#: /web/__form.php:57 /web/__form.php:283
 msgid "Автобус (до 16 пассажиров)"
 msgstr ""
 
-#: contacts.php:107 contacts.php:122 /web/contacts.php:107
-#: /web/contacts.php:122
+#: /web/contacts.php:107 /web/contacts.php:122
 msgid "Адреса и телефоны"
 msgstr ""
 
-#: contacts.php:68 /web/contacts.php:68
+#: /web/contacts.php:68
 msgid "Адреса и телефоны страховой компании \"Евразия\""
 msgstr ""
 
-#: __form.php:87 __form.php:313 /web/__form.php:86 /web/__form.php:312
-#: /web/__form.php:87 /web/__form.php:313
+#: /web/__form.php:87 /web/__form.php:314
 msgid "Акмолинской области"
 msgstr ""
 
-#: __form.php:89 __form.php:315 /web/__form.php:88 /web/__form.php:314
-#: /web/__form.php:89 /web/__form.php:315
+#: /web/__form.php:89 /web/__form.php:316
 msgid "Актюбинской области"
 msgstr ""
 
-#: __form.php:88 __form.php:314 /web/__form.php:87 /web/__form.php:313
-#: /web/__form.php:88 /web/__form.php:314
+#: /web/__form.php:88 /web/__form.php:315
 msgid "Алматинской области"
 msgstr ""
 
-#: __form.php:85 __form.php:312 /web/__form.php:85 /web/__form.php:311
-#: /web/__form.php:312
+#: /web/__form.php:85 /web/__form.php:312
 msgid "Алматы"
 msgstr ""
 
-#: __form.php:84 __form.php:311 /web/__form.php:84 /web/__form.php:310
-#: /web/__form.php:311
+#: /web/__form.php:84 /web/__form.php:311
 msgid "Астане"
 msgstr ""
 
-#: __form.php:90 __form.php:316 /web/__form.php:89 /web/__form.php:315
-#: /web/__form.php:90 /web/__form.php:316
+#: /web/__form.php:90 /web/__form.php:317
 msgid "Атырауской области"
 msgstr ""
 
-#: index.php:355 /web/index.php:355
+#: /web/index.php:355
 msgid ""
 "Банк зачисляет бонусы в&nbsp;течение 3&nbsp;дней, сразу после списания "
 "оплаты за&nbsp;страховку.\n"
@@ -121,374 +111,355 @@ msgid ""
 "оплачивать покупки или переводить в&nbsp;&laquo;живые&raquo; деньги."
 msgstr ""
 
-#: __form.php:176 /web/__form.php:175 /web/__form.php:176
+#: /web/__form.php:176
 msgid ""
 "Бонус до 30% при оплате картой <img src=\"./i/eubank.png\" alt=\"\" /> "
 "Евразийского банка"
 msgstr ""
 
-#: index.php:147 /web/index.php:147
+#: /web/index.php:147
 msgid "Быстрое оформление полиса"
 msgstr ""
 
-#: index.php:223 /web/index.php:223
+#: /web/index.php:223
 msgid ""
 "В октябре 2017 года Standard & Poor’s присвоил «Евразии» наивысший среди "
 "частных финансовых компаний Казахстана рейтинг «ВВ+/kzAA-» (прогноз "
 "позитивный)."
 msgstr ""
 
-#: __form.php:4 /web/__form.php:4
+#: /web/__form.php:4
 msgid "Ваш ИИН"
 msgstr ""
 
-#: __form.php:276 /web/__form.php:275 /web/__form.php:276
+#: /web/__form.php:276
 msgid "Ваше авто"
 msgstr ""
 
-#: __form.php:122 /web/__form.php:121 /web/__form.php:122
+#: /web/__form.php:122
 msgid "Ваше имя"
 msgstr ""
 
-#: index.php:182 /web/index.php:182
+#: /web/index.php:182
 msgid "Введите 12 цифр номера страховки"
 msgstr ""
 
-#: __form.js.php:788 /web/__form.js.php:788
+#: /web/__form.js.php:788
 msgid "Ввести данные вручную"
 msgstr ""
 
-#: __form.php:91 __form.php:317 /web/__form.php:90 /web/__form.php:316
-#: /web/__form.php:91 /web/__form.php:317
+#: /web/__form.php:91 /web/__form.php:318
 msgid "Восточно-Казахстанской области"
 msgstr ""
 
-#: __form.js.php:35 /web/__form.js.php:35
+#: /web/__form.js.php:35
 msgid "Второй"
 msgstr ""
 
-#: policy-request.php:128 /web/policy-request.php:128
+#: /web/policy-request.php:128
 msgid "Вы забыли указать номер телефона"
 msgstr ""
 
-#: __form.js.php:362 /web/__form.js.php:362
+#: /web/__form.js.php:362
 msgid "Выберите город"
 msgstr ""
 
-#: __form.php:83 __form.php:310 /web/__form.php:83 /web/__form.php:309
-#: /web/__form.php:310
+#: /web/__form.php:83 /web/__form.php:310
 msgid "Выберите регион"
 msgstr ""
 
-#: __form.php:39 __form.php:265 /web/__form.php:39 /web/__form.php:264
-#: /web/__form.php:265
+#: /web/__form.php:39 /web/__form.php:265
 msgid "Гос. номер"
 msgstr ""
 
-#: __form.php:55 __form.php:281 /web/__form.php:55 /web/__form.php:280
-#: /web/__form.php:281
+#: /web/__form.php:55 /web/__form.php:281
 msgid "Грузовик"
 msgstr ""
 
-#: __form.php:138 /web/__form.php:137 /web/__form.php:138
+#: /web/__form.php:138
 msgid "Добавить авто"
 msgstr ""
 
-#: __form.php:137 /web/__form.php:136 /web/__form.php:137
+#: /web/__form.php:137
 msgid "Добавить водителя"
 msgstr ""
 
-#: contacts.php:106 contacts.php:235 index.php:130 index.php:271
 #: /web/index.php:130 /web/index.php:271 /web/contacts.php:106
 #: /web/contacts.php:235
 msgid "Доставка и оплата"
 msgstr ""
 
-#: index.php:274 /web/index.php:274
+#: /web/index.php:274
 msgid ""
 "Доставляем полисы по&nbsp;Алматы и&nbsp;Астане в&nbsp;будние дни с&nbsp;9:00 "
 "до&nbsp;22:00, в&nbsp;субботу с&nbsp;9:00 до&nbsp;18:00."
 msgstr ""
 
-#: contacts.php:238 /web/contacts.php:238
+#: /web/contacts.php:238
 msgid "Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни."
 msgstr ""
 
-#: index.php:343 /web/index.php:343
+#: /web/index.php:343
 msgid ""
 "Если карты нет, закажите её&nbsp;с&nbsp;доставкой на&nbsp;дом:\n"
 "                        <a href=\"https://pay.smartbank.kz/cards\" target="
 "\"_blank\">https://pay.smartbank.kz/cards</a>."
 msgstr ""
 
-#: __form.php:260 /web/__form.php:259 /web/__form.php:260
+#: /web/__form.php:260
 msgid "Ещё один автомобиль"
 msgstr ""
 
-#: __form.php:217 /web/__form.php:216 /web/__form.php:217
+#: /web/__form.php:217
 msgid "Ещё один водитель"
 msgstr ""
 
-#: __form.php:92 __form.php:318 /web/__form.php:91 /web/__form.php:317
-#: /web/__form.php:92 /web/__form.php:318
+#: /web/__form.php:92 /web/__form.php:319
 msgid "Жамбылской области"
 msgstr ""
 
-#: index.php:293 /web/index.php:293
+#: /web/index.php:293
 msgid "Заказ звонка"
 msgstr ""
 
-#: index.php:318 /web/index.php:318
+#: /web/index.php:318
 msgid "Заказать"
 msgstr ""
 
-#: __form.js.php:560 __form.php:195 /web/__form.php:194 /web/__form.js.php:560
-#: /web/__form.php:195
+#: /web/__form.php:195 /web/__form.js.php:560
 msgid "Заказать полис"
 msgstr ""
 
-#: __form.php:93 __form.php:319 /web/__form.php:92 /web/__form.php:318
-#: /web/__form.php:93 /web/__form.php:319
+#: /web/__form.php:93 /web/__form.php:320
 msgid "Западно-Казахстанской области"
 msgstr ""
 
-#: __form.php:206 /web/__form.php:205 /web/__form.php:206
+#: /web/__form.php:206
 msgid "Заполнить еще одну заявку"
 msgstr ""
 
-#: __form.php:221 /web/__form.php:220 /web/__form.php:221
+#: /web/__form.php:221
 msgid "ИИН"
 msgstr ""
 
-#: index.php:316 /web/index.php:316
+#: /web/index.php:316
 msgid "Имя"
 msgstr ""
 
-#: __form.js.php:121 /web/__form.js.php:121
+#: /web/__form.js.php:121
 msgid ""
 "К сожалению, произошла ошибка. Пожалуйста, загляните чуть позже или "
 "позвоните нас по телефонам 8&nbsp;800-080-00-99 или 5678"
 msgstr ""
 
-#: index.php:353 /web/index.php:353
+#: /web/index.php:353
 msgid "Как воспользоваться бонусами"
 msgstr ""
 
-#: index.php:339 /web/index.php:339
+#: /web/index.php:339
 msgid "Как получить бонусы"
 msgstr ""
 
-#: __form.php:94 __form.php:320 /web/__form.php:93 /web/__form.php:319
-#: /web/__form.php:94 /web/__form.php:320
+#: /web/__form.php:94 /web/__form.php:321
 msgid "Карагандинской области"
 msgstr ""
 
-#: index.php:219 /web/index.php:219
+#: /web/index.php:219
 msgid ""
 "Компании страхуют у нас сотрудников, транспорт, имущество и гражданско-"
 "правовую ответственность. Частные лица — автомобили (КАСКО и ОГПО ВТС), "
 "имущество и здоровье при выезде за рубеж."
 msgstr ""
 
-#: index.php:132 /web/index.php:132
+#: /web/index.php:132
 msgid "Контакты"
 msgstr ""
 
-#: __form.php:95 __form.php:321 /web/__form.php:94 /web/__form.php:320
-#: /web/__form.php:95 /web/__form.php:321
+#: /web/__form.php:95 /web/__form.php:322
 msgid "Костанайской области"
 msgstr ""
 
-#: __form.php:96 __form.php:322 /web/__form.php:95 /web/__form.php:321
-#: /web/__form.php:96 /web/__form.php:322
+#: /web/__form.php:96 /web/__form.php:323
 msgid "Кызылординской области"
 msgstr ""
 
-#: __form.php:53 __form.php:279 /web/__form.php:53 /web/__form.php:278
-#: /web/__form.php:279
+#: /web/__form.php:53 /web/__form.php:279
 msgid "Легковая машина"
 msgstr ""
 
-#: __form.php:97 __form.php:323 /web/__form.php:96 /web/__form.php:322
-#: /web/__form.php:97 /web/__form.php:323
+#: /web/__form.php:97 /web/__form.php:324
 msgid "Мангистауской области"
 msgstr ""
 
-#: index.php:148 /web/index.php:148
+#: /web/index.php:148
 msgid "Минимальная цена + бонусы"
 msgstr ""
 
-#: __form.php:54 __form.php:280 /web/__form.php:54 /web/__form.php:279
-#: /web/__form.php:280
+#: /web/__form.php:54 /web/__form.php:280
 msgid "Мотоцикл"
 msgstr ""
 
-#: index.php:212 /web/index.php:212
+#: /web/index.php:212
 msgid "Мы предлагаем все виды страхования для компаний и частных лиц."
 msgstr ""
 
-#: __form.js.php:686 __form.php:43 __form.php:269 /web/__form.php:43
-#: /web/__form.php:268 /web/__form.js.php:686 /web/__form.php:269
+#: /web/__form.php:43 /web/__form.php:269 /web/__form.js.php:686
 msgid "Не помню гос. номер"
 msgstr ""
 
-#: __form.js.php:123 /web/__form.js.php:123
+#: /web/__form.js.php:123
 msgid "Неверно введен ИИН. Пожалуйста, проверьте еще раз."
 msgstr ""
 
-#: __check-policy.js.php:41 /web/__check-policy.js.php:41
+#: /web/__check-policy.js.php:41
 msgid "Неверно введен номер полиса"
 msgstr ""
 
-#: policy-request.php:144 /web/policy-request.php:144
+#: /web/policy-request.php:144
 msgid "Неверно указана эл. почта"
 msgstr ""
 
-#: __form.js.php:368 /web/__form.js.php:368
+#: /web/__form.js.php:368
 msgid "Нет в списке"
 msgstr ""
 
-#: index.php:190 /web/index.php:190
+#: /web/index.php:190
 msgid "Номер полиса"
 msgstr ""
 
-#: index.php:208 /web/index.php:208
+#: /web/index.php:208
 msgid "О страховой компании «Евразия»"
 msgstr ""
 
-#: index.php:142 /web/index.php:142
+#: /web/index.php:142
 msgid "ОГПО ВТС"
 msgstr ""
 
-#: index.php:144 /web/index.php:144
+#: /web/index.php:144
 msgid "Обязательная автостраховка с&nbsp;бесплатной доставкой"
 msgstr ""
 
-#: index.php:71 widget.php:66 /web/index.php:71 /web/widget.php:66
+#: /web/index.php:71 /web/widget.php:66
 msgid ""
 "Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая "
 "компания \"Евразия\""
 msgstr ""
 
-#: contacts.php:244 index.php:280 /web/index.php:280 /web/contacts.php:244
+#: /web/index.php:280 /web/contacts.php:244
 msgid "Оплата наличными курьеру при получении."
 msgstr ""
 
-#: index.php:340 /web/index.php:340
+#: /web/index.php:340
 msgid ""
 "Оплатите страховку на&nbsp;сайте eurasia36.kz картой Евразийского Банка."
 msgstr ""
 
-#: index.php:131 /web/index.php:131
+#: /web/index.php:131
 msgid "Отправить документы"
 msgstr ""
 
-#: index.php:244 /web/index.php:244
+#: /web/index.php:244
 msgid "Отправить нам документы"
 msgstr ""
 
-#: __form.js.php:517 /web/__form.js.php:517
+#: /web/__form.js.php:517
 msgid "Отправляем заявку..."
 msgstr ""
 
-#: index.php:221 /web/index.php:221
+#: /web/index.php:221
 msgid ""
 "Офисы компании работают в Алматы, Астане, Караганде и других крупных городах "
 "Казахстана."
 msgstr ""
 
-#: __form.php:98 __form.php:324 /web/__form.php:97 /web/__form.php:323
-#: /web/__form.php:98 /web/__form.php:324
+#: /web/__form.php:98 /web/__form.php:325
 msgid "Павлодарской области"
 msgstr ""
 
-#: index.php:322 /web/index.php:322
+#: /web/index.php:322
 msgid "Перезвоним в течение 10 минут."
 msgstr ""
 
-#: __form.php:203 /web/__form.php:202 /web/__form.php:203
+#: /web/__form.php:203
 msgid ""
 "Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках."
 msgstr ""
 
-#: index.php:128 /web/index.php:128
+#: /web/index.php:128
 msgid "Перезвоните мне"
 msgstr ""
 
-#: index.php:358 /web/index.php:358
+#: /web/index.php:358
 msgid ""
 "Подробнее на&nbsp;<a href=\"https://bonus.eubank.kz\" target=\"_blank"
 "\">https://bonus.eubank.kz/</a>"
 msgstr ""
 
-#: __check-policy.js.php:4 /web/__check-policy.js.php:4
+#: /web/__check-policy.js.php:4
 #, php-format
 msgid "Полис настоящий, действует до&nbsp;%s"
 msgstr ""
 
-#: __check-policy.js.php:5 /web/__check-policy.js.php:5
+#: /web/__check-policy.js.php:5
 #, php-format
 msgid "Полис настоящий, закончил действие %s"
 msgstr ""
 
-#: __check-policy.js.php:3 /web/__check-policy.js.php:3
+#: /web/__check-policy.js.php:3
 #, php-format
 msgid "Полис настоящий, начнёт действовать %s"
 msgstr ""
 
-#: __check-policy.js.php:7 /web/__check-policy.js.php:7
+#: /web/__check-policy.js.php:7
 msgid "Полис настоящий, не&nbsp;действует, потому что&nbsp;произведена выплата"
 msgstr ""
 
-#: __check-policy.js.php:6 /web/__check-policy.js.php:6
+#: /web/__check-policy.js.php:6
 msgid ""
 "Полис настоящий, не&nbsp;действует, потому что&nbsp;страхователь расторгнул "
 "договор"
 msgstr ""
 
-#: __check-policy.js.php:8 /web/__check-policy.js.php:8
+#: /web/__check-policy.js.php:8
 msgid ""
 "Полис не&nbsp;найден. Убедитесь, что&nbsp;ввели номер без&nbsp;ошибок, "
 "или&nbsp;свяжитесь с&nbsp;нами"
 msgstr ""
 
-#: contacts.php:242 index.php:278 /web/index.php:278 /web/contacts.php:242
+#: /web/index.php:278 /web/contacts.php:242
 msgid "Принимаем заказы круглосуточно, без выходных и праздничных дней."
 msgstr ""
 
-#: __form.php:56 __form.php:282 /web/__form.php:56 /web/__form.php:281
-#: /web/__form.php:282
+#: /web/__form.php:56 /web/__form.php:282
 msgid "Прицеп"
 msgstr ""
 
-#: __check-policy.js.php:44 __check-policy.js.php:86 index.php:193
 #: /web/index.php:193 /web/__check-policy.js.php:44
 #: /web/__check-policy.js.php:86
 msgid "Проверить"
 msgstr ""
 
-#: index.php:180 /web/index.php:180
+#: /web/index.php:180
 msgid "Проверка подлинности страхового полиса Евразии"
 msgstr ""
 
-#: __check-policy.js.php:38 /web/__check-policy.js.php:38
+#: /web/__check-policy.js.php:38
 msgid "Проверяем..."
 msgstr ""
 
-#: __form.js.php:38 /web/__form.js.php:38
+#: /web/__form.js.php:38
 msgid "Пятый"
 msgstr ""
 
-#: index.php:149 /web/index.php:149
+#: /web/index.php:149
 msgid "Работаем c 1995 года"
 msgstr ""
 
-#: __form.js.php:455 __form.js.php:475 __form.php:144 /web/__form.php:143
-#: /web/__form.js.php:455 /web/__form.js.php:475 /web/__form.php:144
+#: /web/__form.php:144 /web/__form.js.php:455 /web/__form.js.php:475
 msgid "Рассчитать стоимость"
 msgstr ""
 
-#: __form.js.php:433 /web/__form.js.php:433
+#: /web/__form.js.php:433
 msgid "Расчитываем стоимость..."
 msgstr ""
 
@@ -496,43 +467,41 @@ msgstr ""
 #. <br/>
 #. <a href="https://creditpolis.theeurasia.kz/"><?= _("Страховка в рассрочку") ?></a>
 #.
-#: index.php:256 /web/index.php:256
+#: /web/index.php:256
 msgid "Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»"
 msgstr ""
 
-#: contacts.php:240 index.php:276 /web/index.php:276 /web/contacts.php:240
+#: /web/index.php:276 /web/contacts.php:240
 msgid ""
 "Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, "
 "Актау, Павлодаре, Атырау и Актобе."
 msgstr ""
 
-#: __form.php:99 __form.php:325 /web/__form.php:98 /web/__form.php:324
-#: /web/__form.php:99 /web/__form.php:325
+#: /web/__form.php:99 /web/__form.php:326
 msgid "Северо-Казахстанской области"
 msgstr ""
 
-#: __form.js.php:543 /web/__form.js.php:543
+#: /web/__form.js.php:543
 msgid "Сейчас вы будете перенаправлены на страницу оплаты"
 msgstr ""
 
-#: __form.js.php:479 /web/__form.js.php:479
+#: /web/__form.js.php:479
 msgid "Сервис временно недоступен. Но вы можете оставить заявку."
 msgstr ""
 
-#: index.php:347 /web/index.php:347
+#: /web/index.php:347
 msgid "Сколько я&nbsp;получу?"
 msgstr ""
 
-#: __form.js.php:591 /web/__form.js.php:591
+#: /web/__form.js.php:591
 msgid "Спасибо, мы приняли вашу заявку."
 msgstr ""
 
-#: __form.js.php:539 __form.php:197 /web/__form.php:196 /web/__form.js.php:539
-#: /web/__form.php:197
+#: /web/__form.php:197 /web/__form.js.php:539
 msgid "Спасибо. Мы получили вашу заявку"
 msgstr ""
 
-#: index.php:322 /web/index.php:322
+#: /web/index.php:322
 msgid "Спросите менеджера о действующих скидках."
 msgstr ""
 
@@ -545,177 +514,170 @@ msgstr ""
 #. </div>
 #. </div>
 #. <?php
-#: __form.php:162 /web/__form.php:161 /web/__form.php:162
+#: /web/__form.php:162
 msgid "Стоимость вашей страховки"
 msgstr ""
 
-#: index.php:317 /web/index.php:317
+#: /web/index.php:317
 msgid "Телефон"
 msgstr ""
 
-#: __form.php:50 /web/__form.php:50
+#: /web/__form.php:50
 msgid "Тип авто"
 msgstr ""
 
-#: __form.js.php:36 /web/__form.js.php:36
+#: /web/__form.js.php:36
 msgid "Третий"
 msgstr ""
 
-#: __form.php:285 /web/__form.php:284 /web/__form.php:285
+#: /web/__form.php:285
 msgid "Троллейбус или трамвай"
 msgstr ""
 
-#: __form.php:100 /web/__form.php:99 /web/__form.php:100
+#: /web/__form.php:100
 msgid "Туркестанской области"
 msgstr ""
 
-#: index.php:200 /web/index.php:200
+#: /web/index.php:200
 msgid ""
 "У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/"
 "kzAA- (S&P, 2017)."
 msgstr ""
 
-#: index.php:227 /web/index.php:227
+#: /web/index.php:227
 msgid "Узнать стоимость страховки"
 msgstr ""
 
-#: __form.js.php:37 /web/__form.js.php:37
+#: /web/__form.js.php:37
 msgid "Четвертый"
 msgstr ""
 
-#: __form.php:86 /web/__form.php:86
+#: /web/__form.php:86 /web/__form.php:313
 msgid "Шымкенте"
 msgstr ""
 
-#: contacts.php:127 /web/contacts.php:127
+#: /web/contacts.php:127
 msgid "Эл. почта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>"
 msgstr ""
 
-#: __form.php:326 /web/__form.php:325 /web/__form.php:326
+#: /web/__form.php:327
 msgid "Южно-Казахстанской области"
 msgstr ""
 
-#: __check-policy.js.php:19 /web/__check-policy.js.php:19
+#: /web/__check-policy.js.php:19
 msgid "августа"
 msgstr ""
 
-#: __form.js.php:228 /web/__form.js.php:228
+#: /web/__form.js.php:228
 msgid "автомобиль"
 msgstr ""
 
-#: __check-policy.js.php:15 /web/__check-policy.js.php:15
+#: /web/__check-policy.js.php:15
 msgid "апреля"
 msgstr ""
 
-#: __form.js.php:264 /web/__form.js.php:264
+#: /web/__form.js.php:264
 msgid "водитель"
 msgstr ""
 
-#: __form.php:114 __form.php:340 /web/__form.php:113 /web/__form.php:339
-#: /web/__form.php:114 /web/__form.php:340
+#: /web/__form.php:114 /web/__form.php:341
 msgid "временный въезд на территорию РК"
 msgstr ""
 
-#: __form.js.php:714 /web/__form.js.php:714
+#: /web/__form.js.php:714
 msgid "г."
 msgstr ""
 
-#: __form.php:63 __form.php:290 /web/__form.php:63 /web/__form.php:289
-#: /web/__form.php:290
+#: /web/__form.php:63 /web/__form.php:290
 msgid "год выпуска"
 msgstr ""
 
-#: __check-policy.js.php:23 /web/__check-policy.js.php:23
+#: /web/__check-policy.js.php:23
 msgid "декабря"
 msgstr ""
 
-#: __form.php:68 /web/__form.php:68
+#: /web/__form.php:68
 #, php-format
 msgid "до %d"
 msgstr ""
 
-#: __form.php:10 __form.php:227 /web/__form.php:10 /web/__form.php:226
-#: /web/__form.php:227
+#: /web/__form.php:10 /web/__form.php:227
 msgid "за рулем"
 msgstr ""
 
-#: index.php:227 /web/index.php:227
+#: /web/index.php:227
 msgid "заказать звонок"
 msgstr ""
 
-#: contacts.php:105 index.php:122 /web/index.php:122 /web/contacts.php:105
+#: /web/index.php:122 /web/contacts.php:105
 msgid "звонок бесплатный"
 msgstr ""
 
-#: contacts.php:105 index.php:122 index.php:227 /web/index.php:122
-#: /web/index.php:227 /web/contacts.php:105
+#: /web/index.php:122 /web/index.php:227 /web/contacts.php:105
 msgid "или"
 msgstr ""
 
-#: index.php:216 index.php:231 /web/index.php:216 /web/index.php:231
+#: /web/index.php:216 /web/index.php:231
 msgid "или 5,9 млн. тенге в день выплачивает «Евразия» своим клиентам"
 msgstr ""
 
-#: __check-policy.js.php:18 /web/__check-policy.js.php:18
+#: /web/__check-policy.js.php:18
 msgid "июля"
 msgstr ""
 
-#: __check-policy.js.php:17 /web/__check-policy.js.php:17
+#: /web/__check-policy.js.php:17
 msgid "июня"
 msgstr ""
 
-#: __form.php:32 __form.php:249 /web/__form.php:32 /web/__form.php:248
-#: /web/__form.php:249
+#: /web/__form.php:32 /web/__form.php:249
 msgid "льготные условия для пенсионеров и инвалидов"
 msgstr ""
 
-#: __check-policy.js.php:14 /web/__check-policy.js.php:14
+#: /web/__check-policy.js.php:14
 msgid "марта"
 msgstr ""
 
-#: __check-policy.js.php:16 /web/__check-policy.js.php:16
+#: /web/__check-policy.js.php:16
 msgid "мая"
 msgstr ""
 
-#: __form.php:15 __form.php:232 /web/__form.php:15 /web/__form.php:231
-#: /web/__form.php:232
+#: /web/__form.php:15 /web/__form.php:232
 msgid "менее 2 лет"
 msgstr ""
 
-#: __form.php:80 __form.php:307 /web/__form.php:80 /web/__form.php:306
-#: /web/__form.php:307
+#: /web/__form.php:80 /web/__form.php:307
 msgid "на учёте в"
 msgstr ""
 
-#: __form.js.php:718 /web/__form.js.php:718
+#: /web/__form.js.php:718
 msgid "на учёте в "
 msgstr ""
 
-#: __check-policy.js.php:22 /web/__check-policy.js.php:22
+#: /web/__check-policy.js.php:22
 msgid "ноября"
 msgstr ""
 
-#: __check-policy.js.php:21 /web/__check-policy.js.php:21
+#: /web/__check-policy.js.php:21
 msgid "октября"
 msgstr ""
 
 #. * <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span>
-#: __form.php:172 /web/__form.php:171 /web/__form.php:172
+#: /web/__form.php:172
 msgid "оплатить банковской картой в интернете"
 msgstr ""
 
-#: __check-policy.js.php:20 /web/__check-policy.js.php:20
+#: /web/__check-policy.js.php:20
 msgid "сентября"
 msgstr ""
 
-#: __form.js.php:457 /web/__form.js.php:457
+#: /web/__form.js.php:457
 msgid "тенге"
 msgstr ""
 
-#: __check-policy.js.php:13 /web/__check-policy.js.php:13
+#: /web/__check-policy.js.php:13
 msgid "февраля"
 msgstr ""
 
-#: __check-policy.js.php:12 /web/__check-policy.js.php:12
+#: /web/__check-policy.js.php:12
 msgid "января"
 msgstr ""
