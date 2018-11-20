@@ -1,0 +1,747 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: eurasia36\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-17 16:15+0000\n"
+"PO-Revision-Date: 2018-06-12 15:18+0600\n"
+"Last-Translator: Vadim Isaev <vadim.o.isaev@gmail.com>\n"
+"Language-Team: Vadim Isaev <vadim.o.isaev@gmail.com>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: /web/__form.php:74
+#, php-format
+msgid "%d и новее"
+msgstr "%d және одан жаңа"
+
+#: /web/index.php:215 /web/index.php:230
+msgid "10 000 тенге  в&nbsp;минуту"
+msgstr "Минутына 10 000 теңге"
+
+#: /web/index.php:349
+msgid ""
+"16% от&nbsp;стоимости страховки при оплате &laquo;Картой рассрочки&raquo;\n"
+"                        и&nbsp;30% при оплате любой другой картой "
+"Евразийского Банка."
+msgstr ""
+"«Бөліп төлеу картасымен» төлеу кезінде сақтандыру құнынан 16% және "
+"Еуразиялық Банктің кез келген басқа картасымен төлеу кезінде 30%."
+
+#: /web/__form.php:21 /web/__form.php:238
+msgid "2 года и больше"
+msgstr "2 жылдан артық"
+
+#: /web/contacts.php:126
+msgid "5678 — бесплатно с мобильного"
+msgstr "5678 — ұялы телефоннан тегін"
+
+#: /web/contacts.php:125
+msgid "8 800 080-00-99 — бесплатная горячая линия по Казахстану"
+msgstr "8 800 080-00-99 — Қазақстан бойынша тегін жедел желі"
+
+#: /web/__form.php:178
+msgid ""
+"<a href=\"\" class=\"gray flink\" data-toggle=\"modal\" data-target="
+"\"#cashback\">Бонус до 30%</a> при оплате картой <img src=\"./i/eubank.png\" "
+"alt=\"\" /> Евразийского банка"
+msgstr ""
+"<img src=\"/i/eubank.png\" alt=\"\" /> Еуразиялық банктің картасымен төлеу "
+"кезінде <a href=\"\" class=\"gray flink\" data-toggle=\"modal\" data-target="
+"\"#cashback\">30% дейін бонус</a>"
+
+#. echo '<pre>';
+#. print_r($offices);
+#. echo '</pre>';
+#: /web/index.php:241 /web/contacts.php:222
+msgid "© АО «Страховая компания «Евразия»"
+msgstr "© «Евразия» Сақтандыру компаниясы» АҚ"
+
+#: /web/index.php:210
+msgid "«Евразия» основана в 1995 году, и работает в 75 странах мира."
+msgstr "«Евразия» 1995 жылы құрылған, және әлемнің 75 елдерінде жұмыс істейді."
+
+#: /web/__form.php:58 /web/__form.php:284
+msgid "Автобус (более 16 пассажиров)"
+msgstr "16 артық жолаушылары бар автобустар"
+
+#: /web/__form.php:57 /web/__form.php:283
+msgid "Автобус (до 16 пассажиров)"
+msgstr "16 және одан аз жолаушылары бар автобустар"
+
+#: /web/contacts.php:107 /web/contacts.php:122
+msgid "Адреса и телефоны"
+msgstr "Байланыстар"
+
+#: /web/contacts.php:68
+msgid "Адреса и телефоны страховой компании \"Евразия\""
+msgstr "«Евразия» сақтандыру компаниясының байланыстары"
+
+#: /web/__form.php:87 /web/__form.php:314
+msgid "Акмолинской области"
+msgstr "Ақмола облысы"
+
+#: /web/__form.php:89 /web/__form.php:316
+msgid "Актюбинской области"
+msgstr "Ақтөбе облысы"
+
+#: /web/__form.php:88 /web/__form.php:315
+msgid "Алматинской области"
+msgstr "Алматы облысы"
+
+#: /web/__form.php:85 /web/__form.php:312
+msgid "Алматы"
+msgstr "Алматы қаласы"
+
+#: /web/__form.php:84 /web/__form.php:311
+msgid "Астане"
+msgstr "Астана қаласы"
+
+#: /web/__form.php:90 /web/__form.php:317
+msgid "Атырауской области"
+msgstr "Атырау облысы"
+
+#: /web/index.php:355
+msgid ""
+"Банк зачисляет бонусы в&nbsp;течение 3&nbsp;дней, сразу после списания "
+"оплаты за&nbsp;страховку.\n"
+"                        После этого бонусами можно пользоваться&nbsp;&mdash; "
+"оплачивать покупки или переводить в&nbsp;&laquo;живые&raquo; деньги."
+msgstr ""
+"Банк бонустарды сақтандыру үшін төлемақыны есептен шығарғаннан кейін дереу, "
+"3 күн ішінде есептейді. Содан кейін бұл бонустарды пайдалануға – сатып "
+"алуларға төлеуге немесе «нақты» ақшаға аударуға болады."
+
+#: /web/__form.php:176
+msgid ""
+"Бонус до 30% при оплате картой <img src=\"./i/eubank.png\" alt=\"\" /> "
+"Евразийского банка"
+msgstr ""
+"<img src=\"/i/eubank.png\" alt=\"\" /> Еуразиялық банктің картасымен төлеу "
+"кезінде 30% дейін бонус"
+
+#: /web/index.php:147
+msgid "Быстрое оформление полиса"
+msgstr "Полисті жылдам ресімдеу"
+
+#: /web/index.php:223
+msgid ""
+"В октябре 2017 года Standard & Poor’s присвоил «Евразии» наивысший среди "
+"частных финансовых компаний Казахстана рейтинг «ВВ+/kzAA-» (прогноз "
+"позитивный)."
+msgstr ""
+"2017 жылы Standard & Poor’s «Евразияға» Қазақстанның жеке қаржы "
+"компанияларының арасында ең жоғарғы «ВВ+/kzAA-» («оң») рейтингін берді."
+
+#: /web/__form.php:4
+msgid "Ваш ИИН"
+msgstr "Сіздің ЖСН"
+
+#: /web/__form.php:276
+msgid "Ваше авто"
+msgstr "Сіздің автокөлік"
+
+#: /web/__form.php:122
+msgid "Ваше имя"
+msgstr "Сіздің атыңыз"
+
+#: /web/index.php:182
+msgid "Введите 12 цифр номера страховки"
+msgstr "Сақтандырудың нөмірінің 12 санын енгізіңіз"
+
+#: /web/__form.js.php:788
+msgid "Ввести данные вручную"
+msgstr "Деректерді қолдан енгізу"
+
+#: /web/__form.php:91 /web/__form.php:318
+msgid "Восточно-Казахстанской области"
+msgstr "Шығыс Қазақстан облысы"
+
+#: /web/__form.js.php:35
+msgid "Второй"
+msgstr "Екінші"
+
+#: /web/policy-request.php:128
+msgid "Вы забыли указать номер телефона"
+msgstr "Телефон нөмірін қосуды ұмытып қалдыңыз"
+
+#: /web/__form.js.php:362
+msgid "Выберите город"
+msgstr "Қаланы таңдаңыз"
+
+#: /web/__form.php:83 /web/__form.php:310
+msgid "Выберите регион"
+msgstr "Өңірді таңдаңыз"
+
+#: /web/__form.php:39 /web/__form.php:265
+msgid "Гос. номер"
+msgstr "Көлігіңіздің нөмірі"
+
+#: /web/__form.php:55 /web/__form.php:281
+msgid "Грузовик"
+msgstr "Жүк"
+
+#: /web/__form.php:138
+msgid "Добавить авто"
+msgstr "Тағы бір авто"
+
+#: /web/__form.php:137
+msgid "Добавить водителя"
+msgstr "Тағы бір жүргізуші"
+
+#: /web/index.php:130 /web/index.php:271 /web/contacts.php:106
+#: /web/contacts.php:235
+msgid "Доставка и оплата"
+msgstr "Жеткізу және төлеу"
+
+#: /web/index.php:274
+msgid ""
+"Доставляем полисы по&nbsp;Алматы и&nbsp;Астане в&nbsp;будние дни с&nbsp;9:00 "
+"до&nbsp;22:00, в&nbsp;субботу с&nbsp;9:00 до&nbsp;18:00."
+msgstr ""
+"Полистерді Алматы және Астана бойынша жұмыс күндері 9:00 бастап 22:00 дейін, "
+"сенбіде 9:00 бастап 18:00 дейін жеткіземіз."
+
+#: /web/contacts.php:238
+msgid "Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни."
+msgstr ""
+"Полистерді тек Алматы қ. бойынша жұмыс күндері<br/>сағат 9:00 ден 19:00 "
+"дейін жеткіземіз."
+
+#: /web/index.php:343
+msgid ""
+"Если карты нет, закажите её&nbsp;с&nbsp;доставкой на&nbsp;дом:\n"
+"                        <a href=\"https://pay.smartbank.kz/cards\" target="
+"\"_blank\">https://pay.smartbank.kz/cards</a>."
+msgstr ""
+"Егер картаңыз болмаса, оны үйге жеткізумен тапсырыс беріңіз: <a href="
+"\"https://pay.smartbank.kz/cards\" target=\"_blank\">https://pay.smartbank."
+"kz/cards</a>"
+
+#: /web/__form.php:260
+msgid "Ещё один автомобиль"
+msgstr "Тағы бір автомобиль"
+
+#: /web/__form.php:217
+msgid "Ещё один водитель"
+msgstr "Тағы бір жүргізуші"
+
+#: /web/__form.php:92 /web/__form.php:319
+msgid "Жамбылской области"
+msgstr "Жамбыл облысы"
+
+#: /web/index.php:293
+msgid "Заказ звонка"
+msgstr "Қоңырау шалуға тапсырыс"
+
+#: /web/index.php:318
+msgid "Заказать"
+msgstr "Тапсырыс беру"
+
+#: /web/__form.php:195 /web/__form.js.php:560
+msgid "Заказать полис"
+msgstr "Полиске тапсырыс беру"
+
+#: /web/__form.php:93 /web/__form.php:320
+msgid "Западно-Казахстанской области"
+msgstr "Батыс Қазақстан облысы"
+
+#: /web/__form.php:206
+msgid "Заполнить еще одну заявку"
+msgstr "Тағы бір өтінішті толтыру"
+
+#: /web/__form.php:221
+msgid "ИИН"
+msgstr "Сіздің ЖСН"
+
+#: /web/index.php:316
+msgid "Имя"
+msgstr "Сіздің атыңыз"
+
+#: /web/__form.js.php:121
+msgid ""
+"К сожалению, произошла ошибка. Пожалуйста, загляните чуть позже или "
+"позвоните нас по телефонам 8&nbsp;800-080-00-99 или 5678"
+msgstr ""
+"Өкінішке орай қателік орын алды. Өтінеміз, кешірек кіріңіз немесе "
+"8&nbsp;800-080-00-99 немесе 5678 телефондары бойынша қоңырау шалыңыз."
+
+#: /web/index.php:353
+msgid "Как воспользоваться бонусами"
+msgstr "Бонустарды қалай пайдалануға болады"
+
+#: /web/index.php:339
+msgid "Как получить бонусы"
+msgstr "Бонустарды қалай алуға болады"
+
+#: /web/__form.php:94 /web/__form.php:321
+msgid "Карагандинской области"
+msgstr "Қарағанды облысы"
+
+#: /web/index.php:219
+msgid ""
+"Компании страхуют у нас сотрудников, транспорт, имущество и гражданско-"
+"правовую ответственность. Частные лица — автомобили (КАСКО и ОГПО ВТС), "
+"имущество и здоровье при выезде за рубеж."
+msgstr ""
+"Компаниялар бізде қызметкерлерін, көлікті, мүлікті және азаматтық-құқықтық "
+"жауапкершілікті сақтандырады. Жеке тұлғалар – автомобильдерді (КАСКО және "
+"КҚИ АҚЖМС), мүлікті және шетелге шығу кезінде денсаулығын."
+
+#: /web/index.php:132
+msgid "Контакты"
+msgstr "Байланыстар"
+
+#: /web/__form.php:95 /web/__form.php:322
+msgid "Костанайской области"
+msgstr "Қостанай облысы"
+
+#: /web/__form.php:96 /web/__form.php:323
+msgid "Кызылординской области"
+msgstr "Қызылорда облысы"
+
+#: /web/__form.php:53 /web/__form.php:279
+msgid "Легковая машина"
+msgstr "Жеңіл"
+
+#: /web/__form.php:97 /web/__form.php:324
+msgid "Мангистауской области"
+msgstr "Маңғыстау облысы"
+
+#: /web/index.php:148
+msgid "Минимальная цена + бонусы"
+msgstr "Минималды баға + бонустар"
+
+#: /web/__form.php:54 /web/__form.php:280
+msgid "Мотоцикл"
+msgstr "Мотокөлік"
+
+#: /web/index.php:212
+msgid "Мы предлагаем все виды страхования для компаний и частных лиц."
+msgstr ""
+"Біз компаниялар мен жеке тұлғалар үшін сақтандырудың барлық түрлерін "
+"ұсынамыз."
+
+#: /web/__form.php:43 /web/__form.php:269 /web/__form.js.php:686
+msgid "Не помню гос. номер"
+msgstr "Мемл. нөмір есімде жоқ"
+
+#: /web/__form.js.php:123
+msgid "Неверно введен ИИН. Пожалуйста, проверьте еще раз."
+msgstr "ЖСН қате енгізілген. Өтінеміз, тағы да бір рет тексеріңіз."
+
+#: /web/__check-policy.js.php:41
+msgid "Неверно введен номер полиса"
+msgstr "Полистің нөмірі қате енгізілген"
+
+#: /web/policy-request.php:144
+msgid "Неверно указана эл. почта"
+msgstr "Жарамсыз эл. пошта көрсетілді"
+
+#: /web/__form.js.php:368
+msgid "Нет в списке"
+msgstr "Тізімде жоқ"
+
+#: /web/index.php:190
+msgid "Номер полиса"
+msgstr "Полистің нөмірі"
+
+#: /web/index.php:208
+msgid "О страховой компании «Евразия»"
+msgstr "«Евразия» сақтандыру компаниясы туралы"
+
+#: /web/index.php:142
+msgid "ОГПО ВТС"
+msgstr "КҚИ АҚЖМС"
+
+#: /web/index.php:144
+msgid "Обязательная автостраховка с&nbsp;бесплатной доставкой"
+msgstr "Тегін жеткізумен міндетті автосақтандыру"
+
+#: /web/index.php:71 /web/widget.php:66
+msgid ""
+"Обязательная страховка автомобиля (ОГПО) с бесплатной доставкой — страховая "
+"компания \"Евразия\""
+msgstr ""
+"Тегін жеткізумен автомобильді міндетті сақтандыру (АҚЖМС) — \"Евразия\" "
+"сақтандыру компаниясы"
+
+#: /web/index.php:280 /web/contacts.php:244
+msgid "Оплата наличными курьеру при получении."
+msgstr "Төлем қолқа алу кезінде курьерге қолма-қол ақшамен."
+
+#: /web/index.php:340
+msgid ""
+"Оплатите страховку на&nbsp;сайте eurasia36.kz картой Евразийского Банка."
+msgstr ""
+"Сақтандыру үшін eurasia36.kz сайтында Еуразиялық Банктің картасымен төлеңіз."
+
+#: /web/index.php:131
+msgid "Отправить документы"
+msgstr "Құжаттарды жіберу"
+
+#: /web/index.php:244
+msgid "Отправить нам документы"
+msgstr "Бізге құжаттарды жіберу"
+
+#: /web/__form.js.php:517
+msgid "Отправляем заявку..."
+msgstr "Өтінімді жібереміз …"
+
+#: /web/index.php:221
+msgid ""
+"Офисы компании работают в Алматы, Астане, Караганде и других крупных городах "
+"Казахстана."
+msgstr ""
+"Компанияның офистері Алматы, Астана, Қарағанды қалаларында және Қазақстанның "
+"басқа ірі қалаларында жұмыс істейді."
+
+#: /web/__form.php:98 /web/__form.php:325
+msgid "Павлодарской области"
+msgstr "Павлодар облысы"
+
+#: /web/index.php:322
+msgid "Перезвоним в течение 10 минут."
+msgstr "10 минут ішінде қайта қоңырау шаламыз."
+
+#: /web/__form.php:203
+msgid ""
+"Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках."
+msgstr ""
+"10 минут ішінде қайта қоңырау шаламыз. Менеджерден қолданыстағы жеңілдіктер "
+"туралы сұраңыз."
+
+#: /web/index.php:128
+msgid "Перезвоните мне"
+msgstr "Маған қоңырау шалыңыз"
+
+#: /web/index.php:358
+msgid ""
+"Подробнее на&nbsp;<a href=\"https://bonus.eubank.kz\" target=\"_blank"
+"\">https://bonus.eubank.kz/</a>"
+msgstr ""
+"Толығырақ <a href=\"https://bonus.eubank.kz\" target=\"_blank\">https://"
+"bonus.eubank.kz/</a>"
+
+#: /web/__check-policy.js.php:4
+#, php-format
+msgid "Полис настоящий, действует до&nbsp;%s"
+msgstr "Берілген полис %s дейін қолданылады"
+
+#: /web/__check-policy.js.php:5
+#, php-format
+msgid "Полис настоящий, закончил действие %s"
+msgstr "Берілген полис қолданылуын %s аяқтаған"
+
+#: /web/__check-policy.js.php:3
+#, php-format
+msgid "Полис настоящий, начнёт действовать %s"
+msgstr "Берілген полистің қолданылуы %s бастап басталады"
+
+#: /web/__check-policy.js.php:7
+msgid "Полис настоящий, не&nbsp;действует, потому что&nbsp;произведена выплата"
+msgstr "Берілген полис қолданылмайды, себебі төлем жүзеге асырылған"
+
+#: /web/__check-policy.js.php:6
+msgid ""
+"Полис настоящий, не&nbsp;действует, потому что&nbsp;страхователь расторгнул "
+"договор"
+msgstr "Берілген полис қолданылмайды, себебі Сақтанушы шартты бұзған"
+
+#: /web/__check-policy.js.php:8
+msgid ""
+"Полис не&nbsp;найден. Убедитесь, что&nbsp;ввели номер без&nbsp;ошибок, "
+"или&nbsp;свяжитесь с&nbsp;нами"
+msgstr ""
+"Полис табылған жоқ. Нөмірді қатесіз тергеніңізге көз жеткізіңіз, немесе "
+"бізбен байланысыңыз"
+
+#: /web/index.php:278 /web/contacts.php:242
+msgid "Принимаем заказы круглосуточно, без выходных и праздничных дней."
+msgstr ""
+"Тапсырыстарды тәулік бойына, демалыссыз және мереке күндері қабылдаймыз."
+
+#: /web/__form.php:56 /web/__form.php:282
+msgid "Прицеп"
+msgstr "Тіркемелер (жартылай тіркемелер)"
+
+#: /web/index.php:193 /web/__check-policy.js.php:44
+#: /web/__check-policy.js.php:86
+msgid "Проверить"
+msgstr "Тексеру"
+
+#: /web/index.php:180
+msgid "Проверка подлинности страхового полиса Евразии"
+msgstr "Евразияның сақтандыру полисінің шынайылығын тексеру"
+
+#: /web/__check-policy.js.php:38
+msgid "Проверяем..."
+msgstr "Тексереміз..."
+
+#: /web/__form.js.php:38
+msgid "Пятый"
+msgstr "Бесінші"
+
+#: /web/index.php:149
+msgid "Работаем c 1995 года"
+msgstr "1995 ж. бастап жұмыс істейміз"
+
+#: /web/__form.php:144 /web/__form.js.php:455 /web/__form.js.php:475
+msgid "Рассчитать стоимость"
+msgstr "Бағасын есептеп шығару"
+
+#: /web/__form.js.php:433
+msgid "Расчитываем стоимость..."
+msgstr "Құнын есептейміз…"
+
+#. *
+#. <br/>
+#. <a href="https://creditpolis.theeurasia.kz/"><?= _("Страховка в рассрочку") ?></a>
+#.
+#: /web/index.php:256
+msgid "Сайт сделан<br/>в&nbsp;<span>студии&nbsp;«Графика»"
+msgstr "Сайт «Графика»<br/>студиясында&nbsp;жасалған"
+
+#: /web/index.php:276 /web/contacts.php:240
+msgid ""
+"Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, "
+"Актау, Павлодаре, Атырау и Актобе."
+msgstr ""
+"Өзі алып кету Алматы, Астана, Қарағанды, Өскемен, Қостанай, Ақтау, Павлодар, "
+"Атырау және Ақтөбе қалаларында мүмкін болады."
+
+#: /web/__form.php:99 /web/__form.php:326
+msgid "Северо-Казахстанской области"
+msgstr "Солтүстік Қазақстан облысы"
+
+#: /web/__form.js.php:543
+msgid "Сейчас вы будете перенаправлены на страницу оплаты"
+msgstr "Сіз қазір төлеу парақшасына ауыстырыласыз"
+
+#: /web/__form.js.php:479
+msgid "Сервис временно недоступен. Но вы можете оставить заявку."
+msgstr "Сервис уақытша қолжетімді емес. Бірақ сіз өтінімді қалдыра аласыз."
+
+#: /web/index.php:347
+msgid "Сколько я&nbsp;получу?"
+msgstr "Мен қанша аламын?"
+
+#: /web/__form.js.php:591
+msgid "Спасибо, мы приняли вашу заявку."
+msgstr "Рахмет. Біз сіздің өтініміңізді алдық"
+
+#: /web/__form.php:197 /web/__form.js.php:539
+msgid "Спасибо. Мы получили вашу заявку"
+msgstr "Рахмет. Біз сіздің өтініміңізді алдық"
+
+#: /web/index.php:322
+msgid "Спросите менеджера о действующих скидках."
+msgstr "Менеджерден қолданыстағы жеңілдіктер туралы сұраңыз."
+
+#. * ?>
+#. <div class="more-details">
+#. <div class="row">
+#. <div class="col-sm-offset-3 col-sm-9">
+#. <?= _('Добавить ещё<br class="visible-xs"/>&nbsp;<a href="" class="btn-additional add-driver">водителя</a><span class="add-car"><span class="add-car__or">&nbsp;<br class="visible-sm"/>или</span>&nbsp;<a href="" class="btn-additional add-auto">автомобиль</a></span>') ?>
+#. </div>
+#. </div>
+#. </div>
+#. <?php
+#: /web/__form.php:162
+msgid "Стоимость вашей страховки"
+msgstr "Сіздің сақтандырудың құны"
+
+#: /web/index.php:317
+msgid "Телефон"
+msgstr ""
+
+#: /web/__form.php:50
+msgid "Тип авто"
+msgstr "Автокөлік түрі"
+
+#: /web/__form.js.php:36
+msgid "Третий"
+msgstr "Үшінші"
+
+#: /web/__form.php:285
+msgid "Троллейбус или трамвай"
+msgstr ""
+
+#: /web/__form.php:100
+msgid "Туркестанской области"
+msgstr "Түркістан облысы"
+
+#: /web/index.php:200
+msgid ""
+"У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BB+/"
+"kzAA- (S&P, 2017)."
+msgstr ""
+"Бізде Қазақстанның жеке қаржы компанияларының арасындағы ең жоғарғы рейтинг: "
+"BB+/kzAA- (S&P, 2017)."
+
+#: /web/index.php:227
+msgid "Узнать стоимость страховки"
+msgstr "Сақтандыру құны білу"
+
+#: /web/__form.js.php:37
+msgid "Четвертый"
+msgstr "Төртінші"
+
+#: /web/__form.php:86 /web/__form.php:313
+msgid "Шымкенте"
+msgstr "Шымкент қаласы"
+
+#: /web/contacts.php:127
+msgid "Эл. почта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>"
+msgstr ""
+"Эл. пошта: <a href=\"mailto:info@theeurasia.kz\">info@theeurasia.kz</a>"
+
+#: /web/__form.php:327
+#, fuzzy
+msgid "Южно-Казахстанской области"
+msgstr "Батыс Қазақстан облысы"
+
+#: /web/__check-policy.js.php:19
+msgid "августа"
+msgstr "тамыз"
+
+#: /web/__form.js.php:228
+msgid "автомобиль"
+msgstr "автомобиль"
+
+#: /web/__check-policy.js.php:15
+msgid "апреля"
+msgstr "сәуiр"
+
+#: /web/__form.js.php:264
+msgid "водитель"
+msgstr "жүргізуші"
+
+#: /web/__form.php:114 /web/__form.php:341
+msgid "временный въезд на территорию РК"
+msgstr "ҚР аумағына уақытша кіру"
+
+#: /web/__form.js.php:714
+msgid "г."
+msgstr "ж."
+
+#: /web/__form.php:63 /web/__form.php:290
+msgid "год выпуска"
+msgstr "шығарылған жылы"
+
+#: /web/__check-policy.js.php:23
+msgid "декабря"
+msgstr "желтоқсан"
+
+#: /web/__form.php:68
+#, php-format
+msgid "до %d"
+msgstr "%d дейін"
+
+#: /web/__form.php:10 /web/__form.php:227
+msgid "за рулем"
+msgstr "жүргізу өтілі"
+
+#: /web/index.php:227
+msgid "заказать звонок"
+msgstr "қоңырау шалуға тапсырыс беру"
+
+#: /web/index.php:122 /web/contacts.php:105
+msgid "звонок бесплатный"
+msgstr "қоңырау шалу тегін"
+
+#: /web/index.php:122 /web/index.php:227 /web/contacts.php:105
+msgid "или"
+msgstr "немесе"
+
+#: /web/index.php:216 /web/index.php:231
+msgid "или 5,9 млн. тенге в день выплачивает «Евразия» своим клиентам"
+msgstr ""
+"немесе тәулігіне 5,9 млн. теңге, оның клиенттері үшін «Евразия» төлейді"
+
+#: /web/__check-policy.js.php:18
+msgid "июля"
+msgstr "шiлде"
+
+#: /web/__check-policy.js.php:17
+msgid "июня"
+msgstr "маусым"
+
+#: /web/__form.php:32 /web/__form.php:249
+msgid "льготные условия для пенсионеров и инвалидов"
+msgstr "жеңілдікті жағдайлар — мүгедектер, зейнеткерлер, ҰОС қатысушылар"
+
+#: /web/__check-policy.js.php:14
+msgid "марта"
+msgstr "наурыз"
+
+#: /web/__check-policy.js.php:16
+msgid "мая"
+msgstr "мамыр"
+
+#: /web/__form.php:15 /web/__form.php:232
+msgid "менее 2 лет"
+msgstr "2 жылдан аз"
+
+#: /web/__form.php:80 /web/__form.php:307
+msgid "на учёте в"
+msgstr "тіркеу өңірі"
+
+#: /web/__form.js.php:718
+msgid "на учёте в "
+msgstr "өңірді таңдаңыз"
+
+#: /web/__check-policy.js.php:22
+msgid "ноября"
+msgstr "қараша"
+
+#: /web/__check-policy.js.php:21
+msgid "октября"
+msgstr "қазан"
+
+#. * <span class="gray"><?= _('или в рассрочку на 3 месяца по <span class="price-post">&nbsp;</span> тенге в месяц.') ?></span>
+#: /web/__form.php:172
+msgid "оплатить банковской картой в интернете"
+msgstr "банк картасымен ғаламтор арқылы төлеу"
+
+#: /web/__check-policy.js.php:20
+msgid "сентября"
+msgstr "қыркүйек"
+
+#: /web/__form.js.php:457
+msgid "тенге"
+msgstr "теңге"
+
+#: /web/__check-policy.js.php:13
+msgid "февраля"
+msgstr "ақпан"
+
+#: /web/__check-policy.js.php:12
+msgid "января"
+msgstr "қаңтар"
+
+#~ msgid ""
+#~ "Добавить ещё<br class=\"visible-xs\"/> <a href=\"\" class=\"btn-"
+#~ "additional add-driver\">водителя</a><span class=\"add-car\"><span class="
+#~ "\"add-car__or\"> <br class=\"visible-sm\"/>или</span>&nbsp;<a href=\"\" "
+#~ "class=\"btn-additional add-auto\">автомобиль</a></span>"
+#~ msgstr ""
+#~ "<a href=\"\" class=\"btn-additional add-driver\">Жүргізушіні</a><span "
+#~ "class=\"add-car\"><span class=\"add-car__or\"> <br class=\"visible-sm\"/"
+#~ ">немесе</span>&nbsp;<a href=\"\" class=\"btn-additional add-auto"
+#~ "\">автомобильді</a></span> қосу"
+
+#~ msgid ""
+#~ "Кажется, произошла ошибка. Пожалуйста, заполните форму ещё раз или <a "
+#~ "href=\"\" data-toggle=\"modal\" data-target=\"#callback\">закажите "
+#~ "звонок</a> — мы сами перезвоним и всё рассчитаем."
+#~ msgstr ""
+#~ "Қате болған секілді. Өтінеміз, нысанды тағы да бір рет толтырыңыз немесе "
+#~ "<a href=\"\" data-toggle=\"modal\" data-target=\"#callback\">қоңырау "
+#~ "шалуға тапсырыс беріңіз</a> — біз өзіміз қайта қоңырау шаламыз және бәрін "
+#~ "есептейміз."
+
+#~ msgid "город областного значения"
+#~ msgstr "облыстық маңызы бар қала"

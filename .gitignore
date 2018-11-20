@@ -7,6 +7,3 @@
 # local
 /logs
 *.log
-
-# GNU gettext compiled resource file
-*.mo

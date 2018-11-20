@@ -4,7 +4,7 @@ header('Content-Type: text/html; charset=utf-8');
 
 require_once(__DIR__ . '/api/Util.php');
 
-$langs = ['ru' => ['Русский', 'ru_RU'], 'kz' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
+$langs = ['ru' => ['Русский', 'ru_RU'], 'kk' => ['Қазақша', 'kk_KZ']/*, 'en' => ['English', 'en_US']*/];
 
 
 $lang = (isset($_GET['lang']) && array_key_exists($_GET['lang'], $langs)) ? $_GET['lang'] : 'ru';
@@ -41,7 +41,7 @@ $url = 'eurasia/pos/all/';
 
 $data = '{}';
 
-$apiLang = $lang == 'kz' ? 'kk' : $lang;
+$apiLang = $lang;
 $offices = EurasiaAPI::request($url, $data, 'get', $apiLang);
 $offices = json_decode($offices, true);
 
@@ -106,7 +106,7 @@ ob_start("Util::minifyHtml");
                             <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
                             <li><span><?= _("Адреса и телефоны") ?></span></li>
                             <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="contacts.php<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
-                            <li class="lang-li"><?php if($lang == 'kz'): ?><span class="current-lang">KZ</span><?php else: ?><a href="<?= Util::passParameters('kz') ?>">KZ</a><?php endif; ?></li>
+                            <li class="lang-li"><?php if($lang == 'kk'): ?><span class="current-lang">KZ</span><?php else: ?><a href="<?= Util::passParameters('kz') ?>">KZ</a><?php endif; ?></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

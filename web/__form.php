@@ -83,6 +83,7 @@
                         <option value="0" selected disabled><?= _("Выберите регион") ?></option>
                         <option value="GAST"><?= _("Астане") ?></option>
                         <option value="GALM"><?= _("Алматы") ?></option>
+                        <option value="GSHM"><?= _("Шымкенте") ?></option>
                         <option value="OAKM"><?= _("Акмолинской области") ?></option>
                         <option value="OALM"><?= _("Алматинской области") ?></option>
                         <option value="OAKT"><?= _("Актюбинской области") ?></option>
@@ -96,7 +97,7 @@
                         <option value="OMNG"><?= _("Мангистауской области") ?></option>
                         <option value="OPVL"><?= _("Павлодарской области") ?></option>
                         <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
-                        <option value="OUK"><?= _("Туркестанской области") ?></option>
+                        <option value="OTRK"><?= _("Туркестанской области") ?></option>
                     </select>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 major-city__container">
@@ -309,6 +310,7 @@
                     <option value="0" selected disabled><?= _("Выберите регион") ?></option>
                     <option value="GAST"><?= _("Астане") ?></option>
                     <option value="GALM"><?= _("Алматы") ?></option>
+                    <option value="GSHM"><?= _("Шымкенте") ?></option>
                     <option value="OAKM"><?= _("Акмолинской области") ?></option>
                     <option value="OALM"><?= _("Алматинской области") ?></option>
                     <option value="OAKT"><?= _("Актюбинской области") ?></option>
@@ -322,7 +324,7 @@
                     <option value="OMNG"><?= _("Мангистауской области") ?></option>
                     <option value="OPVL"><?= _("Павлодарской области") ?></option>
                     <option value="OSK"><?= _("Северо-Казахстанской области") ?></option>
-                    <option value="OUK"><?= _("Южно-Казахстанской области") ?></option>
+                    <option value="OTRK"><?= _("Южно-Казахстанской области") ?></option>
                 </select>
             </div>
             <div class="col-sm-9 col-sm-offset-3 major-city__container">
