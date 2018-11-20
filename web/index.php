@@ -147,6 +147,7 @@ ob_start("Util::minifyHtml");
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
                     <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
+                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Лидер страхового рынка более 12 лет!") ?></div>
                 </div>
             </div>
         </header>
@@ -163,12 +164,12 @@ ob_start("Util::minifyHtml");
                         <?php if($lang == 'ru'): ?>
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
                             <span class="bonus-teaser__header">Получите<br/>бонус до 30%</span>
-                            <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте картой Евразийского банка</span>
+                            <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте Eurasia36.kz картой Евразийского банка</span>
                             <img src="./i/eubank-logo.png" alt="" />
                         </a>
                         <?php else: ?>
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
-                            <span class="bonus-teaser__text bonus-teaser__text_kz">Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
+                            <span class="bonus-teaser__text bonus-teaser__text_kz">Eurasia36.kz сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
                             <span class="bonus-teaser__header">30% дейін бонус алыңыз</span>
                             <img src="./i/eubank-logo.png" alt="" />
                         </a>
@@ -179,7 +180,7 @@ ob_start("Util::minifyHtml");
                     <div class="check-policy">
                         <h3><?= _("Проверка подлинности страхового полиса Евразии") ?></h3>
 
-                        <p><?= _("Введите 12 цифр номера страховки") ?></p>
+                        <p><?= _("Введите 12 цифр и букв номера страховки") ?></p>
 
                         <form class="form-inline check-policy__form" action="check-policy.php" method="post">
                             <input
