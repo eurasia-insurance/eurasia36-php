@@ -225,27 +225,7 @@ ob_start("Util::minifyHtml");
             </div>
         </footer>
 
-
-        <!-- Доставка и оплата -->
-        <div class="modal fade modal-transparent" id="delivery" tabindex="-1" role="dialog" aria-labelledby="delivery">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&nbsp;</button>
-                        <h4 class="modal-title" id="myModalLabel"><?= _("Доставка и оплата") ?></h4>
-                    </div>
-                    <div class="modal-body">
-                        <p class="delivery-time"><?= _("Доставляем полисы только по г. Алматы<br/>с 9:00 до 19:00 в будние дни.") ?></p>
-
-                        <p><?= _("Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.") ?></p>
-
-                        <p><?= _("Принимаем заказы круглосуточно, без выходных и праздничных дней.") ?></p>
-
-                        <p class="delivery-time"><?= _("Оплата наличными курьеру при получении.") ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<?php include '__dostavka.php'; ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>
