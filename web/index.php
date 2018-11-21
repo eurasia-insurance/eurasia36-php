@@ -144,9 +144,10 @@ ob_start("Util::minifyHtml");
                 <h1><?= _("Обязательная автостраховка с&nbsp;бесплатной доставкой") ?></h1>
 
                 <div class="row pluses">
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
+                    <div class="col-sm-4 col-md-3"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
+                    <div class="col-sm-4 col-md-3"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
+                    <div class="col-sm-4 col-md-3"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
+                    <div class="col-sm-4 col-md-3"><img src="./i/check.svg" alt="✓" /> <?= _("Лидер страхового рынка более 12 лет!") ?></div>
                 </div>
             </div>
         </header>
@@ -163,12 +164,12 @@ ob_start("Util::minifyHtml");
                         <?php if($lang == 'ru'): ?>
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
                             <span class="bonus-teaser__header">Получите<br/>бонус до 30%</span>
-                            <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте картой Евразийского банка</span>
+                            <span class="bonus-teaser__text">от стоимости страховки при оплате на сайте Eurasia36.kz картой Евразийского банка</span>
                             <img src="./i/eubank-logo.png" alt="" />
                         </a>
                         <?php else: ?>
                         <a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
-                            <span class="bonus-teaser__text bonus-teaser__text_kz">Сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
+                            <span class="bonus-teaser__text bonus-teaser__text_kz">Eurasia36.kz сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
                             <span class="bonus-teaser__header">30% дейін бонус алыңыз</span>
                             <img src="./i/eubank-logo.png" alt="" />
                         </a>
@@ -179,7 +180,7 @@ ob_start("Util::minifyHtml");
                     <div class="check-policy">
                         <h3><?= _("Проверка подлинности страхового полиса Евразии") ?></h3>
 
-                        <p><?= _("Введите 12 цифр номера страховки") ?></p>
+                        <p><?= _("Введите 12 цифр и букв номера страховки") ?></p>
 
                         <form class="form-inline check-policy__form" action="check-policy.php" method="post">
                             <input
@@ -271,13 +272,13 @@ ob_start("Util::minifyHtml");
                         <h4 class="modal-title" id="myModalLabel"><?= _("Доставка и оплата") ?></h4>
                     </div>
                     <div class="modal-body">
-                        <p class="delivery-time"><?= _("Доставляем полисы по&nbsp;Алматы и&nbsp;Астане в&nbsp;будние дни с&nbsp;9:00 до&nbsp;22:00, в&nbsp;субботу с&nbsp;9:00 до&nbsp;18:00.") ?></p>
+                        <p class="delivery-time"><?= _("Принимаем заказы круглосуточно, без выходных и праздничных дней.") ?></p>
 
-                        <p><?= _("Самовывоз возможен в Алматы, Астане, Караганде, Усть-Каменогорске, Костанае, Актау, Павлодаре, Атырау и Актобе.") ?></p>
+                        <p><?= _("Доставляем полисы по Алматы и Астане в будние дни с 9:00 до 19:00. В субботу с 10:00 до 16:00.") ?></p>
 
-                        <p><?= _("Принимаем заказы круглосуточно, без выходных и праздничных дней.") ?></p>
+                        <p><?= _("Самовывоз возможен в будние дни, в городах: Алматы, Астана, Караганда, Усть-Каменногорск, Костанай, Актау, Павлодар, Атырау, Актобе, Шымкент, Семей, Петропавловск и Уральск.") ?></p>
 
-                        <p class="delivery-time"><?= _("Оплата наличными курьеру при получении.") ?></p>
+                        <p class="delivery-time"><?= _("Оплата возможна наличными через курьера и онлайн через наш сайт – www.eurasia36.kz") ?></p>
                     </div>
                 </div>
             </div>
