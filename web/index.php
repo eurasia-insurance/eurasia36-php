@@ -262,7 +262,7 @@ ob_start("Util::minifyHtml");
             </div>
         </footer>
 
-		<?php include 'dostavka.php'; ?>
+		<?php include '__dostavka.php'; ?>
 
         <!-- Заказ звонка -->
         <div class="modal fade modal-transparent" id="callback" tabindex="-1" role="dialog" aria-labelledby="delivery">

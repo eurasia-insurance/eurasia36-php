@@ -225,7 +225,7 @@ ob_start("Util::minifyHtml");
             </div>
         </footer>
 
-		<?php include 'dostavka.php'; ?>
+		<?php include '__dostavka.php'; ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>
