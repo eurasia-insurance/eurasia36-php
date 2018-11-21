@@ -144,10 +144,10 @@ ob_start("Util::minifyHtml");
                 <h1><?= _("Обязательная автостраховка с&nbsp;бесплатной доставкой") ?></h1>
 
                 <div class="row pluses">
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
-<!--                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>  -->
-                    <div class="col-sm-4"><img src="./i/check.svg" alt="✓" /> <?= _("Лидер страхового рынка более 12 лет!") ?></div>
+                    <div class="col-sm-4 col-md-5"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
+                    <div class="col-sm-4 col-md-5"><img src="./i/check.svg" alt="✓" /> <?= _("Минимальная цена + бонусы") ?></div>
+                    <div class="col-sm-4 col-md-5"><img src="./i/check.svg" alt="✓" /> <?= _("Работаем c 1995 года") ?></div>
+                    <div class="col-sm-4 col-md-5"><img src="./i/check.svg" alt="✓" /> <?= _("Лидер страхового рынка более 12 лет!") ?></div>
                 </div>
             </div>
         </header>
