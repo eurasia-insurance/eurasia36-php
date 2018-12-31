@@ -1,4 +1,13 @@
 #!/bin/bash
 
-make compile
+curdir="$(pwd)"
 
+DVOLS="-v $curdir/web:/web -v $curdir/src/i18n:/src -v $curdir/web/i18n:/i18n"
+
+DIMG="lapsatech/msgfmt:latest"
+DRUN="docker run --rm"
+
+$DRUN $DVOLS $DIMG xgettext
+$DRUN $DVOLS $DIMG msgmerge kk KZ
+rm -rf $curdir/web/i18n
+$DRUN $DVOLS $DIMG msgfmt
