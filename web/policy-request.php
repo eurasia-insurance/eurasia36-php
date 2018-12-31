@@ -148,7 +148,6 @@ if(isset($email)) {
 }
 
 $url = 'insurance/crm/send-policy-request';
-$url = 'insurance/crm/send-policy-request-reply';
 
 $_POST['type'] = 'EXPRESS';
 
