@@ -234,37 +234,45 @@ li.lang-li {
     }
 }
 
-
-.cabinet-banner__header {
-	position: absolute;
-	top: 9px;
-	left: 14px;
+.cabinet-banner {
+	position: relative;
 	display: block;
-	font-family: Helvetica;
-	font-size: 23px;
-	font-weight: normal;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #ffffff;
-}
+	background: transparent url("./i/cabinet-bg.png") no-repeat center/cover;
+	margin-top: 30px;
+	width: 360px;
+	height: 224px;
 
-.cabinet-banner__text {
-	position: absolute;
-	top: 178px;
-	left: 23px;
-	display: block;
-	width: 273px;
-	height: 20px;
-	font-family: Helvetica;
-	font-size: 17px;
-	font-weight: normal;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #aaaaaa;
+	.cabinet-banner__header {
+		position: absolute;
+		top: 9px;
+		left: 14px;
+		display: block;
+		font-family: Helvetica;
+		font-size: 23px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		color: #ffffff;
+	}
+
+	.cabinet-banner__text {
+		position: absolute;
+		top: 178px;
+		left: 23px;
+		display: block;
+		width: 273px;
+		height: 20px;
+		font-family: Helvetica;
+		font-size: 17px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: normal;
+		color: #aaaaaa;
+	}
 }
 
 #cashback {

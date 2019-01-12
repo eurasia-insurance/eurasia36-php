@@ -159,6 +159,7 @@ ob_start("Util::minifyHtml");
                     <?php require('./__form.php') ?>
                 </div>
                 <div class="col-xs-12 col-sm-4">
+
 					<a href="https://online.theeurasia.kz/cabinet/" target="_blank" class="cabinet-banner">
 						<span class="cabinet-banner__header_rectangle">
 							<span class="cabinet-banner__header"><?= _("Купите страховку онлайн") ?></span>
