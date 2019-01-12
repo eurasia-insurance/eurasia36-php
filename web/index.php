@@ -127,7 +127,7 @@ ob_start("Util::minifyHtml");
                                    style="display: inline-block; font-size: 12px;padding-top: 0;padding-left: 10px;"
                                    class=""><?= _("Перезвоните мне") ?></a>
                             </li>
-                            <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Доставка и оплата") ?></a></li>
+                            <li><a href="#info" data-toggle="modal" data-target="#delivery"><?= _("Расчет и оплата") ?></a></li>
                             <li><a href="https://box.eurasia36.kz"><?= _("Отправить документы") ?></a></li>
                             <li><a href="./contacts.php<?= $lang != 'ru' ? Util::passParameters($lang) : Util::passParameters() ?>"><?= _("Контакты") ?></a></li>
                             <li class="lang-li first-lang-li"><?php if($lang == 'ru'): ?><span class="current-lang">RU</span><?php else: ?><a href="./<?= Util::passParameters() ?>">RU</a><?php endif; ?></li>
@@ -141,7 +141,7 @@ ob_start("Util::minifyHtml");
                 <!--
                 <span class="ogpo-vts"><?= _("ОГПО ВТС") ?></span> <a href="./order/casco/index.html" class="avto-kasko">Авто Каско</a>
                 -->
-                <h1><?= _("Обязательная автостраховка с&nbsp;бесплатной доставкой") ?></h1>
+                <h1><?= _("Оставить заявку на обязательное автострахование") ?></h1>
 
                 <div class="row pluses">
                     <div class="col-sm-4 col-md-3"><img src="./i/check.svg" alt="✓" /> <?= _("Быстрое оформление полиса") ?></div>
@@ -164,7 +164,7 @@ ob_start("Util::minifyHtml");
 						<span class="cabinet-banner__header_rectangle">
 							<span class="cabinet-banner__header"><?= _("Купите страховку онлайн") ?></span>
 						</span>
-						<span class="cabinet-banner__text"><?= _("В личном кабинете СК \"Евразия\"")?></span>
+						<span class="cabinet-banner__text"><?= _("В личном кабинете СК «Евразия»")?></span>
 					</a>
 
                     <div class="check-policy">
@@ -189,19 +189,19 @@ ob_start("Util::minifyHtml");
 					<?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
 						<?php if($lang == 'ru'): ?>
 					<a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
-						<span class="bonus-teaser__header">Получите<br/>бонус до 30%</span>
-						<span class="bonus-teaser__text">от стоимости страховки при оплате на сайте Eurasia36.kz картой Евразийского банка</span>
+						<span class="bonus-teaser__header"><?= _("Получите бонус до 30%") ?></span>
+						<span class="bonus-teaser__text"><?= _("от стоимости страховки при оплате на сайте СК Евразия картой Евразийского банка") ?></span>
 						<img src="./i/eubank-logo.png" alt="" />
 					</a>
 						<?php else: ?>
 					<a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
-						<span class="bonus-teaser__text bonus-teaser__text_kz">Eurasia36.kz сайтта Еуразиялық банктің картасымен төлеу кезінде сақтандыру құнынан</span>
-						<span class="bonus-teaser__header">30% дейін бонус алыңыз</span>
+						<span class="bonus-teaser__text bonus-teaser__text_kz"><?= _("от стоимости страховки при оплате на сайте СК Евразия картой Евразийского банка") ?></span>
+						<span class="bonus-teaser__header"><?= _("Получите бонус до 30%") ?></span>
 						<img src="./i/eubank-logo.png" alt="" />
 					</a>
 						<?php endif; ?>
                     <?php endif; ?>
-                    
+
                     <div class="rating hidden-xs">
                         <img src="./i/rating.png" alt="" />
                         <?= _("У нас наивысший рейтинг среди частных финансовых компаний Казахстана: BBB-(прогноз стабильный)/kzAAA (S&P, 2018).") ?>
