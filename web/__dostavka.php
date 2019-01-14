@@ -9,7 +9,7 @@
                     <div class="modal-body">
                         <p class="delivery-time"><?= _("Принимаем заказы круглосуточно, без выходных и праздничных дней 24/7") ?></p>
 
-                        <p class="delivery-time"><?= _("Оплата возможна наличными через курьера и онлайн через наш сайт <a href=\"https://cabinet.eurasia36.kz/Cabinet/OgpoVts/\" target=\"_blank\">https://cabinet.eurasia36.kz/Cabinet/OgpoVts/</a>") ?></p>
+                        <p class="delivery-time"><?= _("Оплата возможна наличными через курьера и онлайн через наш сайт <a href=\"https://online.theeurasia.kz/cabinet/\" target=\"_blank\">https://online.theeurasia.kz/cabinet/</a>") ?></p>
                     </div>
                 </div>
             </div>
