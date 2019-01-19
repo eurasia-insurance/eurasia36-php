@@ -212,11 +212,11 @@ msgstr ""
 
 #: /web/__form.php:260
 msgid "Ещё один автомобиль"
-msgstr "Тағы бір автомобиль"
+msgstr "Тағы авто-көліктерді косу"
 
 #: /web/__form.php:217
 msgid "Ещё один водитель"
-msgstr "Тағы бір жүргізуші"
+msgstr "Тағы жүргізушілерді қосу"
 
 #: /web/__form.php:92 /web/__form.php:319
 msgid "Жамбылской области"
@@ -344,7 +344,7 @@ msgstr "Тізімде жоқ"
 
 #: /web/index.php:181
 msgid "Номер полиса"
-msgstr "Полистің нөмірі"
+msgstr "келісім-шарттың нөмірі"
 
 #: /web/index.php:215
 msgid "О страховой компании «Евразия»"
@@ -368,10 +368,10 @@ msgid ""
 "\"https://online.theeurasia.kz/cabinet/\" target=\"_blank\">https://online."
 "theeurasia.kz/cabinet/</a>"
 msgstr ""
-"Төлем  курьер арқылы қолма-қол ақшамен  және  біздің <a href="
+"Төлем курьер арқылы қолма-қол ақшамен неме біздің сайт арқылы <a href="
 "\"https://online.theeurasia.kz/cabinet/\" target=\"_blank\">https://online."
 "theeurasia.kz/cabinet/</a>"
-" сайтымыз  арқылы онлайн мүмкін болады"
+" онлайн төлем жасау мүмкіндігі бар"
 
 #: /web/index.php:326
 msgid ""
@@ -469,8 +469,7 @@ msgstr "30%  дейін бонус алыңыз"
 
 #: /web/__dostavka.php:10
 msgid "Принимаем заказы круглосуточно, без выходных и праздничных дней 24/7"
-msgstr ""
-"Тапсырысты тәулік бойына, демалыссыз және мереке  күндері  24/7 қабылдаймыз"
+msgstr "Тапсырысты тәулік бойы 24/7 қабылдаймыз, демалыс және мереке кундерісіз"
 
 #: /web/__form.php:56 /web/__form.php:282
 msgid "Прицеп"
@@ -588,7 +587,7 @@ msgstr ""
 
 #: /web/index.php:234
 msgid "Узнать стоимость страховки"
-msgstr "Сақтандыру құны білу"
+msgstr "Сақтандыру құның білу"
 
 #: /web/__form.js.php:37
 msgid "Четвертый"
