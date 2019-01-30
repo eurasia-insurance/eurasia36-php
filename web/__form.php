@@ -200,7 +200,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9 order-hint">
-                <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих скидках.") ?>
+                <?= _("Перезвоним в течение 10 минут. Спросите менеджера о действующих акциях.") ?>
             </div>
             <div class="col-sm-offset-3 col-sm-9 one-more-form">
                 <a href="./" id="oneMorePolicy"><?= _("Заполнить еще одну заявку") ?></a>
