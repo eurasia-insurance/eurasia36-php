@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eurasia36.kz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-20 00:19+0000\n"
+"POT-Creation-Date: 2019-02-11 18:24+0000\n"
 "Last-Translator: Vadim Isaev <vadim.o.isaev@gmail.com>\n"
 "Language-Team: Vadim Isaev <vadim.o.isaev@gmail.com>\n"
 "Language: kk\n"
@@ -308,8 +308,8 @@ msgid "Мангистауской области"
 msgstr "Маңғыстау облысы"
 
 #: /web/index.php:148
-msgid "Минимальная цена + бонусы"
-msgstr "Минималды баға + бонустар"
+msgid "Минимальная цена"
+msgstr "Минималды баға"
 
 #: /web/__form.php:54 /web/__form.php:280
 msgid "Мотоцикл"
@@ -410,8 +410,7 @@ msgid "Перезвоним в течение 10 минут."
 msgstr "10 минут ішінде қайта қоңырау шаламыз."
 
 #: /web/__form.php:203
-msgid ""
-"Перезвоним в течение 10 минут. Спросите менеджера о действующих акциях."
+msgid "Перезвоним в течение 10 минут. Спросите менеджера о действующих акциях."
 msgstr ""
 "10 минут аралығында хабарласамыз. Ағымдағы науқан бойынша менеджерден сұраңыз"
 
