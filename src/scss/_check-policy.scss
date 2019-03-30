@@ -31,6 +31,21 @@
     }
   }
 
+  &__form2 {
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    .form-control {
+      flex: 1 1 180px;
+      max-width: 180px;
+      font-size: 16px;
+      color: #000;
+      height: auto;
+      padding: 16px 10px;
+    }
+  }
+
   .btn {
     padding-left: 0;
     padding-right: 0;
