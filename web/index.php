@@ -184,13 +184,15 @@ ob_start("Util::minifyHtml");
                             <button type="submit" class="btn btn_transparent pull-right"><?= _("Проверить") ?></button>
                         </form>
                         <div class="check-policy__result"></div>
+                    </div>
 
-						<form action="https://id.mkb.kz/" method="get">
-							<button type="submit" class="btn btn_transparent pull-right"><?= _("Проверка наличия страхового полиса ЕСБД") ?></button>
+                    <div class="check-policy">
+						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline check-policy__form">
+							<button type="submit" class="btn btn_transparent pull-right"><?= _("Проверка полиса ЕСБД") ?></button>
 						</form>
 
-						<form action="http://smsconnect.theeurasia.kz/checkpolicy/" method="get">
-							<button type="submit" class="btn btn_transparent pull-right"><?= _("Сервис проверки страховых полисов СК \"Евразия\"") ?></button>
+						<form action="http://smsconnect.theeurasia.kz/checkpolicy/" method="get" target="_blank" class="form-inline check-policy__form">
+							<button type="submit" class="btn btn_transparent pull-right"><?= _("Сервис проверки СК \"Евразия\"") ?></button>
 						</form>
                     </div>
 
