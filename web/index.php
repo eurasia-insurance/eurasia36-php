@@ -187,11 +187,11 @@ ob_start("Util::minifyHtml");
                     </div>
 
                     <div class="check-policy">
-						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline check-policy__form">
+						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline">
 							<button type="submit" class="btn btn_transparent pull-right"><?= _("Проверка полиса ЕСБД") ?></button>
 						</form>
 
-						<form action="http://smsconnect.theeurasia.kz/checkpolicy/" method="get" target="_blank" class="form-inline check-policy__form">
+						<form action="http://smsconnect.theeurasia.kz/checkpolicy/" method="get" target="_blank" class="form-inline">
 							<button type="submit" class="btn btn_transparent pull-right"><?= _("Сервис проверки СК \"Евразия\"") ?></button>
 						</form>
                     </div>
