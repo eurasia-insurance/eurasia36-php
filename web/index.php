@@ -186,6 +186,16 @@ ob_start("Util::minifyHtml");
                         <div class="check-policy__result"></div>
                     </div>
 
+                    <div class="check-policy">
+						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline check-policy__form2" style="margin-bottom: 30px;">
+							<button type="submit" class="btn btn_transparent pull-right"><?= _("Проверка полиса ЕСБД") ?></button>
+						</form>
+
+						<form action="http://smsconnect.theeurasia.kz/checkpolicy/" method="get" target="_blank" class="form-inline check-policy__form2">
+							<button type="submit" class="btn btn_transparent pull-right"><?= _("Сервис проверки СК \"Евразия\"") ?></button>
+						</form>
+                    </div>
+
 					<?php if(defined('PARAM_SHOW_EUBANK_BONUS') && PARAM_SHOW_EUBANK_BONUS == 1): ?>
 						<?php if($lang == 'ru'): ?>
 					<a href="" class="bonus-teaser" data-toggle="modal" data-target="#cashback">
