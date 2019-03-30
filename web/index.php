@@ -187,7 +187,7 @@ ob_start("Util::minifyHtml");
                     </div>
 
                     <div class="check-policy">
-						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline check-policy__form2">
+						<form action="https://id.mkb.kz/" method="get" target="_blank" class="form-inline check-policy__form2" style="margin-bottom: 30px;">
 							<button type="submit" class="btn btn_transparent pull-right"><?= _("Проверка полиса ЕСБД") ?></button>
 						</form>
 
