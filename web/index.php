@@ -162,9 +162,8 @@ ob_start("Util::minifyHtml");
 
 					<a href="https://online.theeurasia.kz/cabinet/" target="_blank" class="cabinet-banner">
 						<span class="cabinet-banner__header_rectangle">
-							<span class="cabinet-banner__header"><?= _("Купите страховку онлайн") ?></span>
+							<span class="cabinet-banner__header"><?= _("Купите страховку онлайн со скидкой 10%") ?></span>
 						</span>
-						<span class="cabinet-banner__text"><?= _("В личном кабинете СК «Евразия»")?></span>
 					</a>
 
                     <div class="check-policy">
